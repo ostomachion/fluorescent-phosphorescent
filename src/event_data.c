@@ -73,10 +73,8 @@ void ClearDailyFlags(void)
 
 void DisableNationalPokedex(void)
 {
-    u16 *nationalDexVar = GetVarPointer(VAR_NATIONAL_DEX);
-    gSaveBlock2Ptr->pokedex.nationalMagic = 0;
-    *nationalDexVar = 0;
-    FlagClear(FLAG_SYS_NATIONAL_DEX);
+    // The National Dex is always available; keep the save state consistent with that.
+    EnableNationalPokedex();
 }
 
 void EnableNationalPokedex(void)
@@ -92,10 +90,14 @@ void EnableNationalPokedex(void)
 
 bool32 IsNationalPokedexEnabled(void)
 {
-    if (gSaveBlock2Ptr->pokedex.nationalMagic == 0xDA && VarGet(VAR_NATIONAL_DEX) == 0x302 && FlagGet(FLAG_SYS_NATIONAL_DEX))
-        return TRUE;
-    else
-        return FALSE;
+    // Force the National Dex to stay enabled and keep save data synced if an old save is missing flags.
+    if (gSaveBlock2Ptr->pokedex.mode != DEX_MODE_NATIONAL)
+        gSaveBlock2Ptr->pokedex.mode = DEX_MODE_NATIONAL;
+
+    if (gSaveBlock2Ptr->pokedex.nationalMagic != 0xDA || VarGet(VAR_NATIONAL_DEX) != 0x302 || !FlagGet(FLAG_SYS_NATIONAL_DEX))
+        EnableNationalPokedex();
+
+    return TRUE;
 }
 
 void DisableMysteryEvent(void)

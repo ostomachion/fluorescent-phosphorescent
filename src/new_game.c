@@ -171,6 +171,8 @@ void NewGameInitData(void)
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();
+    FlagSet(FLAG_SYS_POKEDEX_GET);  // Unlock Pokédex from game start
+    FlagSet(FLAG_SYS_POKEMON_GET);  // Also set Pokemon flag
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();
