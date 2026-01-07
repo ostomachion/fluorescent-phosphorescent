@@ -1085,11 +1085,6 @@ enum NationalDexOrder
 
 enum
 {
-    DEX_MODE_NATIONAL  // Only National dex mode is used
-};
-
-enum
-{
     FLAG_GET_SEEN,
     FLAG_GET_CAUGHT,
     FLAG_SET_SEEN,

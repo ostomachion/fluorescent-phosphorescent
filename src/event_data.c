@@ -83,17 +83,13 @@ void EnableNationalPokedex(void)
     gSaveBlock2Ptr->pokedex.nationalMagic = 0xDA;
     *nationalDexVar = 0x302;
     FlagSet(FLAG_SYS_NATIONAL_DEX);
-    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_NATIONAL;
     gSaveBlock2Ptr->pokedex.order = 0;
     ResetPokedexScrollPositions();
 }
 
 bool32 IsNationalPokedexEnabled(void)
 {
-    // Force the National Dex to stay enabled and keep save data synced if an old save is missing flags.
-    if (gSaveBlock2Ptr->pokedex.mode != DEX_MODE_NATIONAL)
-        gSaveBlock2Ptr->pokedex.mode = DEX_MODE_NATIONAL;
-
+    // National Dex is always enabled. Sync save data if old save is missing flags.
     if (gSaveBlock2Ptr->pokedex.nationalMagic != 0xDA || VarGet(VAR_NATIONAL_DEX) != 0x302 || !FlagGet(FLAG_SYS_NATIONAL_DEX))
         EnableNationalPokedex();
 
