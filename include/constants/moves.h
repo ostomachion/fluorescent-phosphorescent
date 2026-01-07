@@ -910,7 +910,13 @@
 
 #define MOVES_COUNT_GEN9 848
 
-#define MOVES_COUNT         MOVES_COUNT_GEN9
+// New moves from Pokemon TCG Pocket
+#define MOVE_FIRE_CLAWS 848
+#define MOVE_WAVE_SPLASH 849
+
+#define MOVES_COUNT_TCG 850
+
+#define MOVES_COUNT         MOVES_COUNT_TCG
 
 // Z Moves
 #define MOVE_BREAKNECK_BLITZ (MOVES_COUNT + 0)
