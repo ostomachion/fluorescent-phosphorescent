@@ -2010,8 +2010,6 @@ static const struct WindowTemplate sSearchMenu_WindowTemplate[] =
 //************************************
 void CB2_OpenPokedexPlusHGSS(void)
 {
-    if (!POKEDEX_PLUS_HGSS) return; // prevents the compiler from emitting static .rodata
-                                    // if the feature is disabled
     switch (gMain.state)
     {
     case 0:
@@ -4050,9 +4048,6 @@ void Task_DisplayCaughtMonDexPageHGSS(u8 taskId)
     u8 spriteId;
     u16 species;
     enum NationalDexOrder dexNum;
-
-    if (!POKEDEX_PLUS_HGSS) return; // prevents the compiler from emitting static .rodata
-                                    // if the feature is disabled
 
     species = gTasks[taskId].tSpecies;
     dexNum = SpeciesToNationalPokedexNum(species);
