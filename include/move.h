@@ -60,6 +60,13 @@ enum ProtectMethod
     PROTECT_MAT_BLOCK,
 };
 
+// For incrementally porting moves to the new card mechanic system
+struct CardMoveData
+{
+    s32 damage;
+    const u8 *animation;
+};
+
 struct MoveInfo
 {
     const u8 *name;
@@ -161,6 +168,8 @@ struct MoveInfo
     u8 contestComboStarterId;
     u8 contestComboMoves[MAX_COMBO_MOVES];
     const u8 *battleAnimScript;
+
+    const struct CardMoveData *card;
 };
 
 extern const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL];

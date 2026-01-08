@@ -119,6 +119,9 @@ static const u8 sGMaxOneBlowDescription[] = _(
     "G-max Urshifu attack.\n"
     "Ignores Max Guard.");
 
+// Card battle system extended move data
+#include "card_moves_info.h"
+
 const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 {
     [MOVE_NONE] =
@@ -1502,6 +1505,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
         .battleAnimScript = gBattleAnimMove_Ember,
+        .card = &sCardEmber,
     },
 
     [MOVE_FLAMETHROWER] =
