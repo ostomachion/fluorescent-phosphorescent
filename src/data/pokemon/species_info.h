@@ -1,6 +1,7 @@
 #include "constants/abilities.h"
 #include "species_info/shared_dex_text.h"
 #include "species_info/shared_front_pic_anims.h"
+#include "card_species_info.h"
 
 // Macros for ease of use.
 

@@ -22,6 +22,29 @@ void HandleCardMove(void)
     
     s32 damage = cardData->damage;
     
+    // Check for card weakness mechanic
+    // If target has card species data with a weakness, check if it matches attacker's type
+    u16 targetSpecies = gBattleMons[gBattlerTarget].species;
+    const struct CardSpeciesData *targetCardData = gSpeciesInfo[targetSpecies].card;
+    
+    if (targetCardData != NULL)
+    {
+        // Get attacker's types
+        u16 attackerSpecies = gBattleMons[gBattlerAttacker].species;
+        u8 attackerType1 = gSpeciesInfo[attackerSpecies].types[0];
+        u8 attackerType2 = gSpeciesInfo[attackerSpecies].types[1];
+        
+        // Check if target is weak to either of attacker's types
+        // TYPE_NONE means no weakness, so skip it
+        if (targetCardData->weakness != TYPE_NONE 
+            && (targetCardData->weakness == attackerType1 || targetCardData->weakness == attackerType2))
+        {
+            damage += 20; // Add weakness damage bonus
+            // Set super effective flag for sound/message
+            gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_SUPER_EFFECTIVE;
+        }
+    }
+    
     // Store damage - the battle script will handle actually applying it to HP
     gBattleStruct->moveDamage[gBattlerTarget] = damage;
     

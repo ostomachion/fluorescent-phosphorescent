@@ -717,6 +717,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_GROWTH},
         .battleAnimScript = gBattleAnimMove_VineWhip,
+        .card = &sCardVineWhip,
     },
 
     [MOVE_STOMP] =
@@ -1579,6 +1580,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_MUD_SPORT, COMBO_STARTER_RAIN_DANCE, COMBO_STARTER_WATER_SPORT},
         .battleAnimScript = gBattleAnimMove_WaterGun,
+        .card = &sCardWaterGun,
     },
 
     [MOVE_HYDRO_PUMP] =
@@ -1601,6 +1603,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_RAIN_DANCE},
         .battleAnimScript = gBattleAnimMove_HydroPump,
         .validApprenticeMove = TRUE,
+        .card = &sCardHydroPump,
     },
 
     [MOVE_SURF] =
@@ -2021,6 +2024,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_GROWTH},
         .battleAnimScript = gBattleAnimMove_MegaDrain,
+        .card = &sCardMegaDrain,
     },
 
     [MOVE_LEECH_SEED] =
@@ -2100,6 +2104,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_GROWTH},
         .battleAnimScript = gBattleAnimMove_RazorLeaf,
         .validApprenticeMove = TRUE,
+        .card = &sCardRazorLeaf,
     },
 
     [MOVE_SOLAR_BEAM] =
@@ -2312,6 +2317,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
         .battleAnimScript = gBattleAnimMove_FireSpin,
         .validApprenticeMove = TRUE,
+        .card = &sCardFireSpin,
     },
 
     [MOVE_THUNDER_SHOCK] =
@@ -22914,5 +22920,42 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .ignoresProtect = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxRapidFlow,
+    },
+
+    [MOVE_FIRE_CLAWS] =
+    {
+        .name = COMPOUND_STRING("Fire Claws"),
+        .description = COMPOUND_STRING(
+            "Slashes with claws of\n"
+            "searing flames."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .battleAnimScript = gBattleAnimMove_FirePunch,
+        .card = &sCardFireClaws,
+    },
+
+    [MOVE_WAVE_SPLASH] =
+    {
+        .name = COMPOUND_STRING("Wave Splash"),
+        .description = COMPOUND_STRING(
+            "Creates a wave that\n"
+            "crashes into the foe."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .battleAnimScript = gBattleAnimMove_WaterPulse,
+        .card = &sCardWaveSplash,
     },
 };

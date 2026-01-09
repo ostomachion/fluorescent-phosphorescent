@@ -14,6 +14,41 @@
 
 // Add your card move data definitions below this line:
 
+// Grass moves
+static const struct CardMoveData sCardVineWhip = {
+    .damage = 40,
+};
+
+static const struct CardMoveData sCardRazorLeaf = {
+    .damage = 60,
+};
+
+static const struct CardMoveData sCardMegaDrain = {
+    .damage = 80,
+};
+
+// Fire moves
 static const struct CardMoveData sCardEmber = {
     .damage = 30,
+};
+
+static const struct CardMoveData sCardFireClaws = {
+    .damage = 60,
+};
+
+static const struct CardMoveData sCardFireSpin = {
+    .damage = 150,
+};
+
+// Water moves
+static const struct CardMoveData sCardWaterGun = {
+    .damage = 20,
+};
+
+static const struct CardMoveData sCardWaveSplash = {
+    .damage = 40,
+};
+
+static const struct CardMoveData sCardHydroPump = {
+    .damage = 80,
 };

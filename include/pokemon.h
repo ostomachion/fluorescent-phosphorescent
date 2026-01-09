@@ -409,6 +409,12 @@ struct Evolution
     const struct EvolutionParam *params;
 };
 
+// For incrementally porting species to the new card mechanic system
+struct CardSpeciesData
+{
+    enum Type weakness;
+};
+
 struct SpeciesInfo /*0xC4*/
 {
     u8 baseHP;
@@ -523,6 +529,7 @@ struct SpeciesInfo /*0xC4*/
     const struct Evolution *evolutions;
     const u16 *formSpeciesIdTable;
     const struct FormChange *formChangeTable;
+    const struct CardSpeciesData *card;
 #if OW_POKEMON_OBJECT_EVENTS
     struct ObjectEventGraphicsInfo overworldData;
 #if P_GENDER_DIFFERENCES

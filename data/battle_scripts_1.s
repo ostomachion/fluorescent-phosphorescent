@@ -8899,6 +8899,8 @@ BattleScript_SwapToSubstituteReturn:
 	return
 
 BattleScript_CardMoveHit::
+	printattackstring
+	waitmessage B_WAIT_TIME_LONG
 	attackanimation
 	waitanimation
 	effectivenesssound
@@ -8906,6 +8908,8 @@ BattleScript_CardMoveHit::
 	waitstate
 	healthbarupdate BS_TARGET, MOVE_DAMAGE_HP_UPDATE
 	datahpupdate BS_TARGET, MOVE_DAMAGE_HP_UPDATE
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_TARGET
 	moveendall
 	end
