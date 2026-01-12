@@ -99,7 +99,8 @@ static const u16 sMiscIndicatorPal[] = INCBIN_U16("graphics/battle_interface/mis
 static const u16 sMegaIndicatorPal[] = INCBIN_U16("graphics/battle_interface/mega_indicator.gbapal");
 static const u16 sTeraIndicatorPal[] = INCBIN_U16("graphics/battle_interface/tera_indicator.gbapal");
 
-static const u8 *const sTeraIndicatorDataPtrs[] =
+// Exposed for use in energy card display
+const u8 *const sTeraIndicatorDataPtrs[] =
 {
     sNormalIndicatorGfx,
     sNormalIndicatorGfx,
@@ -124,9 +125,11 @@ static const u8 *const sTeraIndicatorDataPtrs[] =
     sStellarIndicatorGfx,
 };
 
+// Exposed for use in energy card display
+const struct SpritePalette sSpritePalette_TeraIndicator = {sTeraIndicatorPal, TAG_TERA_INDICATOR_PAL};
+
 static const struct SpritePalette sSpritePalette_MiscIndicator = {sMiscIndicatorPal, TAG_MISC_INDICATOR_PAL};
 static const struct SpritePalette sSpritePalette_MegaIndicator = {sMegaIndicatorPal, TAG_MEGA_INDICATOR_PAL};
-static const struct SpritePalette sSpritePalette_TeraIndicator = {sTeraIndicatorPal, TAG_TERA_INDICATOR_PAL};
 
 static const struct OamData sOamData_GimmickIndicator =
 {

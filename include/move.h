@@ -65,6 +65,15 @@ struct CardMoveData
 {
     s32 damage;
     const u8 *animation;
+    u8 energyNeeded;
+    u8 grassEnergyNeeded;
+    u8 fireEnergyNeeded;
+    u8 waterEnergyNeeded;
+    u8 electricEnergyNeeded;
+    u8 psychicEnergyNeeded;
+    u8 fightingEnergyNeeded;
+    u8 darknessEnergyNeeded;
+    u8 metalEnergyNeeded;
 };
 
 struct MoveInfo

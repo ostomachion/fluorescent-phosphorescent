@@ -279,6 +279,7 @@ extern const u8 gText_MoveInterfacePP[];
 extern const u8 gText_MoveInterfaceType[];
 extern const u8 gText_MoveInterfacePpType[];
 extern const u8 gText_MoveInterfaceDynamicColors[];
+extern const u8 gText_MoveInterfaceEnergy[];
 extern const u8 gText_WhichMoveToForget4[];
 extern const u8 gText_BattleYesNoChoice[];
 extern const u8 gText_BattleSwitchWhich[];

@@ -49,6 +49,10 @@
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
 
+// External declarations for type indicator data
+extern const u8 *const sTeraIndicatorDataPtrs[];
+extern const struct SpritePalette sSpritePalette_TeraIndicator;
+
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
 static void PlayerHandleTrainerSlide(u32 battler);
@@ -81,6 +85,8 @@ static void MoveSelectionDisplayPpNumber(u32 battler);
 static void MoveSelectionDisplayPpString(u32 battler);
 static void MoveSelectionDisplayMoveType(u32 battler);
 static void MoveSelectionDisplayMoveNames(u32 battler);
+static void DestroyEnergyIconSprites(void);
+static void CreateEnergyIconSprites(u32 battler, const struct CardMoveData *cardData);
 static void TryMoveSelectionDisplayMoveDescription(u32 battler);
 static void MoveSelectionDisplayMoveDescription(u32 battler);
 static void WaitForMonSelection(u32 battler);
@@ -154,6 +160,11 @@ static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
     [CONTROLLER_DEBUGMENU]                = PlayerHandleBattleDebug,
     [CONTROLLER_TERMINATOR_NOP]           = BtlController_TerminatorNop
 };
+
+// Energy icon sprite management
+#define MAX_ENERGY_ICONS 8
+static u8 sEnergyIconSpriteIds[MAX_ENERGY_ICONS];
+static u8 sEnergyIconCount = 0;
 
 void SetControllerToPlayer(u32 battler)
 {
@@ -1644,7 +1655,18 @@ static void MoveSelectionDisplayMoveNames(u32 battler)
 
 static void MoveSelectionDisplayPpString(u32 battler)
 {
-    StringCopy(gDisplayedStringBattle, gText_MoveInterfacePP);
+    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
+    u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
+    
+    // Check if this move has card data
+    if (gMovesInfo[move].card != NULL)
+    {
+        StringCopy(gDisplayedStringBattle, gText_MoveInterfaceEnergy);
+    }
+    else
+    {
+        StringCopy(gDisplayedStringBattle, gText_MoveInterfacePP);
+    }
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
 }
 
@@ -1656,8 +1678,18 @@ static void MoveSelectionDisplayPpNumber(u32 battler)
     if (gBattleResources->bufferA[battler][2] == TRUE) // check if we didn't want to display pp number
         return;
 
-    SetPpNumbersPaletteInMoveSelection(battler);
     moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
+    u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
+    
+    // Skip PP display for card moves - energy is already shown in the type area
+    if (gMovesInfo[move].card != NULL)
+    {
+        gDisplayedStringBattle[0] = EOS;
+        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP_REMAINING);
+        return;
+    }
+
+    SetPpNumbersPaletteInMoveSelection(battler);
     txtPtr = ConvertIntToDecimalStringN(gDisplayedStringBattle, moveInfo->currentPp[gMoveSelectionCursor[battler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
     *(txtPtr)++ = CHAR_SLASH;
     ConvertIntToDecimalStringN(txtPtr, moveInfo->maxPp[gMoveSelectionCursor[battler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
@@ -1665,13 +1697,126 @@ static void MoveSelectionDisplayPpNumber(u32 battler)
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP_REMAINING);
 }
 
+static void DestroyEnergyIconSprites(void)
+{
+    u8 i;
+    for (i = 0; i < sEnergyIconCount; i++)
+    {
+        if (sEnergyIconSpriteIds[i] != SPRITE_NONE)
+        {
+            DestroySprite(&gSprites[sEnergyIconSpriteIds[i]]);
+            sEnergyIconSpriteIds[i] = SPRITE_NONE;
+        }
+    }
+    sEnergyIconCount = 0;
+}
+
+static void CreateEnergyIconSprites(u32 battler, const struct CardMoveData *cardData)
+{
+    u8 i;
+    u8 iconIndex = 0;
+    struct SpriteSheet spriteSheet;
+    struct SpriteTemplate spriteTemplate;
+    
+    // Destroy any existing energy icon sprites
+    DestroyEnergyIconSprites();
+    
+    // Ensure the palette is loaded
+    LoadSpritePalette(&sSpritePalette_TeraIndicator);
+    
+    // Position energy icons in the TYPE area
+    // Start below where "ENERGY" text appears (line 1 of TYPE window)
+    // TYPE window starts around x=168 (21*8), but we want to align with category icon area
+    // The category icon is at (38, 64), and TYPE info appears to its right
+    // Move selection area is at the bottom of the screen (160px tall screen)
+    s16 x = 172;  // Starting X position (aligned with TYPE window content)
+    s16 y = 110;  // Y position (in the TYPE window area at bottom of screen)
+    
+    // OAM data for 8x16 indicator sprites
+    static const struct OamData sOamData_EnergyIcon =
+    {
+        .shape = SPRITE_SHAPE(8x16),
+        .size = SPRITE_SIZE(8x16),
+        .priority = 0,  // Priority 0 to render in front of battle windows
+    };
+    
+    // Base sprite template
+    spriteTemplate.tileTag = 0;
+    spriteTemplate.paletteTag = TAG_TERA_INDICATOR_PAL;
+    spriteTemplate.oam = &sOamData_EnergyIcon;
+    spriteTemplate.anims = gDummySpriteAnimTable;
+    spriteTemplate.images = NULL;
+    spriteTemplate.affineAnims = gDummySpriteAffineAnimTable;
+    spriteTemplate.callback = SpriteCallbackDummy;
+    
+    // Base tag for energy icons
+    #define ENERGY_ICON_BASE_TAG 0xDE00
+    
+    // Helper macro to create icons for a specific energy type
+    #define CREATE_ENERGY_ICONS(count, typeId) \
+        for (i = 0; i < count && iconIndex < MAX_ENERGY_ICONS; i++) \
+        { \
+            spriteSheet.data = sTeraIndicatorDataPtrs[typeId]; \
+            spriteSheet.size = 128; \
+            spriteSheet.tag = ENERGY_ICON_BASE_TAG + iconIndex; \
+            LoadSpriteSheet(&spriteSheet); \
+            spriteTemplate.tileTag = ENERGY_ICON_BASE_TAG + iconIndex; \
+            sEnergyIconSpriteIds[iconIndex] = CreateSprite(&spriteTemplate, x, y, 0); \
+            if (sEnergyIconSpriteIds[iconIndex] != MAX_SPRITES) \
+            { \
+                gSprites[sEnergyIconSpriteIds[iconIndex]].invisible = FALSE; \
+            } \
+            x += 8; \
+            iconIndex++; \
+        }
+    
+    // Create sprites for each energy type using TYPE_* constants
+    CREATE_ENERGY_ICONS(cardData->grassEnergyNeeded, TYPE_GRASS)
+    CREATE_ENERGY_ICONS(cardData->fireEnergyNeeded, TYPE_FIRE)
+    CREATE_ENERGY_ICONS(cardData->waterEnergyNeeded, TYPE_WATER)
+    CREATE_ENERGY_ICONS(cardData->electricEnergyNeeded, TYPE_ELECTRIC)
+    CREATE_ENERGY_ICONS(cardData->psychicEnergyNeeded, TYPE_PSYCHIC)
+    CREATE_ENERGY_ICONS(cardData->fightingEnergyNeeded, TYPE_FIGHTING)
+    CREATE_ENERGY_ICONS(cardData->darknessEnergyNeeded, TYPE_DARK)
+    CREATE_ENERGY_ICONS(cardData->metalEnergyNeeded, TYPE_STEEL)
+    
+    // Calculate colorless energy
+    u8 coloredEnergy = cardData->grassEnergyNeeded + cardData->fireEnergyNeeded + 
+                      cardData->waterEnergyNeeded + cardData->electricEnergyNeeded + 
+                      cardData->psychicEnergyNeeded + cardData->fightingEnergyNeeded + 
+                      cardData->darknessEnergyNeeded + cardData->metalEnergyNeeded;
+    u8 colorlessEnergy = cardData->energyNeeded - coloredEnergy;
+    CREATE_ENERGY_ICONS(colorlessEnergy, TYPE_NORMAL)
+    
+    #undef CREATE_ENERGY_ICONS
+    #undef ENERGY_ICON_BASE_TAG
+    
+    sEnergyIconCount = iconIndex;
+}
+
 static void MoveSelectionDisplayMoveType(u32 battler)
 {
     u8 *txtPtr, *end;
     u32 speciesId = gBattleMons[battler].species;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
+    
+    // Check if this move has card data - display energy requirements
+    if (gMovesInfo[move].card != NULL)
+    {
+        const struct CardMoveData *cardData = gMovesInfo[move].card;
+        
+        // Clear the type window text
+        gDisplayedStringBattle[0] = EOS;
+        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+        
+        // Create energy icon sprites
+        CreateEnergyIconSprites(battler, cardData);
+        return;
+    }
+    
+    // Normal type display for non-card moves
+    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     enum Type type = GetMoveType(move);
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
@@ -2419,6 +2564,15 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 batt
     static const u8 immuneIcon[] =  _("{BIG_MULT_X}");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     u8 *txtPtr;
+    u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
+    
+    // Check if this move has card data - display "ENERGY" instead of effectiveness
+    if (gMovesInfo[move].card != NULL)
+    {
+        StringCopy(gDisplayedStringBattle, gText_MoveInterfaceEnergy);
+        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
+        return;
+    }
 
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfacePP);
 
