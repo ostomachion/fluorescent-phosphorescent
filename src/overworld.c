@@ -1,5 +1,8 @@
 #include "global.h"
 #include "overworld.h"
+#if DEBUG_QUICK_NEW_GAME
+extern const u8 Debug_CheatStart[];
+#endif
 #include "battle_pyramid.h"
 #include "battle_setup.h"
 #include "berry.h"
@@ -1792,6 +1795,9 @@ void CB2_NewGame(void)
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext_Init();
+#if DEBUG_QUICK_NEW_GAME
+    ScriptContext_SetupScript(Debug_CheatStart);
+#endif
     UnlockPlayerFieldControls();
     gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;

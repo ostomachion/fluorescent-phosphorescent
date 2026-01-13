@@ -169,10 +169,13 @@
 
 // Static RAM declarations
 
-static EWRAM_DATA bool8 sStartedPokeBallTask = 0;
-static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
-
+#if !DEBUG_QUICK_NEW_GAME
 static u8 sBirchSpeechMainTaskId;
+
+static EWRAM_DATA bool8 sStartedPokeBallTask = 0;
+#endif
+
+static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
 
 // Static ROM declarations
 
@@ -189,8 +192,16 @@ static void HighlightSelectedMainMenuItem(u8, u8, s16);
 static void Task_HandleMainMenuInput(u8);
 static void Task_HandleMainMenuAPressed(u8);
 static void Task_HandleMainMenuBPressed(u8);
-static void Task_NewGameBirchSpeech_Init(u8);
 static void Task_DisplayMainMenuInvalidActionError(u8);
+static void MainMenu_FormatSavegamePlayer(void);
+static void MainMenu_FormatSavegamePokedex(void);
+static void MainMenu_FormatSavegameTime(void);
+static void MainMenu_FormatSavegameBadges(void);
+static void DrawMainMenuWindowBorder(const struct WindowTemplate *, u16);
+static void LoadMainMenuWindowFrameTiles(u8, u16);
+static void Task_HighlightSelectedMainMenuItem(u8);
+#if !DEBUG_QUICK_NEW_GAME
+static void Task_NewGameBirchSpeech_Init(u8);
 static void AddBirchSpeechObjects(u8);
 static void Task_NewGameBirchSpeech_WaitToShowBirch(u8);
 static void NewGameBirchSpeech_StartFadeInTarget1OutTarget2(u8, u8);
@@ -210,9 +221,6 @@ static void Task_NewGameBirchSpeech_SlidePlatformAway(u8);
 static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_BoyOrGirl(u8);
-static void LoadMainMenuWindowFrameTiles(u8, u16);
-static void DrawMainMenuWindowBorder(const struct WindowTemplate *, u16);
-static void Task_HighlightSelectedMainMenuItem(u8);
 static void Task_NewGameBirchSpeech_WaitToShowGenderMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseGender(u8);
 static void NewGameBirchSpeech_ShowGenderMenu(void);
@@ -239,11 +247,8 @@ static void Task_NewGameBirchSpeech_FadePlayerToWhite(u8);
 static void Task_NewGameBirchSpeech_Cleanup(u8);
 static void SpriteCB_Null(struct Sprite *);
 static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8);
-static void MainMenu_FormatSavegamePlayer(void);
-static void MainMenu_FormatSavegamePokedex(void);
-static void MainMenu_FormatSavegameTime(void);
-static void MainMenu_FormatSavegameBadges(void);
 static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8, u8, u8, u8, u8, u8);
+#endif
 
 // .rodata
 
@@ -1079,7 +1084,20 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             default:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
                 gPlttBufferFaded[0] = RGB_BLACK;
+#if DEBUG_QUICK_NEW_GAME
+                // Skip Birch intro, set default character
+                int i;
+                const u8 defaultName[] = {CHAR_S, CHAR_T, CHAR_U, EOS};
+                gSaveBlock2Ptr->playerGender = MALE;
+                for (i = 0; i < PLAYER_NAME_LENGTH + 1 && defaultName[i] != EOS; i++)
+                    gSaveBlock2Ptr->playerName[i] = defaultName[i];
+                if (i < PLAYER_NAME_LENGTH + 1)
+                    gSaveBlock2Ptr->playerName[i] = EOS;
+                SetMainCallback2(CB2_NewGame);
+                DestroyTask(taskId);
+#else
                 gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
+#endif
                 break;
             case ACTION_CONTINUE:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
@@ -1272,6 +1290,134 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
     }
 }
 
+static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
+{
+    LoadBgTiles(bgId, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, tileOffset);
+    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
+}
+
+static void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)
+{
+    u16 r9 = 1 + baseTileNum;
+    u16 r10 = 2 + baseTileNum;
+    u16 sp18 = 3 + baseTileNum;
+    u16 spC = 5 + baseTileNum;
+    u16 sp10 = 6 + baseTileNum;
+    u16 sp14 = 7 + baseTileNum;
+    u16 r6 = 8 + baseTileNum;
+
+    FillBgTilemapBufferRect(template->bg, baseTileNum, template->tilemapLeft - 1, template->tilemapTop - 1, 1, 1, 2);
+    FillBgTilemapBufferRect(template->bg, r9, template->tilemapLeft, template->tilemapTop - 1, template->width, 1, 2);
+    FillBgTilemapBufferRect(template->bg, r10, template->tilemapLeft + template->width, template->tilemapTop - 1, 1, 1, 2);
+    FillBgTilemapBufferRect(template->bg, sp18, template->tilemapLeft - 1, template->tilemapTop, 1, template->height, 2);
+    FillBgTilemapBufferRect(template->bg, spC, template->tilemapLeft + template->width, template->tilemapTop, 1, template->height, 2);
+    FillBgTilemapBufferRect(template->bg, sp10, template->tilemapLeft - 1, template->tilemapTop + template->height, 1, 1, 2);
+    FillBgTilemapBufferRect(template->bg, sp14, template->tilemapLeft, template->tilemapTop + template->height, template->width, 1, 2);
+    FillBgTilemapBufferRect(template->bg, r6, template->tilemapLeft + template->width, template->tilemapTop + template->height, 1, 1, 2);
+    CopyBgTilemapBufferToVram(template->bg);
+}
+
+static void CreateMainMenuErrorWindow(const u8 *str)
+{
+    FillWindowPixelBuffer(7, PIXEL_FILL(1));
+    AddTextPrinterParameterized(7, FONT_NORMAL, str, 0, 1, 2, 0);
+    PutWindowTilemap(7);
+    CopyWindowToVram(7, COPYWIN_GFX);
+    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[7], MAIN_MENU_BORDER_TILE);
+    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(9, DISPLAY_WIDTH - 9));
+    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(113, DISPLAY_HEIGHT - 1));
+}
+
+static void MainMenu_FormatSavegameText(void)
+{
+    MainMenu_FormatSavegamePlayer();
+    MainMenu_FormatSavegamePokedex();
+    MainMenu_FormatSavegameTime();
+    MainMenu_FormatSavegameBadges();
+}
+
+static void MainMenu_FormatSavegamePlayer(void)
+{
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPlayer);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gSaveBlock2Ptr->playerName, 100), 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
+}
+
+static void MainMenu_FormatSavegameTime(void)
+{
+    u8 str[0x20];
+    u8 *ptr;
+
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuTime);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+    ptr = ConvertIntToDecimalStringN(str, gSaveBlock2Ptr->playTimeHours, STR_CONV_MODE_LEFT_ALIGN, 3);
+    *ptr = 0xF0;
+    ConvertIntToDecimalStringN(ptr + 1, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+}
+
+static void MainMenu_FormatSavegamePokedex(void)
+{
+    u8 str[0x20];
+    u16 dexCount;
+
+    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+    {
+        if (IsNationalPokedexEnabled())
+            dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
+        else
+            dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
+        StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
+        AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+        ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 4);
+        AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 100), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+    }
+}
+
+static void MainMenu_FormatSavegameBadges(void)
+{
+    u8 str[0x20];
+    u8 badgeCount = 0;
+    u32 i;
+
+    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
+    {
+        if (FlagGet(i))
+            badgeCount++;
+    }
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBadges);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+    ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+}
+
+static void ClearMainMenuWindowTilemap(const struct WindowTemplate *template)
+{
+    FillBgTilemapBufferRect(template->bg, 0, template->tilemapLeft - 1, template->tilemapTop - 1, template->tilemapLeft + template->width + 1, template->tilemapTop + template->height + 1, 2);
+    CopyBgTilemapBufferToVram(template->bg);
+}
+
+void CreateYesNoMenuParameterized(u8 x, u8 y, u16 baseTileNum, u16 baseBlock, u8 yesNoPalNum, u8 winPalNum)
+{
+    struct WindowTemplate template = CreateWindowTemplate(0, x + 1, y + 1, 5, 4, winPalNum, baseBlock);
+    CreateYesNoMenu(&template, baseTileNum, yesNoPalNum, 0);
+}
+
+void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
+{
+    const u8 *name;
+    u8 i;
+
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        name = sMalePresetNames[nameId];
+    else
+        name = sFemalePresetNames[nameId];
+    for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+        gSaveBlock2Ptr->playerName[i] = name[i];
+    gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
+}
+
+#if !DEBUG_QUICK_NEW_GAME
 #define tPlayerSpriteId data[2]
 #define tBG1HOFS data[4]
 #define tIsDoneFadingSprites data[5]
@@ -2123,127 +2269,6 @@ static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
     return Menu_ProcessInputNoWrap();
 }
 
-void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
-{
-    const u8 *name;
-    u8 i;
-
-    if (gSaveBlock2Ptr->playerGender == MALE)
-        name = sMalePresetNames[nameId];
-    else
-        name = sFemalePresetNames[nameId];
-    for (i = 0; i < PLAYER_NAME_LENGTH; i++)
-        gSaveBlock2Ptr->playerName[i] = name[i];
-    gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
-}
-
-static void CreateMainMenuErrorWindow(const u8 *str)
-{
-    FillWindowPixelBuffer(7, PIXEL_FILL(1));
-    AddTextPrinterParameterized(7, FONT_NORMAL, str, 0, 1, 2, 0);
-    PutWindowTilemap(7);
-    CopyWindowToVram(7, COPYWIN_GFX);
-    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[7], MAIN_MENU_BORDER_TILE);
-    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(9, DISPLAY_WIDTH - 9));
-    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(113, DISPLAY_HEIGHT - 1));
-}
-
-static void MainMenu_FormatSavegameText(void)
-{
-    MainMenu_FormatSavegamePlayer();
-    MainMenu_FormatSavegamePokedex();
-    MainMenu_FormatSavegameTime();
-    MainMenu_FormatSavegameBadges();
-}
-
-static void MainMenu_FormatSavegamePlayer(void)
-{
-    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPlayer);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, gSaveBlock2Ptr->playerName, 100), 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);
-}
-
-static void MainMenu_FormatSavegameTime(void)
-{
-    u8 str[0x20];
-    u8 *ptr;
-
-    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuTime);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
-    ptr = ConvertIntToDecimalStringN(str, gSaveBlock2Ptr->playTimeHours, STR_CONV_MODE_LEFT_ALIGN, 3);
-    *ptr = 0xF0;
-    ConvertIntToDecimalStringN(ptr + 1, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
-}
-
-static void MainMenu_FormatSavegamePokedex(void)
-{
-    u8 str[0x20];
-    u16 dexCount;
-
-    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
-        if (IsNationalPokedexEnabled())
-            dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-        else
-            dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-        StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
-        AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
-        ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 4);
-        AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 100), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
-    }
-}
-
-static void MainMenu_FormatSavegameBadges(void)
-{
-    u8 str[0x20];
-    u8 badgeCount = 0;
-    u32 i;
-
-    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
-    {
-        if (FlagGet(i))
-            badgeCount++;
-    }
-    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBadges);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
-    ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
-}
-
-static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
-{
-    LoadBgTiles(bgId, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, tileOffset);
-    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
-}
-
-static void DrawMainMenuWindowBorder(const struct WindowTemplate *template, u16 baseTileNum)
-{
-    u16 r9 = 1 + baseTileNum;
-    u16 r10 = 2 + baseTileNum;
-    u16 sp18 = 3 + baseTileNum;
-    u16 spC = 5 + baseTileNum;
-    u16 sp10 = 6 + baseTileNum;
-    u16 sp14 = 7 + baseTileNum;
-    u16 r6 = 8 + baseTileNum;
-
-    FillBgTilemapBufferRect(template->bg, baseTileNum, template->tilemapLeft - 1, template->tilemapTop - 1, 1, 1, 2);
-    FillBgTilemapBufferRect(template->bg, r9, template->tilemapLeft, template->tilemapTop - 1, template->width, 1, 2);
-    FillBgTilemapBufferRect(template->bg, r10, template->tilemapLeft + template->width, template->tilemapTop - 1, 1, 1, 2);
-    FillBgTilemapBufferRect(template->bg, sp18, template->tilemapLeft - 1, template->tilemapTop, 1, template->height, 2);
-    FillBgTilemapBufferRect(template->bg, spC, template->tilemapLeft + template->width, template->tilemapTop, 1, template->height, 2);
-    FillBgTilemapBufferRect(template->bg, sp10, template->tilemapLeft - 1, template->tilemapTop + template->height, 1, 1, 2);
-    FillBgTilemapBufferRect(template->bg, sp14, template->tilemapLeft, template->tilemapTop + template->height, template->width, 1, 2);
-    FillBgTilemapBufferRect(template->bg, r6, template->tilemapLeft + template->width, template->tilemapTop + template->height, 1, 1, 2);
-    CopyBgTilemapBufferToVram(template->bg);
-}
-
-static void ClearMainMenuWindowTilemap(const struct WindowTemplate *template)
-{
-    FillBgTilemapBufferRect(template->bg, 0, template->tilemapLeft - 1, template->tilemapTop - 1, template->tilemapLeft + template->width + 1, template->tilemapTop + template->height + 1, 2);
-    CopyBgTilemapBufferToVram(template->bg);
-}
-
 static void NewGameBirchSpeech_ClearGenderWindowTilemap(u8 bg, u8 x, u8 y, u8 width, u8 height, u8 unused)
 {
     FillBgTilemapBufferRect(bg, 0, x + 255, y + 255, width + 2, height + 2, 2);
@@ -2281,12 +2306,6 @@ static void NewGameBirchSpeech_WaitForThisIsPokemonText(struct TextPrinterTempla
     }
 }
 
-void CreateYesNoMenuParameterized(u8 x, u8 y, u16 baseTileNum, u16 baseBlock, u8 yesNoPalNum, u8 winPalNum)
-{
-    struct WindowTemplate template = CreateWindowTemplate(0, x + 1, y + 1, 5, 4, winPalNum, baseBlock);
-    CreateYesNoMenu(&template, baseTileNum, yesNoPalNum, 0);
-}
-
 static void NewGameBirchSpeech_ShowDialogueWindow(u8 windowId, u8 copyToVram)
 {
     CallWindowFunction(windowId, NewGameBirchSpeech_CreateDialogueWindowBorder);
@@ -2322,5 +2341,6 @@ static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8 taskId)
         gTasks[taskId].func = Task_NewGameBirchSpeech_SoItsPlayerName;
     }
 }
+#endif
 
 #undef tTimer
