@@ -1098,7 +1098,7 @@ static const u16 sMagmarFormSpeciesIdTable[] = {
     SPECIES_MAGMAR_CARD_A1_44,
     FORM_SPECIES_END,
 };
-#endif
+#endif //P_FAMILY_MAGMAR
 
 #if P_FAMILY_PINSIR
 static const u16 sPinsirFormSpeciesIdTable[] = {
