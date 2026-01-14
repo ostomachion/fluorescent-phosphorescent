@@ -64,7 +64,6 @@ const struct SpeciesInfo gSpeciesInfoSeriesA1[] =
         .tmIlliterate = TRUE,
         .levelUpLearnset = sBulbasaurCardA1N1LevelUpLearnset,
         .formSpeciesIdTable = sBulbasaurFormSpeciesIdTable,
-        .formChangeTable = sBulbasaurFormChangeCardTable,
     },
 #endif //P_FAMILY_BULBASAUR
 
