@@ -27,7 +27,7 @@ const struct SpeciesInfo gSpeciesInfoSeriesA1[] =
         .description = COMPOUND_STRING(
             "There is a plant seed on its back right\n"
             "from the day this Pokémon is born. The\n"
-            "seed gslowly grows larger."),
+            "seed slowly grows larger."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,

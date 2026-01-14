@@ -2279,7 +2279,7 @@ static const u16 sHeatmorFormSpeciesIdTable[] = {
     SPECIES_HEATMOR,
     SPECIES_HEATMOR_CARD_A1_48,
     FORM_SPECIES_END,
-}; 
+};
 #endif //P_FAMILY_HEATMOR
 
 #if P_FAMILY_TORNADUS

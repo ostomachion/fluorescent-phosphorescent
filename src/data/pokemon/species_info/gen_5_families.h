@@ -11111,7 +11111,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sMienshaoLevelUpLearnset,
         .teachableLearnset = sMienshaoTeachableLearnset,
-        .formSpeciesIdTable = sMienfooFormSpeciesIdTable,
+        .formSpeciesIdTable = sMienshaoFormSpeciesIdTable,
     },
 #endif //P_FAMILY_MIENFOO
 
