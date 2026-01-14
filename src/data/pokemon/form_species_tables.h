@@ -1090,7 +1090,7 @@ static const u16 sElectabuzzFormSpeciesIdTable[] = {
     SPECIES_ELECTABUZZ_CARD_A1_101,
     FORM_SPECIES_END,
 };
-#endif // P_FAMILY_ELECTABUZZ
+#endif //P_FAMILY_ELECTABUZZ
 
 #if P_FAMILY_MAGMAR
 static const u16 sMagmarFormSpeciesIdTable[] = {
