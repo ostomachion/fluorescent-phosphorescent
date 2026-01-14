@@ -1818,7 +1818,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         )
         .levelUpLearnset = sDubwoolLevelUpLearnset,
         .teachableLearnset = sDubwoolTeachableLearnset,
-        .formSpeciesIdTable = sDubwoolFormSpeciesIdTable,        
+        .formSpeciesIdTable = sDubwoolFormSpeciesIdTable,
     },
 #endif //P_FAMILY_WOOLOO
 
