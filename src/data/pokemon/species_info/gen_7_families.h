@@ -7008,7 +7008,6 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sMagearnaLevelUpLearnset,
         .teachableLearnset = sMagearnaTeachableLearnset,
         .formSpeciesIdTable = sMagearnaFormSpeciesIdTable,
-        .formChangeTable = sMagearnaFormChangeTable,
     },
 
     [SPECIES_MAGEARNA_ORIGINAL] =
