@@ -2159,7 +2159,7 @@ static const u16 sSwannaFormSpeciesIdTable[] = {
     SPECIES_SWANNA_CARD_A1_86,
     FORM_SPECIES_END,
 };
-#endif //P_DUCKLETT
+#endif //P_FAMILY_DUCKLETT
 
 #if P_FAMILY_DEERLING
 static const u16 sDeerlingFormSpeciesIdTable[] = {
