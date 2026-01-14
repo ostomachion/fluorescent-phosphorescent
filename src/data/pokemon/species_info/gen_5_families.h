@@ -7115,7 +7115,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sCinccinoLevelUpLearnset,
         .teachableLearnset = sCinccinoTeachableLearnset,
-        .formSpeciesIdTable = sMinccinoFormSpeciesIdTable,
+        .formSpeciesIdTable = sCinccinoFormSpeciesIdTable,
     },
 #endif //P_FAMILY_MINCCINO
 
