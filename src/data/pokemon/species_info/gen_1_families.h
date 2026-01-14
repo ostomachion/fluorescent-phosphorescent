@@ -19021,7 +19021,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sOmastarLevelUpLearnset,
         .teachableLearnset = sOmastarTeachableLearnset,
-        .formSpeciesIdTable = sOmanyteFormSpeciesIdTable,
+        .formSpeciesIdTable = sOmastarFormSpeciesIdTable,
     },
 #endif //P_FAMILY_OMANYTE
 
