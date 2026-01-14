@@ -12650,7 +12650,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sHypnoLevelUpLearnset,
         .teachableLearnset = sHypnoTeachableLearnset,
-        .formSpeciesIdTable = sDrowzeeFormSpeciesIdTable,
+        .formSpeciesIdTable = sHypnoFormSpeciesIdTable,
     },
 #endif //P_FAMILY_DROWZEE
 
