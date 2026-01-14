@@ -4480,7 +4480,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sNidorinaLevelUpLearnset,
         .teachableLearnset = sNidorinaTeachableLearnset,
-        .formSpeciesIdTable = sNidoranaFormSpeciesIdTable,
+        .formSpeciesIdTable = sNidorinaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_MOON_STONE, SPECIES_NIDOQUEEN}),
     },
 
