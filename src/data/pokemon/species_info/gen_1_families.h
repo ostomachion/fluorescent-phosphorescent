@@ -5627,7 +5627,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sWigglytuffLevelUpLearnset,
         .teachableLearnset = sWigglytuffTeachableLearnset,
-        .formSpeciesIdTable = sJigglypuffFormSpeciesIdTable,
+        .formSpeciesIdTable = sWigglytuffFormSpeciesIdTable,
     },
 #endif //P_FAMILY_JIGGLYPUFF
 
