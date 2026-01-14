@@ -1876,15 +1876,15 @@
 #define SPECIES_DITTO_CARD_A1_205                       SPECIES_SERIES_A1 + 205
 #define SPECIES_EEVEE_CARD_A1_206                       SPECIES_SERIES_A1 + 206
 // 207 and 208 are copies of Eevee only differing by artwork.
-#define SPECIES_PORYGON_CARD_A1_209                     SPECIES_SERIES_A1 + 209
-#define SPECIES_AERODACTYL_CARD_A1_210                  SPECIES_SERIES_A1 + 210
-#define SPECIES_SNORLAX_CARD_A1_211                     SPECIES_SERIES_A1 + 211
-#define SPECIES_MINCCINO_CARD_A1_212                    SPECIES_SERIES_A1 + 212
-#define SPECIES_CINCCINO_CARD_A1_213                    SPECIES_SERIES_A1 + 213
-#define SPECIES_WOOLOO_CARD_A1_214                      SPECIES_SERIES_A1 + 214
-#define SPECIES_DUBWOOL_CARD_A1_215                     SPECIES_SERIES_A1 + 215
+#define SPECIES_PORYGON_CARD_A1_209                     SPECIES_SERIES_A1 + 207
+#define SPECIES_AERODACTYL_CARD_A1_210                  SPECIES_SERIES_A1 + 208
+#define SPECIES_SNORLAX_CARD_A1_211                     SPECIES_SERIES_A1 + 209
+#define SPECIES_MINCCINO_CARD_A1_212                    SPECIES_SERIES_A1 + 210
+#define SPECIES_CINCCINO_CARD_A1_213                    SPECIES_SERIES_A1 + 211
+#define SPECIES_WOOLOO_CARD_A1_214                      SPECIES_SERIES_A1 + 212
+#define SPECIES_DUBWOOL_CARD_A1_215                     SPECIES_SERIES_A1 + 213
 // Mew only has an immersive card form so appears later in the list.
-#define SPECIES_MEW_CARD_A1_283                         SPECIES_SERIES_A1 + 216
+#define SPECIES_MEW_CARD_A1_283                         SPECIES_SERIES_A1 + 214
 
 #define SPECIES_EGG                                     (SPECIES_MEW_CARD_A1_283 + 1)
 
