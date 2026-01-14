@@ -6914,6 +6914,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             gOverworldPalette_ZygardeComplete,
             gShinyOverworldPalette_ZygardeComplete
         )
+        .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sZygardeLevelUpLearnset,
@@ -6971,7 +6972,6 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         FOOTPRINT(Zygarde)
         //SHADOW(-1, 0, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
-        .isLegendary = TRUE,
         .levelUpLearnset = sZygardeLevelUpLearnset,
         .teachableLearnset = sZygardeTeachableLearnset,
         .formSpeciesIdTable = sZygardeFormSpeciesIdTable,
