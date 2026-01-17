@@ -20,3 +20,8 @@ $(C_BUILDDIR)/heal_location.o: c_dep += $(DATA_SRC_SUBDIR)/heal_locations.h
 AUTO_GEN_TARGETS += include/constants/heal_locations.h
 include/constants/heal_locations.h: $(DATA_SRC_SUBDIR)/heal_locations.json $(DATA_SRC_SUBDIR)/heal_locations.constants.json.txt
 	$(JSONPROC) $^ $@
+
+# Species info generation from JSON
+AUTO_GEN_TARGETS += $(DATA_SRC_SUBDIR)/pokemon/species_info/test_families.h
+$(DATA_SRC_SUBDIR)/pokemon/species_info/test_families.h: $(DATA_SRC_SUBDIR)/pokemon/test_families.json $(DATA_SRC_SUBDIR)/pokemon/test_families.json.txt
+	$(JSONPROC) $^ $@

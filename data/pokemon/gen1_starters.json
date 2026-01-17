@@ -1,0 +1,342 @@
+{
+  "BULBASAUR": {
+    "baseStats": {
+      "hp": 45,
+      "attack": 49,
+      "defense": 49,
+      "speed": 45,
+      "spAttack": 65,
+      "spDefense": 65
+    },
+    "evYield": {
+      "spAttack": 1
+    },
+    "types": {
+      "raw": "MON_TYPES(TYPE_GRASS, TYPE_POISON)"
+    },
+    "catchRate": 45,
+    "expYield": 64,
+    "genderRatio": {
+      "raw": "PERCENT_FEMALE(12.5)"
+    },
+    "eggCycles": 20,
+    "friendship": {
+      "raw": "STANDARD_FRIENDSHIP"
+    },
+    "growthRate": {
+      "raw": "GROWTH_MEDIUM_SLOW"
+    },
+    "eggGroups": {
+      "raw": "MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS)"
+    },
+    "abilities": {
+      "raw": "{ ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL }"
+    },
+    "bodyColor": {
+      "raw": "BODY_COLOR_GREEN"
+    },
+    "noFlip": 1,
+    "speciesName": {
+      "raw": "_(\"Bulbasaur\")"
+    },
+    "cryId": {
+      "raw": "CRY_BULBASAUR"
+    },
+    "natDexNum": {
+      "raw": "NATIONAL_DEX_BULBASAUR"
+    },
+    "categoryName": {
+      "raw": "_(\"Seed\")"
+    },
+    "height": 7,
+    "weight": 69,
+    "description": {
+      "raw": "COMPOUND_STRING(\n            \"Bulbasaur can be seen napping in bright\\n\"\n            \"sunlight. There is a seed on its back.\\n\"\n            \"By soaking up the sun's rays, the seed\\n\"\n            \"grows progressively larger.\")"
+    },
+    "pokemonScale": 356,
+    "pokemonOffset": 17,
+    "trainerScale": 256,
+    "trainerOffset": 0,
+    "frontPic": {
+      "raw": "gMonFrontPic_Bulbasaur"
+    },
+    "frontPicSize": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(32, 40) : MON_COORDS_SIZE(40, 40)"
+    },
+    "frontPicYOffset": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? 14 : 13"
+    },
+    "frontAnimFrames": {
+      "raw": "ANIM_FRAMES(\n            ANIMCMD_FRAME(0, 30),\n            ANIMCMD_FRAME(1, 30),\n            ANIMCMD_FRAME(0, 1),\n        )"
+    },
+    "frontAnimId": {
+      "raw": "ANIM_V_JUMPS_H_JUMPS"
+    },
+    "backPic": {
+      "raw": "gMonBackPic_Bulbasaur"
+    },
+    "backPicSize": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 32) : MON_COORDS_SIZE(56, 40)"
+    },
+    "backPicYOffset": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? 16 : 13"
+    },
+    "backAnimId": {
+      "raw": "BACK_ANIM_DIP_RIGHT_SIDE"
+    },
+    "palette": {
+      "raw": "gMonPalette_Bulbasaur"
+    },
+    "shinyPalette": {
+      "raw": "gMonShinyPalette_Bulbasaur"
+    },
+    "iconSprite": {
+      "raw": "gMonIcon_Bulbasaur"
+    },
+    "iconPalIndex": {
+      "raw": "P_GBA_STYLE_SPECIES_ICONS ? 1 : 4"
+    },
+    "pokemonJumpType": {
+      "raw": "PKMN_JUMP_TYPE_SLOW"
+    },
+    "teachableLearnset": {
+      "raw": "sBulbasaurTeachableLearnset"
+    },
+    "eggMoveLearnset": {
+      "raw": "sBulbasaurEggMoveLearnset"
+    },
+    "formSpeciesIdTable": {
+      "raw": "sBulbasaurFormSpeciesIdTable"
+    },
+    "evolutions": {
+      "raw": "EVOLUTION({EVO_LEVEL, 16, SPECIES_IVYSAUR})"
+    }
+  },
+  "IVYSAUR": {
+    "baseStats": {
+      "hp": 60,
+      "attack": 62,
+      "defense": 63,
+      "speed": 60,
+      "spAttack": 80,
+      "spDefense": 80
+    },
+    "evYield": {
+      "spAttack": 1,
+      "spDefense": 1
+    },
+    "types": {
+      "raw": "MON_TYPES(TYPE_GRASS, TYPE_POISON)"
+    },
+    "catchRate": 45,
+    "expYield": {
+      "raw": "(P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 141"
+    },
+    "genderRatio": {
+      "raw": "PERCENT_FEMALE(12.5)"
+    },
+    "eggCycles": 20,
+    "friendship": {
+      "raw": "STANDARD_FRIENDSHIP"
+    },
+    "growthRate": {
+      "raw": "GROWTH_MEDIUM_SLOW"
+    },
+    "eggGroups": {
+      "raw": "MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS)"
+    },
+    "abilities": {
+      "raw": "{ ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL }"
+    },
+    "bodyColor": {
+      "raw": "BODY_COLOR_GREEN"
+    },
+    "noFlip": 1,
+    "speciesName": {
+      "raw": "_(\"Ivysaur\")"
+    },
+    "cryId": {
+      "raw": "CRY_IVYSAUR"
+    },
+    "natDexNum": {
+      "raw": "NATIONAL_DEX_IVYSAUR"
+    },
+    "categoryName": {
+      "raw": "_(\"Seed\")"
+    },
+    "height": 10,
+    "weight": 130,
+    "description": {
+      "raw": "COMPOUND_STRING(\n            \"To support its bulb, Ivysaur's legs\\n\"\n            \"grow sturdy. If it spends more time lying in\\n\"\n            \"the sunlight, the bud will soon bloom into\\n\"\n            \"a large flower.\")"
+    },
+    "pokemonScale": 335,
+    "pokemonOffset": 13,
+    "trainerScale": 256,
+    "trainerOffset": 0,
+    "frontPic": {
+      "raw": "gMonFrontPic_Ivysaur"
+    },
+    "frontPicSize": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 48) : MON_COORDS_SIZE(56, 48)"
+    },
+    "frontPicYOffset": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? 10 : 9"
+    },
+    "frontAnimFrames": {
+      "raw": "ANIM_FRAMES(\n            ANIMCMD_FRAME(0, 1),\n            ANIMCMD_FRAME(1, 36),\n            ANIMCMD_FRAME(0, 10),\n        )"
+    },
+    "frontAnimId": {
+      "raw": "ANIM_V_STRETCH"
+    },
+    "backPic": {
+      "raw": "gMonBackPic_Ivysaur"
+    },
+    "backPicSize": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(64, 56)"
+    },
+    "backPicYOffset": 9,
+    "backAnimId": {
+      "raw": "BACK_ANIM_H_SLIDE"
+    },
+    "palette": {
+      "raw": "gMonPalette_Ivysaur"
+    },
+    "shinyPalette": {
+      "raw": "gMonShinyPalette_Ivysaur"
+    },
+    "iconSprite": {
+      "raw": "gMonIcon_Ivysaur"
+    },
+    "iconPalIndex": {
+      "raw": "P_GBA_STYLE_SPECIES_ICONS ? 1 : 4"
+    },
+    "pokemonJumpType": {
+      "raw": "PKMN_JUMP_TYPE_NONE"
+    },
+    "teachableLearnset": {
+      "raw": "sIvysaurTeachableLearnset"
+    },
+    "formSpeciesIdTable": {
+      "raw": "sIvysaurFormSpeciesIdTable"
+    },
+    "evolutions": {
+      "raw": "EVOLUTION({EVO_LEVEL, 32, SPECIES_VENUSAUR})"
+    }
+  },
+  "VENUSAUR": {
+    "baseStats": {
+      "hp": 80,
+      "attack": 82,
+      "defense": 83,
+      "speed": 80,
+      "spAttack": 100,
+      "spDefense": 100
+    },
+    "evYield": {
+      "spAttack": 2,
+      "spDefense": 1
+    },
+    "types": {
+      "raw": "MON_TYPES(TYPE_GRASS, TYPE_POISON)"
+    },
+    "catchRate": 45,
+    "expYield": {
+      "raw": "VENUSAUR_EXP_YIELD"
+    },
+    "genderRatio": {
+      "raw": "PERCENT_FEMALE(12.5)"
+    },
+    "eggCycles": 20,
+    "friendship": {
+      "raw": "STANDARD_FRIENDSHIP"
+    },
+    "growthRate": {
+      "raw": "GROWTH_MEDIUM_SLOW"
+    },
+    "eggGroups": {
+      "raw": "MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS)"
+    },
+    "abilities": {
+      "raw": "{ ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL }"
+    },
+    "bodyColor": {
+      "raw": "BODY_COLOR_GREEN"
+    },
+    "speciesName": {
+      "raw": "_(\"Venusaur\")"
+    },
+    "cryId": {
+      "raw": "CRY_VENUSAUR"
+    },
+    "natDexNum": {
+      "raw": "NATIONAL_DEX_VENUSAUR"
+    },
+    "categoryName": {
+      "raw": "_(\"Seed\")"
+    },
+    "height": 20,
+    "weight": 1000,
+    "description": {
+      "raw": "COMPOUND_STRING(\n            \"Venusaur's flower is said to take on vivid\\n\"\n            \"colors if it gets plenty of nutrition and\\n\"\n            \"sunlight. The flower's aroma soothes the\\n\"\n            \"emotions of people.\")"
+    },
+    "pokemonScale": 256,
+    "pokemonOffset": 0,
+    "trainerScale": 388,
+    "trainerOffset": 6,
+    "frontPic": {
+      "raw": "gMonFrontPic_Venusaur"
+    },
+    "frontPicSize": {
+      "raw": "MON_COORDS_SIZE(64, 64)"
+    },
+    "frontPicYOffset": 3,
+    "frontAnimFrames": {
+      "raw": "ANIM_FRAMES(\n            ANIMCMD_FRAME(0, 10),\n            ANIMCMD_FRAME(1, 25),\n            ANIMCMD_FRAME(0, 10),\n        )"
+    },
+    "frontAnimId": {
+      "raw": "ANIM_ROTATE_UP_SLAM_DOWN"
+    },
+    "backPic": {
+      "raw": "gMonBackPic_Venusaur"
+    },
+    "backPicSize": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 48)"
+    },
+    "backPicYOffset": {
+      "raw": "P_GBA_STYLE_SPECIES_GFX ? 7 : 10"
+    },
+    "backAnimId": {
+      "raw": "BACK_ANIM_H_SHAKE"
+    },
+    "palette": {
+      "raw": "gMonPalette_Venusaur"
+    },
+    "shinyPalette": {
+      "raw": "gMonShinyPalette_Venusaur"
+    },
+    "iconSprite": {
+      "raw": "gMonIcon_Venusaur"
+    },
+    "iconPalIndex": {
+      "raw": "P_GBA_STYLE_SPECIES_ICONS ? 1 : 4"
+    },
+    "frontPicSizeFemale": {
+      "raw": "MON_COORDS_SIZE(64, 64)"
+    },
+    "backPicFemale": {
+      "raw": "gMonBackPic_VenusaurF"
+    },
+    "backPicSizeFemale": {
+      "raw": "MON_COORDS_SIZE(64, 48)"
+    },
+    "teachableLearnset": {
+      "raw": "sVenusaurTeachableLearnset"
+    },
+    "formSpeciesIdTable": {
+      "raw": "sVenusaurFormSpeciesIdTable"
+    },
+    "formChangeTable": {
+      "raw": "sVenusaurFormChangeTable"
+    }
+  }
+}

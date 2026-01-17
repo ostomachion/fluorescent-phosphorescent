@@ -120,6 +120,67 @@ int main(int argc, char *argv[])
         return str;
     });
 
+    env.add_callback("enumify", 1, [](Arguments& args) {
+        string str = args.at(0)->get<string>();
+        // Convert kebab-case to SCREAMING_SNAKE_CASE
+        // e.g., "medium-slow" -> "MEDIUM_SLOW"
+        for (unsigned int i = 0; i < str.length(); i++) {
+            if (str[i] == '-') {
+                str[i] = '_';
+            } else {
+                str[i] = toupper(str[i]);
+            }
+        }
+        return str;
+    });
+
+    env.add_callback("wrapDescription", 1, [](Arguments& args) {
+        string text = args.at(0)->get<string>();
+        string result = "COMPOUND_STRING(\n";
+        const int MAX_LINE_LENGTH = 40;
+        
+        size_t pos = 0;
+        while (pos < text.length()) {
+            // Find the next \n (actual line break in the text)
+            size_t newlinePos = text.find("\\n", pos);
+            size_t endPos = (newlinePos != string::npos) ? newlinePos : text.length();
+            
+            // Extract the segment until the next line break
+            string segment = text.substr(pos, endPos - pos);
+            
+            // Word-wrap this segment
+            size_t segmentPos = 0;
+            while (segmentPos < segment.length()) {
+                size_t lineEnd = segmentPos + MAX_LINE_LENGTH;
+                if (lineEnd >= segment.length()) {
+                    // Last chunk of this segment
+                    result += "            \"" + segment.substr(segmentPos) + "\\n\"\n";
+                    break;
+                } else {
+                    // Find the last space before lineEnd to break at word boundary
+                    size_t breakPos = segment.rfind(' ', lineEnd);
+                    if (breakPos == string::npos || breakPos <= segmentPos) {
+                        // No space found, just break at MAX_LINE_LENGTH
+                        breakPos = lineEnd;
+                    }
+                    result += "            \"" + segment.substr(segmentPos, breakPos - segmentPos) + "\\n\"\n";
+                    segmentPos = breakPos;
+                    // Skip the space
+                    if (segmentPos < segment.length() && segment[segmentPos] == ' ')
+                        segmentPos++;
+                }
+            }
+            
+            // Move past the \n
+            pos = endPos;
+            if (newlinePos != string::npos)
+                pos += 2; // Skip the \n
+        }
+        
+        result += "        )";
+        return result;
+    });
+
     try
     {
         env.write_with_json_file(templateFilepath, jsonfilepath, outputFilepath);
