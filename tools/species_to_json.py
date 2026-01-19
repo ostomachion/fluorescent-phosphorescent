@@ -9,6 +9,7 @@ import sys
 import re
 import json
 import logging
+from datetime import datetime
 
 # Set up logging
 logging.basicConfig(
@@ -34,20 +35,50 @@ def parse_species_info(c_code):
     """Parse C species info structs and convert to JSON"""
     species_dict = {}
     skipped_species = []
+    skipped_fields_by_species = {}  # Track fields that were skipped per species
     
     # First, count ALL species entries in the file
     all_species_entries = count_all_species_entries(c_code)
     logging.info(f"Found {len(all_species_entries)} species entries in C file")
     
-    # Find all parseable species definitions (standard format)
-    species_pattern = r'\[SPECIES_(\w+)\]\s*=\s*\{'
+    # Parse line by line to track preprocessor context around species definitions
+    lines = c_code.split('\n')
+    condition_stack = []  # Track active #if conditions
+    species_definitions = []  # List of (species_name, start_line, condition_stack)
     
-    matches = list(re.finditer(species_pattern, c_code))
-    logging.info(f"Found {len(matches)} species with standard struct format")
+    for line_num, line in enumerate(lines):
+        stripped = line.strip()
+        
+        # Track preprocessor directives
+        if stripped.startswith('#if ') or stripped.startswith('#ifdef ') or stripped.startswith('#ifndef '):
+            condition_stack.append(stripped)
+        elif stripped.startswith('#elif '):
+            if condition_stack:
+                condition_stack[-1] = stripped
+        elif stripped.startswith('#else'):
+            if condition_stack:
+                condition_stack[-1] = '#else  // !' + condition_stack[-1][4:]
+        elif stripped.startswith('#endif'):
+            if condition_stack:
+                condition_stack.pop()
+        
+        # Find species definitions (may span multiple lines)
+        species_match = re.search(r'\[SPECIES_(\w+)\]\s*=', line)
+        if species_match:
+            species_name = species_match.group(1)
+            species_definitions.append((species_name, line_num, list(condition_stack)))
     
+    logging.info(f"Found {len(species_definitions)} species with standard struct format")
+    
+    # Now parse each species definition
     parseable_species = set()
-    for i, match in enumerate(matches):
-        species_name = match.group(1)
+    for species_name, line_num, family_conditions in species_definitions:
+        # Find the species definition in the original code
+        species_pattern = r'\[SPECIES_' + re.escape(species_name) + r'\]\s*=\s*\{'
+        match = re.search(species_pattern, c_code)
+        if not match:
+            continue
+        
         start = match.end()
         
         # Find the end - match braces carefully
@@ -63,13 +94,22 @@ def parse_species_info(c_code):
         body = c_code[start:pos-1]
         
         try:
-            species_data = parse_species_body(body)
+            species_data, skipped_fields = parse_species_body(body)
+            
+            # Track skipped fields
+            if skipped_fields:
+                skipped_fields_by_species[species_name] = skipped_fields
+                logging.warning(f"{species_name}: Skipped {len(skipped_fields)} fields - {', '.join(f['field'] for f in skipped_fields)}")
             
             # Validate that we parsed something
             if not species_data:
                 logging.warning(f"SKIPPED {species_name}: No fields parsed")
                 skipped_species.append((species_name, "No fields parsed"))
                 continue
+            
+            # Add family-level conditionals as metadata if present
+            if family_conditions:
+                species_data['_familyConditions'] = family_conditions
             
             # Check for excessive raw values (might indicate parsing issues)
             raw_count = sum(1 for v in species_data.values() if isinstance(v, dict) and 'raw' in v)
@@ -124,164 +164,273 @@ def parse_species_info(c_code):
     if coverage_pct < 100:
         logging.warning(f"Coverage: {parsed_count}/{total_entries} species ({coverage_pct:.1f}%)")
     
-    return species_dict, unparsed_by_prefix
+    # Return all the data needed for metadata
+    return species_dict, unparsed_by_prefix, {
+        "all_species_entries": all_species_entries,
+        "unparsed_species": unparsed_species,
+        "skipped_species": skipped_species,
+        "skipped_fields_by_species": skipped_fields_by_species,
+        "parsed_count": parsed_count,
+        "total_count": total_entries
+    }
 
 def parse_species_body(body):
-    """Parse the body of a species definition"""
+    """Parse the body of a species definition using line-by-line parsing with condition stack"""
     species_data = {}
+    skipped_fields = []  # Track fields that were skipped
     
-    # Split by top-level commas (not inside parens/braces/brackets)
-    lines = []
-    current = ""
-    depth = 0
-    in_string = False
-    escape_next = False
-    in_preprocessor = False
+    # Parse line by line, maintaining a stack of active preprocessor conditions
+    condition_stack = []  # Stack of (#if, #elif, #else conditions)
+    field_values = {}  # field_name -> list of (value, condition_stack) tuples
     
-    for char in body:
-        if escape_next:
-            current += char
-            escape_next = False
-            continue
-        
-        if char == '\\':
-            current += char
-            escape_next = True
-            continue
-        
-        if char == '"':
-            in_string = not in_string
-            current += char
-            continue
-        
-        if in_string:
-            current += char
-            continue
-        
-        # Track preprocessor directives
-        if char == '#' and (not current or current[-1] == '\n'):
-            in_preprocessor = True
-            current += char
-            continue
-        
-        if in_preprocessor:
-            current += char
-            if char == '\n':
-                in_preprocessor = False
-            continue
-        
-        if char in '({[':
-            depth += 1
-            current += char
-        elif char in ')}]':
-            depth -= 1
-            current += char
-        elif char == ',' and depth == 0:
-            if current.strip():
-                lines.append(current.strip())
-            current = ""
-        else:
-            current += char
+    # Split into lines while preserving structure
+    lines = body.split('\n')
+    i = 0
     
-    if current.strip():
-        lines.append(current.strip())
-    
-    # Parse each line, tracking preprocessor context
-    preprocessor_stack = []  # Stack of active preprocessor conditions
-    conditional_fields = {}  # Track fields with multiple conditional values
-    
-    for line in lines:
-        # Extract any preprocessor directives and the remaining content
-        remaining = line
-        directives_for_this_line = []  # Track all directives encountered for this line
+    while i < len(lines):
+        line = lines[i].strip()
         
-        # Process all preprocessor directives in this line
-        while remaining:
-            # Try to match preprocessor directives
-            if_match = re.match(r'^(#if(?:def|ndef)?\s+[^\n]+)(?:\n(.*))?$', remaining, re.DOTALL)
-            elif_match = re.match(r'^(#elif\s+[^\n]+)(?:\n(.*))?$', remaining, re.DOTALL)
-            else_match = re.match(r'^(#else)(?:\s*\n(.*))?$', remaining, re.DOTALL)
-            endif_match = re.match(r'^(#endif[^\n]*)(?:\n(.*))?$', remaining, re.DOTALL)
-            
-            if if_match:
-                directive = if_match.group(1)
-                preprocessor_stack.append(directive)
-                directives_for_this_line.append(directive)
-                remaining = if_match.group(2) or ""
-            elif elif_match:
-                directive = elif_match.group(1)
-                if preprocessor_stack:
-                    preprocessor_stack[-1] = directive
-                directives_for_this_line.append(directive)
-                remaining = elif_match.group(2) or ""
-            elif else_match:
-                directive = else_match.group(1)
-                if preprocessor_stack:
-                    preprocessor_stack[-1] = directive
-                directives_for_this_line.append(directive)
-                remaining = else_match.group(2) or ""
-            elif endif_match:
-                directive = endif_match.group(1)
-                if preprocessor_stack:
-                    preprocessor_stack.pop()
-                directives_for_this_line.append(directive)
-                remaining = endif_match.group(2) or ""
-            else:
-                # No more preprocessor directives in this line
-                break
-        
-        # Skip if nothing remains after preprocessing directives
-        if not remaining or not remaining.strip():
+        # Handle preprocessor directives
+        if line.startswith('#if ') or line.startswith('#ifdef ') or line.startswith('#ifndef '):
+            # Push condition onto stack
+            condition_stack.append(line)
+            i += 1
             continue
-        
-        # Try to match field assignment in remaining content
-        match = re.match(r'^\s*\.\s*(\w+)\s*=\s*(.+)$', remaining, re.DOTALL)
-        if match:
-            field_name = match.group(1)
-            value = match.group(2).strip()
-            
-            # Check if this field already exists (conditional assignment)
-            if field_name in species_data or field_name in conditional_fields:
-                # This is a conditional field with multiple values
-                if field_name not in conditional_fields:
-                    # First time seeing duplicate, initialize with existing value
-                    conditional_fields[field_name] = []
-                    if field_name in species_data:
-                        existing = species_data[field_name]
-                        if isinstance(existing, dict) and 'raw' in existing:
-                            conditional_fields[field_name].append(existing['raw'])
-                        del species_data[field_name]
-                
-                # Add this conditional value with its directives
-                if directives_for_this_line:
-                    conditional_fields[field_name].append('\n'.join(directives_for_this_line) + '\n' + value)
+        elif line.startswith('#elif '):
+            # Replace top of stack with elif condition
+            if condition_stack:
+                condition_stack[-1] = line
+            i += 1
+            continue
+        elif line.startswith('#else'):
+            # Replace top of stack with negated condition
+            if condition_stack:
+                # Convert the last condition to its negation
+                last_cond = condition_stack[-1]
+                if last_cond.startswith('#if '):
+                    condition_stack[-1] = '#else  // !' + last_cond[4:]
                 else:
-                    conditional_fields[field_name].append(value)
-            
-            # If we're inside preprocessor block(s), wrap just the value with directives
-            elif preprocessor_stack:
-                # Store as raw for now, will be handled with other conditionals
-                if field_name not in conditional_fields:
-                    conditional_fields[field_name] = []
-                
-                # Reconstruct with preprocessor directives around the value only
-                full_directives = directives_for_this_line if directives_for_this_line else list(preprocessor_stack)
-                raw_value = '\n'.join(full_directives) + '\n' + value
-                conditional_fields[field_name].append(raw_value)
+                    condition_stack[-1] = '#else'
+            i += 1
+            continue
+        elif line.startswith('#endif'):
+            # Pop condition from stack
+            if condition_stack:
+                condition_stack.pop()
+            i += 1
+            continue
+        
+        # Skip empty lines and comments
+        if not line or line.startswith('//'):
+            i += 1
+            continue
+        
+        # Try to match field assignment: .fieldName = value,
+        field_match = re.match(r'^\.\s*(\w+)\s*=\s*(.+?)(?:,\s*)?$', line)
+        if not field_match:
+            # Try multi-line value (collect until we find comma or closing brace)
+            if re.match(r'^\.\s*(\w+)\s*=', line):
+                # This is a field assignment that spans multiple lines
+                field_match = re.match(r'^\.\s*(\w+)\s*=\s*(.*)$', line)
+                if field_match:
+                    field_name = field_match.group(1)
+                    value_parts = [field_match.group(2)]
+                    i += 1
+                    
+                    # Collect lines until we find a comma or reach end
+                    depth = value_parts[0].count('{') - value_parts[0].count('}')
+                    depth += value_parts[0].count('(') - value_parts[0].count(')')
+                    depth += value_parts[0].count('[') - value_parts[0].count(']')
+                    
+                    while i < len(lines):
+                        next_line = lines[i].strip()
+                        
+                        # Skip preprocessor directives in multi-line values (we'll handle them as raw)
+                        if next_line.startswith('#'):
+                            value_parts.append(next_line)
+                            i += 1
+                            continue
+                        
+                        value_parts.append(next_line)
+                        depth += next_line.count('{') - next_line.count('}')
+                        depth += next_line.count('(') - next_line.count(')')
+                        depth += next_line.count('[') - next_line.count(']')
+                        
+                        # Check if we've reached the end of this value
+                        if depth <= 0 and (',' in next_line or next_line.endswith('}')):
+                            break
+                        i += 1
+                    
+                    # Join and clean up the value
+                    value = '\n'.join(value_parts).rstrip(',').strip()
+                    
+                    # Store with current condition stack
+                    if field_name not in field_values:
+                        field_values[field_name] = []
+                    field_values[field_name].append((value, list(condition_stack)))
+                    
+                    i += 1
+                    continue
+            i += 1
+            continue
+        
+        # Single-line field assignment
+        field_name = field_match.group(1)
+        value = field_match.group(2).rstrip(',').strip()
+        
+        # Store with current condition stack
+        if field_name not in field_values:
+            field_values[field_name] = []
+        field_values[field_name].append((value, list(condition_stack)))
+        
+        i += 1
+    
+    # Now process all collected fields
+    for field_name, values in field_values.items():
+        if len(values) == 1 and not values[0][1]:
+            # Single unconditional value
+            value, _ = values[0]
+            converted = convert_value(value, field_name)
+            if converted is not None:
+                species_data[field_name] = converted
             else:
-                species_data[field_name] = convert_value(value, field_name)
+                skipped_fields.append({
+                    "field": field_name,
+                    "reason": "Could not convert value"
+                })
+        else:
+            # Multiple values or conditional value - create raw block
+            # Need to properly reconstruct the conditional structure
+            
+            # Group values by their condition depth
+            if len(values) == 1:
+                # Single conditional value
+                value, cond_stack = values[0]
+                raw_value = '\n'.join(cond_stack) + '\n' + value + '\n' + ('#endif\n' * len(cond_stack)).rstrip()
+            else:
+                # Multiple conditional values - likely #if/#elif/#else structure
+                raw_parts = []
+                max_depth = max(len(cond_stack) for _, cond_stack in values)
+                
+                for value, cond_stack in values:
+                    if cond_stack:
+                        raw_parts.append(cond_stack[-1])  # Add the last condition (#if, #elif, or #else)
+                    raw_parts.append(value)
+                
+                # Add closing endifs (one per nesting level)
+                raw_parts.append('#endif' * max_depth)
+                
+                raw_value = '\n'.join(raw_parts)
+            
+            converted = convert_value(raw_value, field_name)
+            if converted is not None:
+                species_data[field_name] = converted
+            else:
+                skipped_fields.append({
+                    "field": field_name,
+                    "reason": "Malformed conditional block"
+                })
     
-    # Now handle conditional fields - combine all their values
-    for field_name, values in conditional_fields.items():
-        # Combine all conditional values with their directives plus #endif
-        combined = '\n'.join(values) + '\n' + '#endif' * values[0].count('#if')
-        species_data[field_name] = {"raw": combined}
+    return species_data, skipped_fields
+
+def parse_evolution_conditions(conditions_str):
+    """
+    Parse evolution CONDITIONS macro into structured format.
     
-    return species_data
+    Input: "CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD}, {IF_KNOWS_MOVE_TYPE, TYPE_FAIRY})"
+    Output: [
+        {"type": "min-friendship", "value": "FRIENDSHIP_EVO_THRESHOLD"},
+        {"type": "knows-move-type", "value": "TYPE_FAIRY"}
+    ]
+    """
+    # Match CONDITIONS(...)
+    cond_match = re.match(r'CONDITIONS\((.*)\)$', conditions_str, re.DOTALL)
+    if not cond_match:
+        return None
+    
+    content = cond_match.group(1).strip()
+    conditions = []
+    
+    # Find all {...} groups
+    depth = 0
+    current_cond = ""
+    for char in content:
+        if char == '{':
+            depth += 1
+            if depth == 1:
+                current_cond = ""  # Start new condition
+            else:
+                current_cond += char
+        elif char == '}':
+            depth -= 1
+            if depth == 0 and current_cond.strip():
+                # Parse the condition
+                parts = [p.strip() for p in current_cond.split(',')]
+                if len(parts) >= 1:
+                    cond_type = parts[0]
+                    # Convert IF_MIN_FRIENDSHIP to min-friendship
+                    if cond_type.startswith('IF_'):
+                        cond_type_clean = cond_type[3:].lower().replace('_', '-')
+                    else:
+                        cond_type_clean = cond_type.lower().replace('_', '-')
+                    
+                    cond_obj = {"type": cond_type_clean}
+                    
+                    # Add value if present
+                    if len(parts) >= 2:
+                        value = parts[1].strip()
+                        # Clean up common prefixes
+                        if value.startswith('TYPE_'):
+                            cond_obj["value"] = value[5:].lower().replace('_', '-')
+                        elif value.startswith('MOVE_'):
+                            cond_obj["value"] = value[5:].lower().replace('_', '-')
+                        elif value.startswith('ITEM_'):
+                            cond_obj["value"] = value[5:].lower().replace('_', '-')
+                        elif value.startswith('MAP_'):
+                            cond_obj["value"] = value[4:].lower().replace('_', '-')
+                        elif value.startswith('TIME_'):
+                            cond_obj["value"] = value[5:].lower().replace('_', '-')
+                        else:
+                            cond_obj["value"] = value
+                    
+                    # Add any additional parameters
+                    if len(parts) > 2:
+                        cond_obj["params"] = parts[2:]
+                    
+                    conditions.append(cond_obj)
+                current_cond = ""
+            else:
+                current_cond += char
+        elif depth > 0:
+            current_cond += char
+    
+    return conditions if conditions else None
 
 def convert_value(value, field_name=None):
     """Convert a C value to JSON representation"""
     value = value.strip()
+    
+    # Handle #if/#elif/#else/#endif blocks for generation-based conditionals
+    if value.startswith('#if') and '#endif' in value:
+        # Try to parse as a simple #if COND / value / #else / value / #endif
+        simple_if_else = re.match(
+            r'#if\s+(P_UPDATED_(?:STATS|EXP_YIELDS|TYPES))\s*>=\s*GEN_(\d+)\s*\n'
+            r'(.+?)\s*\n'
+            r'#else\s*\n'
+            r'(.+?)\s*\n'
+            r'#endif',
+            value, re.DOTALL
+        )
+        if simple_if_else:
+            flag = simple_if_else.group(1)
+            gen = simple_if_else.group(2)
+            true_value = simple_if_else.group(3).strip()
+            false_value = simple_if_else.group(4).strip()
+            
+            return {
+                f"gen{gen}": convert_value(true_value, field_name),
+                f"gen{int(gen)-1}": convert_value(false_value, field_name)
+            }
     
     # Check for MON_COORDS_SIZE(width, height) pattern
     coords_match = re.match(r'^MON_COORDS_SIZE\((\d+),\s*(\d+)\)$', value)
@@ -330,6 +479,15 @@ def convert_value(value, field_name=None):
         exp_match = re.match(r'^P_UPDATED_EXP_YIELDS\s*>=\s*GEN_(\d+)$', condition)
         if exp_match:
             gen = exp_match.group(1)
+            return {
+                f"gen{gen}+": convert_value(true_value, field_name),
+                f"gen{int(gen)-1}-": convert_value(false_value, field_name)
+            }
+        
+        # Handle P_UPDATED_TYPES >= GEN_X
+        types_match = re.match(r'^P_UPDATED_TYPES\s*>=\s*GEN_(\d+)$', condition)
+        if types_match:
+            gen = types_match.group(1)
             return {
                 f"gen{gen}+": convert_value(true_value, field_name),
                 f"gen{int(gen)-1}-": convert_value(false_value, field_name)
@@ -431,7 +589,12 @@ def convert_value(value, field_name=None):
                             }
                             # Check for CONDITIONS in part 3
                             if len(parts) > 3 and "CONDITIONS" in parts[3]:
-                                evo_data["conditions"] = parts[3].strip()
+                                parsed_conditions = parse_evolution_conditions(parts[3].strip())
+                                if parsed_conditions:
+                                    evo_data["conditions"] = parsed_conditions
+                                else:
+                                    # Keep as raw if parsing failed
+                                    evo_data["conditions"] = parts[3].strip()
                             evolutions.append(evo_data)
                         
                         current_evo = ""
@@ -547,6 +710,35 @@ def convert_value(value, field_name=None):
     # Examples: gMonFrontPic_Abra, sAbraFormSpeciesIdTable
     if re.match(r'^[A-Za-z_][A-Za-z0-9_]*$', value):
         return value
+    
+    # Validate preprocessor blocks - detect malformed ones
+    if '#if' in value or '#endif' in value or '#elif' in value or '#else' in value:
+        # Check for malformed blocks that start with #endif or #else (extraction bug)
+        if value.strip().startswith('#endif') or value.strip().startswith('#else') or value.strip().startswith('#elif'):
+            return None  # Signal to skip this field
+        
+        # Check for unbalanced #if/#endif
+        if_count = value.count('#if')
+        endif_count = value.count('#endif')
+        if if_count != endif_count:
+            return None  # Signal to skip this field
+        
+        # Check for nested #if blocks (more than one #if)
+        # These are complex and often incorrectly extracted
+        if if_count > 1:
+            # Only allow if they're on separate lines and properly formatted
+            lines = value.split('\n')
+            if_lines = [i for i, line in enumerate(lines) if '#if' in line]
+            endif_lines = [i for i, line in enumerate(lines) if '#endif' in line]
+            
+            # If #if and #endif are not properly paired (with content between), skip it
+            if len(if_lines) != len(endif_lines):
+                return None
+            
+            # Check if any #endif appears on same line as value (malformed)
+            for line in lines:
+                if '#endif' in line and not line.strip().startswith('#endif'):
+                    return None  # e.g., "2\n#endif#endif" is malformed
     
     # Everything else is raw C code (expressions, function calls, arrays, etc.)
     return {"raw": value}
@@ -861,11 +1053,15 @@ def main():
     
     # Parse all species from the file
     logging.info("Parsing species definitions...")
-    species_dict, unparsed_by_prefix = parse_species_info(c_code)
+    species_dict, unparsed_by_prefix, extraction_stats = parse_species_info(c_code)
     
-    # Store parse stats for final summary
-    all_entries_count = len(count_all_species_entries(c_code))
-    parsed_count = len(species_dict)
+    # Unpack extraction stats
+    all_species_entries = extraction_stats["all_species_entries"]
+    unparsed_species = extraction_stats["unparsed_species"]
+    skipped_species = extraction_stats["skipped_species"]
+    skipped_fields_by_species = extraction_stats["skipped_fields_by_species"]
+    parsed_count = extraction_stats["parsed_count"]
+    all_entries_count = extraction_stats["total_count"]
     unparsed_count = all_entries_count - parsed_count
     
     if not species_dict:
@@ -885,8 +1081,57 @@ def main():
     logging.info("Grouping forms...")
     species_dict = group_forms(species_dict)
     
-    # Output as JSON - wrap in "data" for template iteration
-    output = {"data": species_dict}
+    # Build extraction metadata
+    extraction_metadata = {
+        "_comment": "This file was automatically generated from C headers. Some entries could not be included.",
+        "source_file": sys.argv[1] if len(sys.argv) >= 2 else "unknown",
+        "extraction_date": str(datetime.now().isoformat()),
+        "total_species_in_source": all_entries_count,
+        "successfully_parsed": parsed_count,
+        "coverage_percent": round(parsed_count / all_entries_count * 100, 1) if all_entries_count > 0 else 0,
+        "unparsed_count": unparsed_count,
+        "unparsed_species": [],
+        "skipped_species": [],
+        "skipped_fields": skipped_fields_by_species if skipped_fields_by_species else {},
+        "notes": []
+    }
+    
+    # Add unparsed species details
+    if unparsed_species:
+        extraction_metadata["unparsed_species"] = [
+            {
+                "name": name,
+                "reason": "Macro-based or non-standard format - requires manual implementation"
+            } for name in sorted(unparsed_species)
+        ]
+        extraction_metadata["notes"].append(
+            f"{len(unparsed_species)} species use macros (e.g., UNOWN forms) and could not be auto-parsed"
+        )
+    
+    # Add skipped species details  
+    if skipped_species:
+        extraction_metadata["skipped_species"] = [
+            {
+                "name": name,
+                "reason": reason
+            } for name, reason in skipped_species
+        ]
+        extraction_metadata["notes"].append(
+            f"{len(skipped_species)} species failed to parse due to errors"
+        )
+    
+    # Add notes about extraction limitations
+    extraction_metadata["notes"].extend([
+        "Complex multi-line preprocessor conditionals (with #elif) are kept as raw blocks",
+        "Nested preprocessor conditionals are skipped if malformed",
+        "Some fields may require manual review and correction"
+    ])
+    
+    # Output as JSON - metadata first, then data
+    output = {
+        "_extraction_info": extraction_metadata,
+        "data": species_dict
+    }
     
     # Validate JSON is serializable
     try:

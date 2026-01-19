@@ -1,0 +1,530 @@
+{{ doNotModifyHeader }}
+
+## for species_name, species_data in data
+{%- if not existsIn(species_data, "template") or not species_data.template %}
+    [SPECIES_{{ species_name }}] =
+    {
+{%- if existsIn(species_data, "baseHP") %}
+        .baseHP = {% if isObject(species_data.baseHP) %}{% if existsIn(species_data.baseHP, "raw") %}{{ species_data.baseHP.raw }}{% else %}{% if existsIn(species_data.baseHP, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(species_data.baseHP, "gen9") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(species_data.baseHP, "gen8") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(species_data.baseHP, "gen7") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(species_data.baseHP, "gen6") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(species_data.baseHP, "gen5") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(species_data.baseHP, "gen4") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(species_data.baseHP, "gen3") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(species_data.baseHP, "gen2") }} : ({% endif %}{% if existsIn(species_data.baseHP, "gen1") %}{{ at(species_data.baseHP, "gen1") }}{% else if existsIn(species_data.baseHP, "gen2") %}{{ at(species_data.baseHP, "gen2") }}{% else if existsIn(species_data.baseHP, "gen3") %}{{ at(species_data.baseHP, "gen3") }}{% else if existsIn(species_data.baseHP, "gen4") %}{{ at(species_data.baseHP, "gen4") }}{% else if existsIn(species_data.baseHP, "gen5") %}{{ at(species_data.baseHP, "gen5") }}{% else if existsIn(species_data.baseHP, "gen6") %}{{ at(species_data.baseHP, "gen6") }}{% else if existsIn(species_data.baseHP, "gen7") %}{{ at(species_data.baseHP, "gen7") }}{% else if existsIn(species_data.baseHP, "gen8") %}{{ at(species_data.baseHP, "gen8") }}{% else if existsIn(species_data.baseHP, "gen9") %}{{ at(species_data.baseHP, "gen9") }}{% endif %}{% if existsIn(species_data.baseHP, "gen9") %}){% endif %}{% if existsIn(species_data.baseHP, "gen8") %}){% endif %}{% if existsIn(species_data.baseHP, "gen7") %}){% endif %}{% if existsIn(species_data.baseHP, "gen6") %}){% endif %}{% if existsIn(species_data.baseHP, "gen5") %}){% endif %}{% if existsIn(species_data.baseHP, "gen4") %}){% endif %}{% if existsIn(species_data.baseHP, "gen3") %}){% endif %}{% if existsIn(species_data.baseHP, "gen2") %}){% endif %}{% endif %}{% else %}{{ species_data.baseHP }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "baseAttack") %}
+        .baseAttack = {% if isObject(species_data.baseAttack) %}{% if existsIn(species_data.baseAttack, "raw") %}{{ species_data.baseAttack.raw }}{% else %}{% if existsIn(species_data.baseAttack, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(species_data.baseAttack, "gen9") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(species_data.baseAttack, "gen8") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(species_data.baseAttack, "gen7") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(species_data.baseAttack, "gen6") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(species_data.baseAttack, "gen5") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(species_data.baseAttack, "gen4") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(species_data.baseAttack, "gen3") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(species_data.baseAttack, "gen2") }} : ({% endif %}{% if existsIn(species_data.baseAttack, "gen1") %}{{ at(species_data.baseAttack, "gen1") }}{% else if existsIn(species_data.baseAttack, "gen2") %}{{ at(species_data.baseAttack, "gen2") }}{% else if existsIn(species_data.baseAttack, "gen3") %}{{ at(species_data.baseAttack, "gen3") }}{% else if existsIn(species_data.baseAttack, "gen4") %}{{ at(species_data.baseAttack, "gen4") }}{% else if existsIn(species_data.baseAttack, "gen5") %}{{ at(species_data.baseAttack, "gen5") }}{% else if existsIn(species_data.baseAttack, "gen6") %}{{ at(species_data.baseAttack, "gen6") }}{% else if existsIn(species_data.baseAttack, "gen7") %}{{ at(species_data.baseAttack, "gen7") }}{% else if existsIn(species_data.baseAttack, "gen8") %}{{ at(species_data.baseAttack, "gen8") }}{% else if existsIn(species_data.baseAttack, "gen9") %}{{ at(species_data.baseAttack, "gen9") }}{% endif %}{% if existsIn(species_data.baseAttack, "gen9") %}){% endif %}{% if existsIn(species_data.baseAttack, "gen8") %}){% endif %}{% if existsIn(species_data.baseAttack, "gen7") %}){% endif %}{% if existsIn(species_data.baseAttack, "gen6") %}){% endif %}{% if existsIn(species_data.baseAttack, "gen5") %}){% endif %}{% if existsIn(species_data.baseAttack, "gen4") %}){% endif %}{% if existsIn(species_data.baseAttack, "gen3") %}){% endif %}{% if existsIn(species_data.baseAttack, "gen2") %}){% endif %}{% endif %}{% else %}{{ species_data.baseAttack }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "baseDefense") %}
+        .baseDefense = {% if isObject(species_data.baseDefense) %}{% if existsIn(species_data.baseDefense, "raw") %}{{ species_data.baseDefense.raw }}{% else %}{% if existsIn(species_data.baseDefense, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(species_data.baseDefense, "gen9") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(species_data.baseDefense, "gen8") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(species_data.baseDefense, "gen7") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(species_data.baseDefense, "gen6") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(species_data.baseDefense, "gen5") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(species_data.baseDefense, "gen4") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(species_data.baseDefense, "gen3") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(species_data.baseDefense, "gen2") }} : ({% endif %}{% if existsIn(species_data.baseDefense, "gen1") %}{{ at(species_data.baseDefense, "gen1") }}{% else if existsIn(species_data.baseDefense, "gen2") %}{{ at(species_data.baseDefense, "gen2") }}{% else if existsIn(species_data.baseDefense, "gen3") %}{{ at(species_data.baseDefense, "gen3") }}{% else if existsIn(species_data.baseDefense, "gen4") %}{{ at(species_data.baseDefense, "gen4") }}{% else if existsIn(species_data.baseDefense, "gen5") %}{{ at(species_data.baseDefense, "gen5") }}{% else if existsIn(species_data.baseDefense, "gen6") %}{{ at(species_data.baseDefense, "gen6") }}{% else if existsIn(species_data.baseDefense, "gen7") %}{{ at(species_data.baseDefense, "gen7") }}{% else if existsIn(species_data.baseDefense, "gen8") %}{{ at(species_data.baseDefense, "gen8") }}{% else if existsIn(species_data.baseDefense, "gen9") %}{{ at(species_data.baseDefense, "gen9") }}{% endif %}{% if existsIn(species_data.baseDefense, "gen9") %}){% endif %}{% if existsIn(species_data.baseDefense, "gen8") %}){% endif %}{% if existsIn(species_data.baseDefense, "gen7") %}){% endif %}{% if existsIn(species_data.baseDefense, "gen6") %}){% endif %}{% if existsIn(species_data.baseDefense, "gen5") %}){% endif %}{% if existsIn(species_data.baseDefense, "gen4") %}){% endif %}{% if existsIn(species_data.baseDefense, "gen3") %}){% endif %}{% if existsIn(species_data.baseDefense, "gen2") %}){% endif %}{% endif %}{% else %}{{ species_data.baseDefense }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "baseSpeed") %}
+        .baseSpeed = {% if isObject(species_data.baseSpeed) %}{% if existsIn(species_data.baseSpeed, "raw") %}{{ species_data.baseSpeed.raw }}{% else %}{% if existsIn(species_data.baseSpeed, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(species_data.baseSpeed, "gen9") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(species_data.baseSpeed, "gen8") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(species_data.baseSpeed, "gen7") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(species_data.baseSpeed, "gen6") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(species_data.baseSpeed, "gen5") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(species_data.baseSpeed, "gen4") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(species_data.baseSpeed, "gen3") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(species_data.baseSpeed, "gen2") }} : ({% endif %}{% if existsIn(species_data.baseSpeed, "gen1") %}{{ at(species_data.baseSpeed, "gen1") }}{% else if existsIn(species_data.baseSpeed, "gen2") %}{{ at(species_data.baseSpeed, "gen2") }}{% else if existsIn(species_data.baseSpeed, "gen3") %}{{ at(species_data.baseSpeed, "gen3") }}{% else if existsIn(species_data.baseSpeed, "gen4") %}{{ at(species_data.baseSpeed, "gen4") }}{% else if existsIn(species_data.baseSpeed, "gen5") %}{{ at(species_data.baseSpeed, "gen5") }}{% else if existsIn(species_data.baseSpeed, "gen6") %}{{ at(species_data.baseSpeed, "gen6") }}{% else if existsIn(species_data.baseSpeed, "gen7") %}{{ at(species_data.baseSpeed, "gen7") }}{% else if existsIn(species_data.baseSpeed, "gen8") %}{{ at(species_data.baseSpeed, "gen8") }}{% else if existsIn(species_data.baseSpeed, "gen9") %}{{ at(species_data.baseSpeed, "gen9") }}{% endif %}{% if existsIn(species_data.baseSpeed, "gen9") %}){% endif %}{% if existsIn(species_data.baseSpeed, "gen8") %}){% endif %}{% if existsIn(species_data.baseSpeed, "gen7") %}){% endif %}{% if existsIn(species_data.baseSpeed, "gen6") %}){% endif %}{% if existsIn(species_data.baseSpeed, "gen5") %}){% endif %}{% if existsIn(species_data.baseSpeed, "gen4") %}){% endif %}{% if existsIn(species_data.baseSpeed, "gen3") %}){% endif %}{% if existsIn(species_data.baseSpeed, "gen2") %}){% endif %}{% endif %}{% else %}{{ species_data.baseSpeed }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "baseSpAttack") %}
+        .baseSpAttack = {% if isObject(species_data.baseSpAttack) %}{% if existsIn(species_data.baseSpAttack, "raw") %}{{ species_data.baseSpAttack.raw }}{% else %}{% if existsIn(species_data.baseSpAttack, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(species_data.baseSpAttack, "gen9") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(species_data.baseSpAttack, "gen8") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(species_data.baseSpAttack, "gen7") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(species_data.baseSpAttack, "gen6") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(species_data.baseSpAttack, "gen5") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(species_data.baseSpAttack, "gen4") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(species_data.baseSpAttack, "gen3") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(species_data.baseSpAttack, "gen2") }} : ({% endif %}{% if existsIn(species_data.baseSpAttack, "gen1") %}{{ at(species_data.baseSpAttack, "gen1") }}{% else if existsIn(species_data.baseSpAttack, "gen2") %}{{ at(species_data.baseSpAttack, "gen2") }}{% else if existsIn(species_data.baseSpAttack, "gen3") %}{{ at(species_data.baseSpAttack, "gen3") }}{% else if existsIn(species_data.baseSpAttack, "gen4") %}{{ at(species_data.baseSpAttack, "gen4") }}{% else if existsIn(species_data.baseSpAttack, "gen5") %}{{ at(species_data.baseSpAttack, "gen5") }}{% else if existsIn(species_data.baseSpAttack, "gen6") %}{{ at(species_data.baseSpAttack, "gen6") }}{% else if existsIn(species_data.baseSpAttack, "gen7") %}{{ at(species_data.baseSpAttack, "gen7") }}{% else if existsIn(species_data.baseSpAttack, "gen8") %}{{ at(species_data.baseSpAttack, "gen8") }}{% else if existsIn(species_data.baseSpAttack, "gen9") %}{{ at(species_data.baseSpAttack, "gen9") }}{% endif %}{% if existsIn(species_data.baseSpAttack, "gen9") %}){% endif %}{% if existsIn(species_data.baseSpAttack, "gen8") %}){% endif %}{% if existsIn(species_data.baseSpAttack, "gen7") %}){% endif %}{% if existsIn(species_data.baseSpAttack, "gen6") %}){% endif %}{% if existsIn(species_data.baseSpAttack, "gen5") %}){% endif %}{% if existsIn(species_data.baseSpAttack, "gen4") %}){% endif %}{% if existsIn(species_data.baseSpAttack, "gen3") %}){% endif %}{% if existsIn(species_data.baseSpAttack, "gen2") %}){% endif %}{% endif %}{% else %}{{ species_data.baseSpAttack }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "baseSpDefense") %}
+        .baseSpDefense = {% if isObject(species_data.baseSpDefense) %}{% if existsIn(species_data.baseSpDefense, "raw") %}{{ species_data.baseSpDefense.raw }}{% else %}{% if existsIn(species_data.baseSpDefense, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(species_data.baseSpDefense, "gen9") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(species_data.baseSpDefense, "gen8") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(species_data.baseSpDefense, "gen7") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(species_data.baseSpDefense, "gen6") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(species_data.baseSpDefense, "gen5") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(species_data.baseSpDefense, "gen4") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(species_data.baseSpDefense, "gen3") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(species_data.baseSpDefense, "gen2") }} : ({% endif %}{% if existsIn(species_data.baseSpDefense, "gen1") %}{{ at(species_data.baseSpDefense, "gen1") }}{% else if existsIn(species_data.baseSpDefense, "gen2") %}{{ at(species_data.baseSpDefense, "gen2") }}{% else if existsIn(species_data.baseSpDefense, "gen3") %}{{ at(species_data.baseSpDefense, "gen3") }}{% else if existsIn(species_data.baseSpDefense, "gen4") %}{{ at(species_data.baseSpDefense, "gen4") }}{% else if existsIn(species_data.baseSpDefense, "gen5") %}{{ at(species_data.baseSpDefense, "gen5") }}{% else if existsIn(species_data.baseSpDefense, "gen6") %}{{ at(species_data.baseSpDefense, "gen6") }}{% else if existsIn(species_data.baseSpDefense, "gen7") %}{{ at(species_data.baseSpDefense, "gen7") }}{% else if existsIn(species_data.baseSpDefense, "gen8") %}{{ at(species_data.baseSpDefense, "gen8") }}{% else if existsIn(species_data.baseSpDefense, "gen9") %}{{ at(species_data.baseSpDefense, "gen9") }}{% endif %}{% if existsIn(species_data.baseSpDefense, "gen9") %}){% endif %}{% if existsIn(species_data.baseSpDefense, "gen8") %}){% endif %}{% if existsIn(species_data.baseSpDefense, "gen7") %}){% endif %}{% if existsIn(species_data.baseSpDefense, "gen6") %}){% endif %}{% if existsIn(species_data.baseSpDefense, "gen5") %}){% endif %}{% if existsIn(species_data.baseSpDefense, "gen4") %}){% endif %}{% if existsIn(species_data.baseSpDefense, "gen3") %}){% endif %}{% if existsIn(species_data.baseSpDefense, "gen2") %}){% endif %}{% endif %}{% else %}{{ species_data.baseSpDefense }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "types") %}
+        .types = {% if isObject(species_data.types) %}{{ species_data.types.raw }}{% else if isArray(species_data.types) %}MON_TYPES({% for type in species_data.types %}TYPE_{{ enumify(type) }}{% if not loop.is_last %}, {% endif %}{% endfor %}){% else %}{{ species_data.types }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "catchRate") %}
+        .catchRate = {% if isObject(species_data.catchRate) %}{{ species_data.catchRate.raw }}{% else %}{{ species_data.catchRate }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "forceTeraType") %}
+        .forceTeraType = {% if isObject(species_data.forceTeraType) %}{{ species_data.forceTeraType.raw }}{% else %}{{ species_data.forceTeraType }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "expYield") %}
+        .expYield = {% if isObject(species_data.expYield) %}{% if existsIn(species_data.expYield, "raw") %}{{ species_data.expYield.raw }}{% else %}{% if existsIn(species_data.expYield, "gen9") %}P_UPDATED_EXP_YIELDS >= GEN_9 ? {{ at(species_data.expYield, "gen9") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen8") %}P_UPDATED_EXP_YIELDS >= GEN_8 ? {{ at(species_data.expYield, "gen8") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen7") %}P_UPDATED_EXP_YIELDS >= GEN_7 ? {{ at(species_data.expYield, "gen7") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen6") %}P_UPDATED_EXP_YIELDS >= GEN_6 ? {{ at(species_data.expYield, "gen6") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen5") %}P_UPDATED_EXP_YIELDS >= GEN_5 ? {{ at(species_data.expYield, "gen5") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen4") %}P_UPDATED_EXP_YIELDS >= GEN_4 ? {{ at(species_data.expYield, "gen4") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen3") %}P_UPDATED_EXP_YIELDS >= GEN_3 ? {{ at(species_data.expYield, "gen3") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen2") %}P_UPDATED_EXP_YIELDS >= GEN_2 ? {{ at(species_data.expYield, "gen2") }} : ({% endif %}{% if existsIn(species_data.expYield, "gen1") %}{{ at(species_data.expYield, "gen1") }}{% else if existsIn(species_data.expYield, "gen2") %}{{ at(species_data.expYield, "gen2") }}{% else if existsIn(species_data.expYield, "gen3") %}{{ at(species_data.expYield, "gen3") }}{% else if existsIn(species_data.expYield, "gen4") %}{{ at(species_data.expYield, "gen4") }}{% else if existsIn(species_data.expYield, "gen5") %}{{ at(species_data.expYield, "gen5") }}{% else if existsIn(species_data.expYield, "gen6") %}{{ at(species_data.expYield, "gen6") }}{% else if existsIn(species_data.expYield, "gen7") %}{{ at(species_data.expYield, "gen7") }}{% else if existsIn(species_data.expYield, "gen8") %}{{ at(species_data.expYield, "gen8") }}{% else if existsIn(species_data.expYield, "gen9") %}{{ at(species_data.expYield, "gen9") }}{% endif %}{% if existsIn(species_data.expYield, "gen9") %}){% endif %}{% if existsIn(species_data.expYield, "gen8") %}){% endif %}{% if existsIn(species_data.expYield, "gen7") %}){% endif %}{% if existsIn(species_data.expYield, "gen6") %}){% endif %}{% if existsIn(species_data.expYield, "gen5") %}){% endif %}{% if existsIn(species_data.expYield, "gen4") %}){% endif %}{% if existsIn(species_data.expYield, "gen3") %}){% endif %}{% if existsIn(species_data.expYield, "gen2") %}){% endif %}{% endif %}{% else %}{{ species_data.expYield }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "evYield_HP") %}
+        .evYield_HP = {% if isObject(species_data.evYield_HP) %}{{ species_data.evYield_HP.raw }}{% else %}{{ species_data.evYield_HP }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "evYield_Attack") %}
+        .evYield_Attack = {% if isObject(species_data.evYield_Attack) %}{{ species_data.evYield_Attack.raw }}{% else %}{{ species_data.evYield_Attack }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "evYield_Defense") %}
+        .evYield_Defense = {% if isObject(species_data.evYield_Defense) %}{{ species_data.evYield_Defense.raw }}{% else %}{{ species_data.evYield_Defense }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "evYield_Speed") %}
+        .evYield_Speed = {% if isObject(species_data.evYield_Speed) %}{{ species_data.evYield_Speed.raw }}{% else %}{{ species_data.evYield_Speed }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "evYield_SpAttack") %}
+        .evYield_SpAttack = {% if isObject(species_data.evYield_SpAttack) %}{{ species_data.evYield_SpAttack.raw }}{% else %}{{ species_data.evYield_SpAttack }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "evYield_SpDefense") %}
+        .evYield_SpDefense = {% if isObject(species_data.evYield_SpDefense) %}{{ species_data.evYield_SpDefense.raw }}{% else %}{{ species_data.evYield_SpDefense }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "itemCommon") %}
+        .itemCommon = {% if isObject(species_data.itemCommon) %}{{ species_data.itemCommon.raw }}{% else %}{{ species_data.itemCommon }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "itemRare") %}
+        .itemRare = {% if isObject(species_data.itemRare) %}{{ species_data.itemRare.raw }}{% else %}{{ species_data.itemRare }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "genderRatio") %}
+        .genderRatio = {% if isObject(species_data.genderRatio) %}{% if existsIn(species_data.genderRatio, "raw") %}{{ species_data.genderRatio.raw }}{% else if existsIn(species_data.genderRatio, "female") %}PERCENT_FEMALE({{ species_data.genderRatio.female }}){% endif %}{% else if isString(species_data.genderRatio) %}{% if species_data.genderRatio == "genderless" %}MON_GENDERLESS{% else if species_data.genderRatio == "male-only" %}MON_MALE{% else if species_data.genderRatio == "female-only" %}MON_FEMALE{% else %}{{ species_data.genderRatio }}{% endif %}{% else %}{{ species_data.genderRatio }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "eggCycles") %}
+        .eggCycles = {% if isObject(species_data.eggCycles) %}{{ species_data.eggCycles.raw }}{% else %}{{ species_data.eggCycles }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "friendship") %}
+        .friendship = {% if isObject(species_data.friendship) %}{{ species_data.friendship.raw }}{% else if isString(species_data.friendship) %}{{ enumify(species_data.friendship) }}_FRIENDSHIP{% else %}{{ species_data.friendship }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "growthRate") %}
+        .growthRate = {% if isObject(species_data.growthRate) %}{{ species_data.growthRate.raw }}{% else if isString(species_data.growthRate) %}GROWTH_{{ enumify(species_data.growthRate) }}{% else %}{{ species_data.growthRate }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "eggGroups") %}
+        .eggGroups = {% if isObject(species_data.eggGroups) %}{{ species_data.eggGroups.raw }}{% else if isArray(species_data.eggGroups) %}MON_EGG_GROUPS({% for egg in species_data.eggGroups %}EGG_GROUP_{{ enumify(egg) }}{% if not loop.is_last %}, {% endif %}{% endfor %}){% else %}{{ species_data.eggGroups }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "abilities") %}
+        .abilities = {% if isObject(species_data.abilities) %}{{ species_data.abilities.raw }}{% else if isArray(species_data.abilities) %}{ {% for ability in species_data.abilities %}ABILITY_{{ enumify(ability) }}{% if not loop.is_last %}, {% endif %}{% endfor %} }{% else %}{{ species_data.abilities }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "safariZoneFleeRate") %}
+        .safariZoneFleeRate = {% if isObject(species_data.safariZoneFleeRate) %}{{ species_data.safariZoneFleeRate.raw }}{% else %}{{ species_data.safariZoneFleeRate }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "bodyColor") %}
+        .bodyColor = {% if isObject(species_data.bodyColor) %}{{ species_data.bodyColor.raw }}{% else if isString(species_data.bodyColor) %}BODY_COLOR_{{ enumify(species_data.bodyColor) }}{% else %}{{ species_data.bodyColor }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "noFlip") %}
+        .noFlip = {% if isObject(species_data.noFlip) %}{{ species_data.noFlip.raw }}{% else %}{{ species_data.noFlip }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "speciesName") %}
+        .speciesName = {% if isObject(species_data.speciesName) %}{{ species_data.speciesName.raw }}{% else %}_("{{ species_data.speciesName }}"){% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "cryId") %}
+        .cryId = {% if isObject(species_data.cryId) %}{{ species_data.cryId.raw }}{% else if isString(species_data.cryId) %}CRY_{{ enumify(species_data.cryId) }}{% else %}{{ species_data.cryId }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "natDexNum") %}
+        .natDexNum = {% if isObject(species_data.natDexNum) %}{{ species_data.natDexNum.raw }}{% else if isString(species_data.natDexNum) %}NATIONAL_DEX_{{ enumify(species_data.natDexNum) }}{% else %}{{ species_data.natDexNum }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "categoryName") %}
+        .categoryName = {% if isObject(species_data.categoryName) %}{{ species_data.categoryName.raw }}{% else %}_("{{ species_data.categoryName }}"){% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "height") %}
+        .height = {% if isObject(species_data.height) %}{{ species_data.height.raw }}{% else %}{{ species_data.height }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "weight") %}
+        .weight = {% if isObject(species_data.weight) %}{{ species_data.weight.raw }}{% else %}{{ species_data.weight }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "description") %}
+        .description = {% if isObject(species_data.description) %}{{ species_data.description.raw }}{% else %}{{ wrapDescription(species_data.description) }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "pokemonScale") %}
+        .pokemonScale = {% if isObject(species_data.pokemonScale) %}{{ species_data.pokemonScale.raw }}{% else %}{{ species_data.pokemonScale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "pokemonOffset") %}
+        .pokemonOffset = {% if isObject(species_data.pokemonOffset) %}{{ species_data.pokemonOffset.raw }}{% else %}{{ species_data.pokemonOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "trainerScale") %}
+        .trainerScale = {% if isObject(species_data.trainerScale) %}{{ species_data.trainerScale.raw }}{% else %}{{ species_data.trainerScale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "trainerOffset") %}
+        .trainerOffset = {% if isObject(species_data.trainerOffset) %}{{ species_data.trainerOffset.raw }}{% else %}{{ species_data.trainerOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontPic") %}
+        .frontPic = {% if isObject(species_data.frontPic) %}{{ species_data.frontPic.raw }}{% else %}{{ species_data.frontPic }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontPicSize") %}
+        .frontPicSize = {% if isObject(species_data.frontPicSize) %}{% if existsIn(species_data.frontPicSize, "raw") %}{{ species_data.frontPicSize.raw }}{% else if existsIn(species_data.frontPicSize, "width") %}MON_COORDS_SIZE({{ species_data.frontPicSize.width }}, {{ species_data.frontPicSize.height }}){% else if existsIn(species_data.frontPicSize, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {% if existsIn(species_data.frontPicSize.gba, "width") %}MON_COORDS_SIZE({{ species_data.frontPicSize.gba.width }}, {{ species_data.frontPicSize.gba.height }}){% else if isObject(species_data.frontPicSize.gba) %}{{ species_data.frontPicSize.gba.raw }}{% else %}{{ species_data.frontPicSize.gba }}{% endif %} : {% if existsIn(species_data.frontPicSize.upgraded, "width") %}MON_COORDS_SIZE({{ species_data.frontPicSize.upgraded.width }}, {{ species_data.frontPicSize.upgraded.height }}){% else if isObject(species_data.frontPicSize.upgraded) %}{{ species_data.frontPicSize.upgraded.raw }}{% else %}{{ species_data.frontPicSize.upgraded }}{% endif %}{% endif %}{% else %}{{ species_data.frontPicSize }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontPicYOffset") %}
+        .frontPicYOffset = {% if isObject(species_data.frontPicYOffset) %}{% if existsIn(species_data.frontPicYOffset, "raw") %}{{ species_data.frontPicYOffset.raw }}{% else if existsIn(species_data.frontPicYOffset, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {% if isObject(species_data.frontPicYOffset.gba) %}{{ species_data.frontPicYOffset.gba.raw }}{% else %}{{ species_data.frontPicYOffset.gba }}{% endif %} : {% if isObject(species_data.frontPicYOffset.upgraded) %}{{ species_data.frontPicYOffset.upgraded.raw }}{% else %}{{ species_data.frontPicYOffset.upgraded }}{% endif %}{% endif %}{% else %}{{ species_data.frontPicYOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontAnimFrames") %}
+        .frontAnimFrames = {% if isObject(species_data.frontAnimFrames) %}{{ species_data.frontAnimFrames.raw }}{% else if isArray(species_data.frontAnimFrames) %}ANIM_FRAMES(
+{% for frame in species_data.frontAnimFrames %}
+            ANIMCMD_FRAME({{ frame.frame }}, {{ frame.duration }}),
+{% endfor -%}
+        ){% else %}{{ species_data.frontAnimFrames }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontAnimId") %}
+        .frontAnimId = {% if isObject(species_data.frontAnimId) %}{% if existsIn(species_data.frontAnimId, "raw") %}{{ species_data.frontAnimId.raw }}{% else if existsIn(species_data.frontAnimId, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {% if isString(species_data.frontAnimId.gba) %}ANIM_{{ enumify(species_data.frontAnimId.gba) }}{% else %}{{ species_data.frontAnimId.gba }}{% endif %} : {% if isString(species_data.frontAnimId.upgraded) %}ANIM_{{ enumify(species_data.frontAnimId.upgraded) }}{% else %}{{ species_data.frontAnimId.upgraded }}{% endif %}{% endif %}{% else if isString(species_data.frontAnimId) %}ANIM_{{ enumify(species_data.frontAnimId) }}{% else %}{{ species_data.frontAnimId }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontAnimDelay") %}
+        .frontAnimDelay = {% if isObject(species_data.frontAnimDelay) %}{% if existsIn(species_data.frontAnimDelay, "raw") %}{{ species_data.frontAnimDelay.raw }}{% else if existsIn(species_data.frontAnimDelay, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {{ species_data.frontAnimDelay.gba }} : {{ species_data.frontAnimDelay.upgraded }}{% endif %}{% else %}{{ species_data.frontAnimDelay }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "backPic") %}
+        .backPic = {% if isObject(species_data.backPic) %}{{ species_data.backPic.raw }}{% else %}{{ species_data.backPic }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "backPicSize") %}
+        .backPicSize = {% if isObject(species_data.backPicSize) %}{% if existsIn(species_data.backPicSize, "raw") %}{{ species_data.backPicSize.raw }}{% else if existsIn(species_data.backPicSize, "width") %}MON_COORDS_SIZE({{ species_data.backPicSize.width }}, {{ species_data.backPicSize.height }}){% else if existsIn(species_data.backPicSize, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {% if existsIn(species_data.backPicSize.gba, "width") %}MON_COORDS_SIZE({{ species_data.backPicSize.gba.width }}, {{ species_data.backPicSize.gba.height }}){% else if isObject(species_data.backPicSize.gba) %}{{ species_data.backPicSize.gba.raw }}{% else %}{{ species_data.backPicSize.gba }}{% endif %} : {% if existsIn(species_data.backPicSize.upgraded, "width") %}MON_COORDS_SIZE({{ species_data.backPicSize.upgraded.width }}, {{ species_data.backPicSize.upgraded.height }}){% else if isObject(species_data.backPicSize.upgraded) %}{{ species_data.backPicSize.upgraded.raw }}{% else %}{{ species_data.backPicSize.upgraded }}{% endif %}{% endif %}{% else %}{{ species_data.backPicSize }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "backPicYOffset") %}
+        .backPicYOffset = {% if isObject(species_data.backPicYOffset) %}{% if existsIn(species_data.backPicYOffset, "raw") %}{{ species_data.backPicYOffset.raw }}{% else if existsIn(species_data.backPicYOffset, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {% if isObject(species_data.backPicYOffset.gba) %}{{ species_data.backPicYOffset.gba.raw }}{% else %}{{ species_data.backPicYOffset.gba }}{% endif %} : {% if isObject(species_data.backPicYOffset.upgraded) %}{{ species_data.backPicYOffset.upgraded.raw }}{% else %}{{ species_data.backPicYOffset.upgraded }}{% endif %}{% endif %}{% else %}{{ species_data.backPicYOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "backAnimId") %}
+        .backAnimId = {% if isObject(species_data.backAnimId) %}{% if existsIn(species_data.backAnimId, "raw") %}{{ species_data.backAnimId.raw }}{% else if existsIn(species_data.backAnimId, "gba") %}P_GBA_STYLE_SPECIES_GFX ? BACK_ANIM_{{ enumify(at(species_data.backAnimId, "gba")) }} : BACK_ANIM_{{ enumify(at(species_data.backAnimId, "upgraded")) }}{% endif %}{% else if isString(species_data.backAnimId) %}BACK_ANIM_{{ enumify(species_data.backAnimId) }}{% else %}{{ species_data.backAnimId }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "palette") %}
+        .palette = {% if isObject(species_data.palette) %}{{ species_data.palette.raw }}{% else %}{{ species_data.palette }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "shinyPalette") %}
+        .shinyPalette = {% if isObject(species_data.shinyPalette) %}{{ species_data.shinyPalette.raw }}{% else %}{{ species_data.shinyPalette }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "iconSprite") %}
+        .iconSprite = {% if isObject(species_data.iconSprite) %}{{ species_data.iconSprite.raw }}{% else %}{{ species_data.iconSprite }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "iconPalIndex") %}
+        .iconPalIndex = {% if isObject(species_data.iconPalIndex) %}{% if existsIn(species_data.iconPalIndex, "raw") %}{{ species_data.iconPalIndex.raw }}{% else if existsIn(species_data.iconPalIndex, "gba") %}P_GBA_STYLE_SPECIES_ICONS ? {% if isObject(species_data.iconPalIndex.gba) %}{{ species_data.iconPalIndex.gba.raw }}{% else %}{{ species_data.iconPalIndex.gba }}{% endif %} : {% if isObject(species_data.iconPalIndex.upgraded) %}{{ species_data.iconPalIndex.upgraded.raw }}{% else %}{{ species_data.iconPalIndex.upgraded }}{% endif %}{% endif %}{% else %}{{ species_data.iconPalIndex }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontPicFemale") %}
+        .frontPicFemale = {% if isObject(species_data.frontPicFemale) %}{{ species_data.frontPicFemale.raw }}{% else %}{{ species_data.frontPicFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "backPicFemale") %}
+        .backPicFemale = {% if isObject(species_data.backPicFemale) %}{{ species_data.backPicFemale.raw }}{% else %}{{ species_data.backPicFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "frontPicSizeFemale") %}
+        .frontPicSizeFemale = {% if isObject(species_data.frontPicSizeFemale) %}{% if existsIn(species_data.frontPicSizeFemale, "width") %}MON_COORDS_SIZE({{ species_data.frontPicSizeFemale.width }}, {{ species_data.frontPicSizeFemale.height }}){% else %}{{ species_data.frontPicSizeFemale.raw }}{% endif %}{% else %}{{ species_data.frontPicSizeFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "backPicSizeFemale") %}
+        .backPicSizeFemale = {% if isObject(species_data.backPicSizeFemale) %}{% if existsIn(species_data.backPicSizeFemale, "width") %}MON_COORDS_SIZE({{ species_data.backPicSizeFemale.width }}, {{ species_data.backPicSizeFemale.height }}){% else %}{{ species_data.backPicSizeFemale.raw }}{% endif %}{% else %}{{ species_data.backPicSizeFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "paletteFemale") %}
+        .paletteFemale = {% if isObject(species_data.paletteFemale) %}{{ species_data.paletteFemale.raw }}{% else %}{{ species_data.paletteFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "shinyPaletteFemale") %}
+        .shinyPaletteFemale = {% if isObject(species_data.shinyPaletteFemale) %}{{ species_data.shinyPaletteFemale.raw }}{% else %}{{ species_data.shinyPaletteFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "iconSpriteFemale") %}
+        .iconSpriteFemale = {% if isObject(species_data.iconSpriteFemale) %}{{ species_data.iconSpriteFemale.raw }}{% else %}{{ species_data.iconSpriteFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "iconPalIndexFemale") %}
+        .iconPalIndexFemale = {% if isObject(species_data.iconPalIndexFemale) %}{{ species_data.iconPalIndexFemale.raw }}{% else %}{{ species_data.iconPalIndexFemale }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "footprint") %}
+        {% if isObject(species_data.footprint) %}{{ species_data.footprint.raw }}{% else %}{{ species_data.footprint }}{% endif %}
+{%- endif %}
+{%- if existsIn(species_data, "pokemonJumpType") %}
+        .pokemonJumpType = {% if isObject(species_data.pokemonJumpType) %}{{ species_data.pokemonJumpType.raw }}{% else if isString(species_data.pokemonJumpType) %}PKMN_JUMP_TYPE_{{ enumify(species_data.pokemonJumpType) }}{% else %}{{ species_data.pokemonJumpType }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "enemyMonElevation") %}
+        .enemyMonElevation = {% if isObject(species_data.enemyMonElevation) %}{% if existsIn(species_data.enemyMonElevation, "raw") %}{{ species_data.enemyMonElevation.raw }}{% else if existsIn(species_data.enemyMonElevation, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {{ species_data.enemyMonElevation.gba }} : {{ species_data.enemyMonElevation.upgraded }}{% endif %}{% else %}{{ species_data.enemyMonElevation }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isLegendary") %}
+        .isLegendary = {% if isObject(species_data.isLegendary) %}{{ species_data.isLegendary.raw }}{% else %}{{ species_data.isLegendary }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isMythical") %}
+        .isMythical = {% if isObject(species_data.isMythical) %}{{ species_data.isMythical.raw }}{% else %}{{ species_data.isMythical }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isUltraBeast") %}
+        .isUltraBeast = {% if isObject(species_data.isUltraBeast) %}{{ species_data.isUltraBeast.raw }}{% else %}{{ species_data.isUltraBeast }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isParadox") %}
+        .isParadox = {% if isObject(species_data.isParadox) %}{{ species_data.isParadox.raw }}{% else %}{{ species_data.isParadox }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isTotem") %}
+        .isTotem = {% if isObject(species_data.isTotem) %}{{ species_data.isTotem.raw }}{% else %}{{ species_data.isTotem }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isMegaEvolution") %}
+        .isMegaEvolution = {% if isObject(species_data.isMegaEvolution) %}{{ species_data.isMegaEvolution.raw }}{% else %}{{ species_data.isMegaEvolution }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isPrimalReversion") %}
+        .isPrimalReversion = {% if isObject(species_data.isPrimalReversion) %}{{ species_data.isPrimalReversion.raw }}{% else %}{{ species_data.isPrimalReversion }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isUltraBurst") %}
+        .isUltraBurst = {% if isObject(species_data.isUltraBurst) %}{{ species_data.isUltraBurst.raw }}{% else %}{{ species_data.isUltraBurst }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isGigantamax") %}
+        .isGigantamax = {% if isObject(species_data.isGigantamax) %}{{ species_data.isGigantamax.raw }}{% else %}{{ species_data.isGigantamax }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isTeraForm") %}
+        .isTeraForm = {% if isObject(species_data.isTeraForm) %}{{ species_data.isTeraForm.raw }}{% else %}{{ species_data.isTeraForm }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isAlolanForm") %}
+        .isAlolanForm = {% if isObject(species_data.isAlolanForm) %}{{ species_data.isAlolanForm.raw }}{% else %}{{ species_data.isAlolanForm }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isGalarianForm") %}
+        .isGalarianForm = {% if isObject(species_data.isGalarianForm) %}{{ species_data.isGalarianForm.raw }}{% else %}{{ species_data.isGalarianForm }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isHisuianForm") %}
+        .isHisuianForm = {% if isObject(species_data.isHisuianForm) %}{{ species_data.isHisuianForm.raw }}{% else %}{{ species_data.isHisuianForm }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isPaldeanForm") %}
+        .isPaldeanForm = {% if isObject(species_data.isPaldeanForm) %}{{ species_data.isPaldeanForm.raw }}{% else %}{{ species_data.isPaldeanForm }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "cannotBeTraded") %}
+        .cannotBeTraded = {% if isObject(species_data.cannotBeTraded) %}{{ species_data.cannotBeTraded.raw }}{% else %}{{ species_data.cannotBeTraded }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "perfectIVCount") %}
+        .perfectIVCount = {% if isObject(species_data.perfectIVCount) %}{{ species_data.perfectIVCount.raw }}{% else %}{{ species_data.perfectIVCount }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "dexForceRequired") %}
+        .dexForceRequired = {% if isObject(species_data.dexForceRequired) %}{{ species_data.dexForceRequired.raw }}{% else %}{{ species_data.dexForceRequired }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "tmIlliterate") %}
+        .tmIlliterate = {% if isObject(species_data.tmIlliterate) %}{{ species_data.tmIlliterate.raw }}{% else %}{{ species_data.tmIlliterate }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "isFrontierBanned") %}
+        .isFrontierBanned = {% if isObject(species_data.isFrontierBanned) %}{{ species_data.isFrontierBanned.raw }}{% else %}{{ species_data.isFrontierBanned }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "enemyShadowXOffset") %}
+        .enemyShadowXOffset = {% if isObject(species_data.enemyShadowXOffset) %}{{ species_data.enemyShadowXOffset.raw }}{% else %}{{ species_data.enemyShadowXOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "enemyShadowYOffset") %}
+        .enemyShadowYOffset = {% if isObject(species_data.enemyShadowYOffset) %}{{ species_data.enemyShadowYOffset.raw }}{% else %}{{ species_data.enemyShadowYOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "enemyShadowSize") %}
+        .enemyShadowSize = {% if isObject(species_data.enemyShadowSize) %}{{ species_data.enemyShadowSize.raw }}{% else %}{{ species_data.enemyShadowSize }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "suppressEnemyShadow") %}
+        .suppressEnemyShadow = {% if isObject(species_data.suppressEnemyShadow) %}{{ species_data.suppressEnemyShadow.raw }}{% else %}{{ species_data.suppressEnemyShadow }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "enemyShadow") %}
+        {% if isObject(species_data.enemyShadow) %}{{ species_data.enemyShadow.raw }}{% else %}{{ species_data.enemyShadow }}{% endif %}
+{%- endif %}
+{%- if existsIn(species_data, "levelUpLearnset") %}
+        .levelUpLearnset = {% if isObject(species_data.levelUpLearnset) %}{{ species_data.levelUpLearnset.raw }}{% else %}{{ species_data.levelUpLearnset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "teachableLearnset") %}
+        .teachableLearnset = {% if isObject(species_data.teachableLearnset) %}{{ species_data.teachableLearnset.raw }}{% else %}{{ species_data.teachableLearnset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "eggMoveLearnset") %}
+        .eggMoveLearnset = {% if isObject(species_data.eggMoveLearnset) %}{{ species_data.eggMoveLearnset.raw }}{% else %}{{ species_data.eggMoveLearnset }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "evolutions") %}
+        .evolutions = {% if isObject(species_data.evolutions) %}{{ species_data.evolutions.raw }}{% else if isArray(species_data.evolutions) %}EVOLUTION({% for evo in species_data.evolutions %}{EVO_{{ enumify(evo.method) }}, {{ evo.param }}, SPECIES_{{ enumify(evo.species) }}{% if existsIn(evo, "conditions") %}, {{ evo.conditions }}{% endif %}}{% if not loop.is_last %},
+                                {% endif %}{% endfor %}){% else %}{{ species_data.evolutions }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "formSpeciesIdTable") %}
+        .formSpeciesIdTable = {% if isObject(species_data.formSpeciesIdTable) %}{{ species_data.formSpeciesIdTable.raw }}{% else %}{{ species_data.formSpeciesIdTable }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "formChangeTable") %}
+        .formChangeTable = {% if isObject(species_data.formChangeTable) %}{{ species_data.formChangeTable.raw }}{% else %}{{ species_data.formChangeTable }}{% endif %},
+{%- endif %}
+{%- if existsIn(species_data, "overworld") %}
+        {% if isObject(species_data.overworld) %}{{ species_data.overworld.raw }}{% else %}{{ species_data.overworld }}{% endif %}
+{%- endif %}
+{%- if existsIn(species_data, "overworldFemale") %}
+        {% if isObject(species_data.overworldFemale) %}{{ species_data.overworldFemale.raw }}{% else %}{{ species_data.overworldFemale }}{% endif %}
+{%- endif %}
+    },
+{%- endif %}
+## if existsIn(species_data, "forms")
+## for form_name, form_data in at(species_data, "forms")
+## if existsIn(form_data, "raw_placeholder") and form_data.raw_placeholder
+    // TODO: [SPECIES_{% if existsIn(species_data, "formPrefix") %}{{ at(species_data, "formPrefix") }}{% else %}{{ species_name }}{% endif %}_{{ form_name }}] - macro-based, needs manual implementation
+## else
+    [SPECIES_{% if existsIn(species_data, "formPrefix") %}{{ at(species_data, "formPrefix") }}{% else %}{{ species_name }}{% endif %}_{{ form_name }}] =
+    {
+{%- if existsIn(form_data, "baseHP") %}
+        .baseHP = {% if isObject(form_data.baseHP) %}{% if existsIn(form_data.baseHP, "raw") %}{{ form_data.baseHP.raw }}{% else %}{% if existsIn(form_data.baseHP, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(form_data.baseHP, "gen9") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(form_data.baseHP, "gen8") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(form_data.baseHP, "gen7") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(form_data.baseHP, "gen6") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(form_data.baseHP, "gen5") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(form_data.baseHP, "gen4") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(form_data.baseHP, "gen3") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(form_data.baseHP, "gen2") }} : ({% endif %}{% if existsIn(form_data.baseHP, "gen1") %}{{ at(form_data.baseHP, "gen1") }}{% else if existsIn(form_data.baseHP, "gen2") %}{{ at(form_data.baseHP, "gen2") }}{% else if existsIn(form_data.baseHP, "gen3") %}{{ at(form_data.baseHP, "gen3") }}{% else if existsIn(form_data.baseHP, "gen4") %}{{ at(form_data.baseHP, "gen4") }}{% else if existsIn(form_data.baseHP, "gen5") %}{{ at(form_data.baseHP, "gen5") }}{% else if existsIn(form_data.baseHP, "gen6") %}{{ at(form_data.baseHP, "gen6") }}{% else if existsIn(form_data.baseHP, "gen7") %}{{ at(form_data.baseHP, "gen7") }}{% else if existsIn(form_data.baseHP, "gen8") %}{{ at(form_data.baseHP, "gen8") }}{% else if existsIn(form_data.baseHP, "gen9") %}{{ at(form_data.baseHP, "gen9") }}{% endif %}{% if existsIn(form_data.baseHP, "gen9") %}){% endif %}{% if existsIn(form_data.baseHP, "gen8") %}){% endif %}{% if existsIn(form_data.baseHP, "gen7") %}){% endif %}{% if existsIn(form_data.baseHP, "gen6") %}){% endif %}{% if existsIn(form_data.baseHP, "gen5") %}){% endif %}{% if existsIn(form_data.baseHP, "gen4") %}){% endif %}{% if existsIn(form_data.baseHP, "gen3") %}){% endif %}{% if existsIn(form_data.baseHP, "gen2") %}){% endif %}{% endif %}{% else %}{{ form_data.baseHP }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "baseAttack") %}
+        .baseAttack = {% if isObject(form_data.baseAttack) %}{% if existsIn(form_data.baseAttack, "raw") %}{{ form_data.baseAttack.raw }}{% else %}{% if existsIn(form_data.baseAttack, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(form_data.baseAttack, "gen9") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(form_data.baseAttack, "gen8") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(form_data.baseAttack, "gen7") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(form_data.baseAttack, "gen6") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(form_data.baseAttack, "gen5") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(form_data.baseAttack, "gen4") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(form_data.baseAttack, "gen3") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(form_data.baseAttack, "gen2") }} : ({% endif %}{% if existsIn(form_data.baseAttack, "gen1") %}{{ at(form_data.baseAttack, "gen1") }}{% else if existsIn(form_data.baseAttack, "gen2") %}{{ at(form_data.baseAttack, "gen2") }}{% else if existsIn(form_data.baseAttack, "gen3") %}{{ at(form_data.baseAttack, "gen3") }}{% else if existsIn(form_data.baseAttack, "gen4") %}{{ at(form_data.baseAttack, "gen4") }}{% else if existsIn(form_data.baseAttack, "gen5") %}{{ at(form_data.baseAttack, "gen5") }}{% else if existsIn(form_data.baseAttack, "gen6") %}{{ at(form_data.baseAttack, "gen6") }}{% else if existsIn(form_data.baseAttack, "gen7") %}{{ at(form_data.baseAttack, "gen7") }}{% else if existsIn(form_data.baseAttack, "gen8") %}{{ at(form_data.baseAttack, "gen8") }}{% else if existsIn(form_data.baseAttack, "gen9") %}{{ at(form_data.baseAttack, "gen9") }}{% endif %}{% if existsIn(form_data.baseAttack, "gen9") %}){% endif %}{% if existsIn(form_data.baseAttack, "gen8") %}){% endif %}{% if existsIn(form_data.baseAttack, "gen7") %}){% endif %}{% if existsIn(form_data.baseAttack, "gen6") %}){% endif %}{% if existsIn(form_data.baseAttack, "gen5") %}){% endif %}{% if existsIn(form_data.baseAttack, "gen4") %}){% endif %}{% if existsIn(form_data.baseAttack, "gen3") %}){% endif %}{% if existsIn(form_data.baseAttack, "gen2") %}){% endif %}{% endif %}{% else %}{{ form_data.baseAttack }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "baseDefense") %}
+        .baseDefense = {% if isObject(form_data.baseDefense) %}{% if existsIn(form_data.baseDefense, "raw") %}{{ form_data.baseDefense.raw }}{% else %}{% if existsIn(form_data.baseDefense, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(form_data.baseDefense, "gen9") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(form_data.baseDefense, "gen8") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(form_data.baseDefense, "gen7") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(form_data.baseDefense, "gen6") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(form_data.baseDefense, "gen5") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(form_data.baseDefense, "gen4") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(form_data.baseDefense, "gen3") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(form_data.baseDefense, "gen2") }} : ({% endif %}{% if existsIn(form_data.baseDefense, "gen1") %}{{ at(form_data.baseDefense, "gen1") }}{% else if existsIn(form_data.baseDefense, "gen2") %}{{ at(form_data.baseDefense, "gen2") }}{% else if existsIn(form_data.baseDefense, "gen3") %}{{ at(form_data.baseDefense, "gen3") }}{% else if existsIn(form_data.baseDefense, "gen4") %}{{ at(form_data.baseDefense, "gen4") }}{% else if existsIn(form_data.baseDefense, "gen5") %}{{ at(form_data.baseDefense, "gen5") }}{% else if existsIn(form_data.baseDefense, "gen6") %}{{ at(form_data.baseDefense, "gen6") }}{% else if existsIn(form_data.baseDefense, "gen7") %}{{ at(form_data.baseDefense, "gen7") }}{% else if existsIn(form_data.baseDefense, "gen8") %}{{ at(form_data.baseDefense, "gen8") }}{% else if existsIn(form_data.baseDefense, "gen9") %}{{ at(form_data.baseDefense, "gen9") }}{% endif %}{% if existsIn(form_data.baseDefense, "gen9") %}){% endif %}{% if existsIn(form_data.baseDefense, "gen8") %}){% endif %}{% if existsIn(form_data.baseDefense, "gen7") %}){% endif %}{% if existsIn(form_data.baseDefense, "gen6") %}){% endif %}{% if existsIn(form_data.baseDefense, "gen5") %}){% endif %}{% if existsIn(form_data.baseDefense, "gen4") %}){% endif %}{% if existsIn(form_data.baseDefense, "gen3") %}){% endif %}{% if existsIn(form_data.baseDefense, "gen2") %}){% endif %}{% endif %}{% else %}{{ form_data.baseDefense }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "baseSpeed") %}
+        .baseSpeed = {% if isObject(form_data.baseSpeed) %}{% if existsIn(form_data.baseSpeed, "raw") %}{{ form_data.baseSpeed.raw }}{% else %}{% if existsIn(form_data.baseSpeed, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(form_data.baseSpeed, "gen9") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(form_data.baseSpeed, "gen8") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(form_data.baseSpeed, "gen7") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(form_data.baseSpeed, "gen6") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(form_data.baseSpeed, "gen5") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(form_data.baseSpeed, "gen4") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(form_data.baseSpeed, "gen3") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(form_data.baseSpeed, "gen2") }} : ({% endif %}{% if existsIn(form_data.baseSpeed, "gen1") %}{{ at(form_data.baseSpeed, "gen1") }}{% else if existsIn(form_data.baseSpeed, "gen2") %}{{ at(form_data.baseSpeed, "gen2") }}{% else if existsIn(form_data.baseSpeed, "gen3") %}{{ at(form_data.baseSpeed, "gen3") }}{% else if existsIn(form_data.baseSpeed, "gen4") %}{{ at(form_data.baseSpeed, "gen4") }}{% else if existsIn(form_data.baseSpeed, "gen5") %}{{ at(form_data.baseSpeed, "gen5") }}{% else if existsIn(form_data.baseSpeed, "gen6") %}{{ at(form_data.baseSpeed, "gen6") }}{% else if existsIn(form_data.baseSpeed, "gen7") %}{{ at(form_data.baseSpeed, "gen7") }}{% else if existsIn(form_data.baseSpeed, "gen8") %}{{ at(form_data.baseSpeed, "gen8") }}{% else if existsIn(form_data.baseSpeed, "gen9") %}{{ at(form_data.baseSpeed, "gen9") }}{% endif %}{% if existsIn(form_data.baseSpeed, "gen9") %}){% endif %}{% if existsIn(form_data.baseSpeed, "gen8") %}){% endif %}{% if existsIn(form_data.baseSpeed, "gen7") %}){% endif %}{% if existsIn(form_data.baseSpeed, "gen6") %}){% endif %}{% if existsIn(form_data.baseSpeed, "gen5") %}){% endif %}{% if existsIn(form_data.baseSpeed, "gen4") %}){% endif %}{% if existsIn(form_data.baseSpeed, "gen3") %}){% endif %}{% if existsIn(form_data.baseSpeed, "gen2") %}){% endif %}{% endif %}{% else %}{{ form_data.baseSpeed }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "baseSpAttack") %}
+        .baseSpAttack = {% if isObject(form_data.baseSpAttack) %}{% if existsIn(form_data.baseSpAttack, "raw") %}{{ form_data.baseSpAttack.raw }}{% else %}{% if existsIn(form_data.baseSpAttack, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(form_data.baseSpAttack, "gen9") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(form_data.baseSpAttack, "gen8") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(form_data.baseSpAttack, "gen7") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(form_data.baseSpAttack, "gen6") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(form_data.baseSpAttack, "gen5") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(form_data.baseSpAttack, "gen4") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(form_data.baseSpAttack, "gen3") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(form_data.baseSpAttack, "gen2") }} : ({% endif %}{% if existsIn(form_data.baseSpAttack, "gen1") %}{{ at(form_data.baseSpAttack, "gen1") }}{% else if existsIn(form_data.baseSpAttack, "gen2") %}{{ at(form_data.baseSpAttack, "gen2") }}{% else if existsIn(form_data.baseSpAttack, "gen3") %}{{ at(form_data.baseSpAttack, "gen3") }}{% else if existsIn(form_data.baseSpAttack, "gen4") %}{{ at(form_data.baseSpAttack, "gen4") }}{% else if existsIn(form_data.baseSpAttack, "gen5") %}{{ at(form_data.baseSpAttack, "gen5") }}{% else if existsIn(form_data.baseSpAttack, "gen6") %}{{ at(form_data.baseSpAttack, "gen6") }}{% else if existsIn(form_data.baseSpAttack, "gen7") %}{{ at(form_data.baseSpAttack, "gen7") }}{% else if existsIn(form_data.baseSpAttack, "gen8") %}{{ at(form_data.baseSpAttack, "gen8") }}{% else if existsIn(form_data.baseSpAttack, "gen9") %}{{ at(form_data.baseSpAttack, "gen9") }}{% endif %}{% if existsIn(form_data.baseSpAttack, "gen9") %}){% endif %}{% if existsIn(form_data.baseSpAttack, "gen8") %}){% endif %}{% if existsIn(form_data.baseSpAttack, "gen7") %}){% endif %}{% if existsIn(form_data.baseSpAttack, "gen6") %}){% endif %}{% if existsIn(form_data.baseSpAttack, "gen5") %}){% endif %}{% if existsIn(form_data.baseSpAttack, "gen4") %}){% endif %}{% if existsIn(form_data.baseSpAttack, "gen3") %}){% endif %}{% if existsIn(form_data.baseSpAttack, "gen2") %}){% endif %}{% endif %}{% else %}{{ form_data.baseSpAttack }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "baseSpDefense") %}
+        .baseSpDefense = {% if isObject(form_data.baseSpDefense) %}{% if existsIn(form_data.baseSpDefense, "raw") %}{{ form_data.baseSpDefense.raw }}{% else %}{% if existsIn(form_data.baseSpDefense, "gen9") %}P_UPDATED_STATS >= GEN_9 ? {{ at(form_data.baseSpDefense, "gen9") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen8") %}P_UPDATED_STATS >= GEN_8 ? {{ at(form_data.baseSpDefense, "gen8") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen7") %}P_UPDATED_STATS >= GEN_7 ? {{ at(form_data.baseSpDefense, "gen7") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen6") %}P_UPDATED_STATS >= GEN_6 ? {{ at(form_data.baseSpDefense, "gen6") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen5") %}P_UPDATED_STATS >= GEN_5 ? {{ at(form_data.baseSpDefense, "gen5") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen4") %}P_UPDATED_STATS >= GEN_4 ? {{ at(form_data.baseSpDefense, "gen4") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen3") %}P_UPDATED_STATS >= GEN_3 ? {{ at(form_data.baseSpDefense, "gen3") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen2") %}P_UPDATED_STATS >= GEN_2 ? {{ at(form_data.baseSpDefense, "gen2") }} : ({% endif %}{% if existsIn(form_data.baseSpDefense, "gen1") %}{{ at(form_data.baseSpDefense, "gen1") }}{% else if existsIn(form_data.baseSpDefense, "gen2") %}{{ at(form_data.baseSpDefense, "gen2") }}{% else if existsIn(form_data.baseSpDefense, "gen3") %}{{ at(form_data.baseSpDefense, "gen3") }}{% else if existsIn(form_data.baseSpDefense, "gen4") %}{{ at(form_data.baseSpDefense, "gen4") }}{% else if existsIn(form_data.baseSpDefense, "gen5") %}{{ at(form_data.baseSpDefense, "gen5") }}{% else if existsIn(form_data.baseSpDefense, "gen6") %}{{ at(form_data.baseSpDefense, "gen6") }}{% else if existsIn(form_data.baseSpDefense, "gen7") %}{{ at(form_data.baseSpDefense, "gen7") }}{% else if existsIn(form_data.baseSpDefense, "gen8") %}{{ at(form_data.baseSpDefense, "gen8") }}{% else if existsIn(form_data.baseSpDefense, "gen9") %}{{ at(form_data.baseSpDefense, "gen9") }}{% endif %}{% if existsIn(form_data.baseSpDefense, "gen9") %}){% endif %}{% if existsIn(form_data.baseSpDefense, "gen8") %}){% endif %}{% if existsIn(form_data.baseSpDefense, "gen7") %}){% endif %}{% if existsIn(form_data.baseSpDefense, "gen6") %}){% endif %}{% if existsIn(form_data.baseSpDefense, "gen5") %}){% endif %}{% if existsIn(form_data.baseSpDefense, "gen4") %}){% endif %}{% if existsIn(form_data.baseSpDefense, "gen3") %}){% endif %}{% if existsIn(form_data.baseSpDefense, "gen2") %}){% endif %}{% endif %}{% else %}{{ form_data.baseSpDefense }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "types") %}
+        .types = {% if isObject(form_data.types) %}{{ form_data.types.raw }}{% else if isArray(form_data.types) %}MON_TYPES({% for type in form_data.types %}TYPE_{{ enumify(type) }}{% if not loop.is_last %}, {% endif %}{% endfor %}){% else %}{{ form_data.types }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "catchRate") %}
+        .catchRate = {% if isObject(form_data.catchRate) %}{{ form_data.catchRate.raw }}{% else %}{{ form_data.catchRate }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "forceTeraType") %}
+        .forceTeraType = {% if isObject(form_data.forceTeraType) %}{{ form_data.forceTeraType.raw }}{% else %}{{ form_data.forceTeraType }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "expYield") %}
+        .expYield = {% if isObject(form_data.expYield) %}{% if existsIn(form_data.expYield, "raw") %}{{ form_data.expYield.raw }}{% else %}{% if existsIn(form_data.expYield, "gen9") %}P_UPDATED_EXP_YIELDS >= GEN_9 ? {{ at(form_data.expYield, "gen9") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen8") %}P_UPDATED_EXP_YIELDS >= GEN_8 ? {{ at(form_data.expYield, "gen8") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen7") %}P_UPDATED_EXP_YIELDS >= GEN_7 ? {{ at(form_data.expYield, "gen7") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen6") %}P_UPDATED_EXP_YIELDS >= GEN_6 ? {{ at(form_data.expYield, "gen6") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen5") %}P_UPDATED_EXP_YIELDS >= GEN_5 ? {{ at(form_data.expYield, "gen5") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen4") %}P_UPDATED_EXP_YIELDS >= GEN_4 ? {{ at(form_data.expYield, "gen4") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen3") %}P_UPDATED_EXP_YIELDS >= GEN_3 ? {{ at(form_data.expYield, "gen3") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen2") %}P_UPDATED_EXP_YIELDS >= GEN_2 ? {{ at(form_data.expYield, "gen2") }} : ({% endif %}{% if existsIn(form_data.expYield, "gen1") %}{{ at(form_data.expYield, "gen1") }}{% else if existsIn(form_data.expYield, "gen2") %}{{ at(form_data.expYield, "gen2") }}{% else if existsIn(form_data.expYield, "gen3") %}{{ at(form_data.expYield, "gen3") }}{% else if existsIn(form_data.expYield, "gen4") %}{{ at(form_data.expYield, "gen4") }}{% else if existsIn(form_data.expYield, "gen5") %}{{ at(form_data.expYield, "gen5") }}{% else if existsIn(form_data.expYield, "gen6") %}{{ at(form_data.expYield, "gen6") }}{% else if existsIn(form_data.expYield, "gen7") %}{{ at(form_data.expYield, "gen7") }}{% else if existsIn(form_data.expYield, "gen8") %}{{ at(form_data.expYield, "gen8") }}{% else if existsIn(form_data.expYield, "gen9") %}{{ at(form_data.expYield, "gen9") }}{% endif %}{% if existsIn(form_data.expYield, "gen9") %}){% endif %}{% if existsIn(form_data.expYield, "gen8") %}){% endif %}{% if existsIn(form_data.expYield, "gen7") %}){% endif %}{% if existsIn(form_data.expYield, "gen6") %}){% endif %}{% if existsIn(form_data.expYield, "gen5") %}){% endif %}{% if existsIn(form_data.expYield, "gen4") %}){% endif %}{% if existsIn(form_data.expYield, "gen3") %}){% endif %}{% if existsIn(form_data.expYield, "gen2") %}){% endif %}{% endif %}{% else %}{{ form_data.expYield }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "evYield_HP") %}
+        .evYield_HP = {% if isObject(form_data.evYield_HP) %}{{ form_data.evYield_HP.raw }}{% else %}{{ form_data.evYield_HP }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "evYield_Attack") %}
+        .evYield_Attack = {% if isObject(form_data.evYield_Attack) %}{{ form_data.evYield_Attack.raw }}{% else %}{{ form_data.evYield_Attack }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "evYield_Defense") %}
+        .evYield_Defense = {% if isObject(form_data.evYield_Defense) %}{{ form_data.evYield_Defense.raw }}{% else %}{{ form_data.evYield_Defense }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "evYield_Speed") %}
+        .evYield_Speed = {% if isObject(form_data.evYield_Speed) %}{{ form_data.evYield_Speed.raw }}{% else %}{{ form_data.evYield_Speed }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "evYield_SpAttack") %}
+        .evYield_SpAttack = {% if isObject(form_data.evYield_SpAttack) %}{{ form_data.evYield_SpAttack.raw }}{% else %}{{ form_data.evYield_SpAttack }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "evYield_SpDefense") %}
+        .evYield_SpDefense = {% if isObject(form_data.evYield_SpDefense) %}{{ form_data.evYield_SpDefense.raw }}{% else %}{{ form_data.evYield_SpDefense }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "itemCommon") %}
+        .itemCommon = {% if isObject(form_data.itemCommon) %}{{ form_data.itemCommon.raw }}{% else %}{{ form_data.itemCommon }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "itemRare") %}
+        .itemRare = {% if isObject(form_data.itemRare) %}{{ form_data.itemRare.raw }}{% else %}{{ form_data.itemRare }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "genderRatio") %}
+        .genderRatio = {% if isObject(form_data.genderRatio) %}{% if existsIn(form_data.genderRatio, "raw") %}{{ form_data.genderRatio.raw }}{% else if existsIn(form_data.genderRatio, "genderless") %}MON_GENDERLESS{% else if existsIn(form_data.genderRatio, "male") %}MON_MALE{% else if existsIn(form_data.genderRatio, "female") %}{% if at(form_data.genderRatio, "female") == 100 %}MON_FEMALE{% else %}PERCENT_FEMALE({{ at(form_data.genderRatio, "female") }}){% endif %}{% endif %}{% else %}{{ form_data.genderRatio }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "eggCycles") %}
+        .eggCycles = {% if isObject(form_data.eggCycles) %}{{ form_data.eggCycles.raw }}{% else %}{{ form_data.eggCycles }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "friendship") %}
+        .friendship = {% if isObject(form_data.friendship) %}{{ form_data.friendship.raw }}{% else %}{{ form_data.friendship }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "growthRate") %}
+        .growthRate = {% if isObject(form_data.growthRate) %}{{ form_data.growthRate.raw }}{% else %}GROWTH_{{ enumify(form_data.growthRate) }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "eggGroups") %}
+        .eggGroups = {% if isObject(form_data.eggGroups) %}{{ form_data.eggGroups.raw }}{% else if isArray(form_data.eggGroups) %}MON_EGG_GROUPS({% for group in form_data.eggGroups %}EGG_GROUP_{{ enumify(group) }}{% if not loop.is_last %}, {% endif %}{% endfor %}){% else %}{{ form_data.eggGroups }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "abilities") %}
+        .abilities = {% if isObject(form_data.abilities) %}{{ form_data.abilities.raw }}{% else if isArray(form_data.abilities) %}{ {% for ability in form_data.abilities %}ABILITY_{{ enumify(ability) }}{% if not loop.is_last %}, {% endif %}{% endfor %} }{% else %}{{ form_data.abilities }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "bodyColor") %}
+        .bodyColor = {% if isObject(form_data.bodyColor) %}{{ form_data.bodyColor.raw }}{% else %}BODY_COLOR_{{ enumify(form_data.bodyColor) }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "speciesName") %}
+        .speciesName = {% if isObject(form_data.speciesName) %}{{ form_data.speciesName.raw }}{% else %}_("{{ form_data.speciesName }}"){% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "cryId") %}
+        .cryId = {% if isObject(form_data.cryId) %}{{ form_data.cryId.raw }}{% else %}CRY_{{ enumify(form_data.cryId) }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "natDexNum") %}
+        .natDexNum = {% if isObject(form_data.natDexNum) %}{{ form_data.natDexNum.raw }}{% else %}NATIONAL_DEX_{{ enumify(form_data.natDexNum) }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "categoryName") %}
+        .categoryName = {% if isObject(form_data.categoryName) %}{{ form_data.categoryName.raw }}{% else %}_("{{ form_data.categoryName }}"){% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "height") %}
+        .height = {% if isObject(form_data.height) %}{{ form_data.height.raw }}{% else %}{{ form_data.height }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "weight") %}
+        .weight = {% if isObject(form_data.weight) %}{{ form_data.weight.raw }}{% else %}{{ form_data.weight }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "description") %}
+        .description = {% if isObject(form_data.description) %}{{ form_data.description.raw }}{% else %}{{ wrapDescription(form_data.description) }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "pokemonScale") %}
+        .pokemonScale = {% if isObject(form_data.pokemonScale) %}{{ form_data.pokemonScale.raw }}{% else %}{{ form_data.pokemonScale }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "pokemonOffset") %}
+        .pokemonOffset = {% if isObject(form_data.pokemonOffset) %}{{ form_data.pokemonOffset.raw }}{% else %}{{ form_data.pokemonOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "trainerScale") %}
+        .trainerScale = {% if isObject(form_data.trainerScale) %}{{ form_data.trainerScale.raw }}{% else %}{{ form_data.trainerScale }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "trainerOffset") %}
+        .trainerOffset = {% if isObject(form_data.trainerOffset) %}{{ form_data.trainerOffset.raw }}{% else %}{{ form_data.trainerOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "frontPic") %}
+        .frontPic = {% if isObject(form_data.frontPic) %}{{ form_data.frontPic.raw }}{% else %}{{ form_data.frontPic }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "frontPicSize") %}
+        .frontPicSize = {% if isObject(form_data.frontPicSize) %}{% if existsIn(form_data.frontPicSize, "raw") %}{{ form_data.frontPicSize.raw }}{% else if existsIn(form_data.frontPicSize, "gba") %}P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE({{ at(form_data.frontPicSize, "gba").width }}, {{ at(form_data.frontPicSize, "gba").height }}) : MON_COORDS_SIZE({{ at(form_data.frontPicSize, "upgraded").width }}, {{ at(form_data.frontPicSize, "upgraded").height }}){% else %}MON_COORDS_SIZE({{ form_data.frontPicSize.width }}, {{ form_data.frontPicSize.height }}){% endif %}{% else %}{{ form_data.frontPicSize }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "frontPicYOffset") %}
+        .frontPicYOffset = {% if isObject(form_data.frontPicYOffset) %}{% if existsIn(form_data.frontPicYOffset, "raw") %}{{ form_data.frontPicYOffset.raw }}{% else if existsIn(form_data.frontPicYOffset, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {{ at(form_data.frontPicYOffset, "gba") }} : {{ at(form_data.frontPicYOffset, "upgraded") }}{% endif %}{% else %}{{ form_data.frontPicYOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "frontAnimFrames") %}
+        .frontAnimFrames = {% if isObject(form_data.frontAnimFrames) %}{{ form_data.frontAnimFrames.raw }}{% else if isArray(form_data.frontAnimFrames) %}ANIM_FRAMES({% for frame in form_data.frontAnimFrames %}ANIMCMD_FRAME({{ frame.frame }}, {{ frame.duration }}){% if not loop.is_last %}, {% endif %}{% endfor %}){% else %}{{ form_data.frontAnimFrames }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "frontAnimId") %}
+        .frontAnimId = {% if isObject(form_data.frontAnimId) %}{% if existsIn(form_data.frontAnimId, "raw") %}{{ form_data.frontAnimId.raw }}{% else if existsIn(form_data.frontAnimId, "gba") %}P_GBA_STYLE_SPECIES_GFX ? ANIM_{{ enumify(at(form_data.frontAnimId, "gba")) }} : ANIM_{{ enumify(at(form_data.frontAnimId, "upgraded")) }}{% endif %}{% else %}ANIM_{{ enumify(form_data.frontAnimId) }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "enemyMonElevation") %}
+        .enemyMonElevation = {% if isObject(form_data.enemyMonElevation) %}{% if existsIn(form_data.enemyMonElevation, "raw") %}{{ form_data.enemyMonElevation.raw }}{% else if existsIn(form_data.enemyMonElevation, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {{ at(form_data.enemyMonElevation, "gba") }} : {{ at(form_data.enemyMonElevation, "upgraded") }}{% endif %}{% else %}{{ form_data.enemyMonElevation }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "backPic") %}
+        .backPic = {% if isObject(form_data.backPic) %}{{ form_data.backPic.raw }}{% else %}{{ form_data.backPic }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "backPicSize") %}
+        .backPicSize = {% if isObject(form_data.backPicSize) %}{% if existsIn(form_data.backPicSize, "raw") %}{{ form_data.backPicSize.raw }}{% else if existsIn(form_data.backPicSize, "gba") %}P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE({{ at(form_data.backPicSize, "gba").width }}, {{ at(form_data.backPicSize, "gba").height }}) : MON_COORDS_SIZE({{ at(form_data.backPicSize, "upgraded").width }}, {{ at(form_data.backPicSize, "upgraded").height }}){% else %}MON_COORDS_SIZE({{ form_data.backPicSize.width }}, {{ form_data.backPicSize.height }}){% endif %}{% else %}{{ form_data.backPicSize }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "backPicYOffset") %}
+        .backPicYOffset = {% if isObject(form_data.backPicYOffset) %}{% if existsIn(form_data.backPicYOffset, "raw") %}{{ form_data.backPicYOffset.raw }}{% else if existsIn(form_data.backPicYOffset, "gba") %}P_GBA_STYLE_SPECIES_GFX ? {{ at(form_data.backPicYOffset, "gba") }} : {{ at(form_data.backPicYOffset, "upgraded") }}{% endif %}{% else %}{{ form_data.backPicYOffset }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "backAnimId") %}
+        .backAnimId = {% if isObject(form_data.backAnimId) %}{% if existsIn(form_data.backAnimId, "raw") %}{{ form_data.backAnimId.raw }}{% else if existsIn(form_data.backAnimId, "gba") %}P_GBA_STYLE_SPECIES_GFX ? BACK_ANIM_{{ enumify(at(form_data.backAnimId, "gba")) }} : BACK_ANIM_{{ enumify(at(form_data.backAnimId, "upgraded")) }}{% endif %}{% else %}BACK_ANIM_{{ enumify(form_data.backAnimId) }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "palette") %}
+        .palette = {% if isObject(form_data.palette) %}{{ form_data.palette.raw }}{% else %}{{ form_data.palette }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "shinyPalette") %}
+        .shinyPalette = {% if isObject(form_data.shinyPalette) %}{{ form_data.shinyPalette.raw }}{% else %}{{ form_data.shinyPalette }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "iconSprite") %}
+        .iconSprite = {% if isObject(form_data.iconSprite) %}{{ form_data.iconSprite.raw }}{% else %}{{ form_data.iconSprite }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "iconPalIndex") %}
+        .iconPalIndex = {% if isObject(form_data.iconPalIndex) %}{{ form_data.iconPalIndex.raw }}{% else %}{{ form_data.iconPalIndex }}{% endif %},
+{%- endif %}
+#if P_FOOTPRINTS
+{%- if existsIn(form_data, "footprint") %}
+        .footprint = {% if isObject(form_data.footprint) %}{{ form_data.footprint.raw }}{% else %}{{ form_data.footprint }}{% endif %},
+{%- endif %}
+#endif
+{%- if existsIn(form_data, "pokemonJumpType") %}
+        POKEMON_JUMP_TYPE({% if isObject(form_data.pokemonJumpType) %}{{ form_data.pokemonJumpType.raw }}{% else %}PKMN_JUMP_TYPE_{{ enumify(form_data.pokemonJumpType) }}{% endif %}),
+{%- endif %}
+{%- if existsIn(form_data, "isLegendary") %}
+        .isLegendary = {% if isObject(form_data.isLegendary) %}{{ form_data.isLegendary.raw }}{% else %}{{ form_data.isLegendary }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isMythical") %}
+        .isMythical = {% if isObject(form_data.isMythical) %}{{ form_data.isMythical.raw }}{% else %}{{ form_data.isMythical }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isUltraBeast") %}
+        .isUltraBeast = {% if isObject(form_data.isUltraBeast) %}{{ form_data.isUltraBeast.raw }}{% else %}{{ form_data.isUltraBeast }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isParadoxForm") %}
+        .isParadoxForm = {% if isObject(form_data.isParadoxForm) %}{{ form_data.isParadoxForm.raw }}{% else %}{{ form_data.isParadoxForm }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isMegaEvolution") %}
+        .isMegaEvolution = {% if isObject(form_data.isMegaEvolution) %}{{ form_data.isMegaEvolution.raw }}{% else %}{{ form_data.isMegaEvolution }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isPrimalReversion") %}
+        .isPrimalReversion = {% if isObject(form_data.isPrimalReversion) %}{{ form_data.isPrimalReversion.raw }}{% else %}{{ form_data.isPrimalReversion }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isUltraBurst") %}
+        .isUltraBurst = {% if isObject(form_data.isUltraBurst) %}{{ form_data.isUltraBurst.raw }}{% else %}{{ form_data.isUltraBurst }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isGigantamax") %}
+        .isGigantamax = {% if isObject(form_data.isGigantamax) %}{{ form_data.isGigantamax.raw }}{% else %}{{ form_data.isGigantamax }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isAlphaForm") %}
+        .isAlphaForm = {% if isObject(form_data.isAlphaForm) %}{{ form_data.isAlphaForm.raw }}{% else %}{{ form_data.isAlphaForm }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "isBattleOnly") %}
+        .isBattleOnly = {% if isObject(form_data.isBattleOnly) %}{{ form_data.isBattleOnly.raw }}{% else %}{{ form_data.isBattleOnly }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "perfectIVCount") %}
+        .perfectIVCount = {% if isObject(form_data.perfectIVCount) %}{{ form_data.perfectIVCount.raw }}{% else %}{{ form_data.perfectIVCount }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "battleBGM") %}
+        .battleBGM = {% if isObject(form_data.battleBGM) %}{{ form_data.battleBGM.raw }}{% else %}{{ form_data.battleBGM }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "levelUpLearnset") %}
+        .levelUpLearnset = {% if isObject(form_data.levelUpLearnset) %}{{ form_data.levelUpLearnset.raw }}{% else %}{{ form_data.levelUpLearnset }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "teachableLearnset") %}
+        .teachableLearnset = {% if isObject(form_data.teachableLearnset) %}{{ form_data.teachableLearnset.raw }}{% else %}{{ form_data.teachableLearnset }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "eggMoveLearnset") %}
+        .eggMoveLearnset = {% if isObject(form_data.eggMoveLearnset) %}{{ form_data.eggMoveLearnset.raw }}{% else %}{{ form_data.eggMoveLearnset }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "evolutions") %}
+        .evolutions = {% if isObject(form_data.evolutions) %}{{ form_data.evolutions.raw }}{% else if isArray(form_data.evolutions) %}EVOLUTION({% for evo in form_data.evolutions %}{EVO_{{ enumify(evo.method) }}, {{ evo.param }}, SPECIES_{{ enumify(evo.species) }}{% if existsIn(evo, "conditions") %}, {{ evo.conditions }}{% endif %}}{% if not loop.is_last %},
+                                {% endif %}{% endfor %}){% else %}{{ form_data.evolutions }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "formSpeciesIdTable") %}
+        .formSpeciesIdTable = {% if isObject(form_data.formSpeciesIdTable) %}{{ form_data.formSpeciesIdTable.raw }}{% else %}{{ form_data.formSpeciesIdTable }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "formChangeTable") %}
+        .formChangeTable = {% if isObject(form_data.formChangeTable) %}{{ form_data.formChangeTable.raw }}{% else %}{{ form_data.formChangeTable }}{% endif %},
+{%- endif %}
+{%- if existsIn(form_data, "overworld") %}
+        {% if isObject(form_data.overworld) %}{{ form_data.overworld.raw }}{% else %}{{ form_data.overworld }}{% endif %}
+{%- endif %}
+{%- if existsIn(form_data, "overworldFemale") %}
+        {% if isObject(form_data.overworldFemale) %}{{ form_data.overworldFemale.raw }}{% else %}{{ form_data.overworldFemale }}{% endif %}
+{%- endif %}
+    },
+## endif
+## endfor
+## endif
+## endfor
+
