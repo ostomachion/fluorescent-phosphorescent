@@ -227,6 +227,7 @@ Configuration is in `include/config/*.h`:
 - Main docs: https://rh-hideout.github.io/pokeemerald-expansion/
 - Features list: [FEATURES.md](FEATURES.md)
 - Changelog: [docs/CHANGELOG.md](docs/CHANGELOG.md)
+- Inja templating:[docs/tutorials/inja.md](docs/tutorials/inja.md)
 
 ### Tools
 - **Porymap**: Map editor (https://github.com/huderlem/porymap)

@@ -1,0 +1,6801 @@
+{
+  "data": {
+    "ROWLET": {
+      "baseHP": 68,
+      "baseAttack": 55,
+      "baseDefense": 55,
+      "baseSpeed": 42,
+      "baseSpAttack": 50,
+      "baseSpDefense": 50,
+      "types": [
+        "grass",
+        "flying"
+      ],
+      "catchRate": 45,
+      "expYield": 64,
+      "evYield_HP": 1,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "flying"
+      ],
+      "abilities": [
+        "overgrow",
+        "none",
+        "long-reach"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Rowlet",
+      "cryId": "rowlet",
+      "natDexNum": "rowlet",
+      "categoryName": "Grass Quill",
+      "height": 3,
+      "weight": 15,
+      "description": "This wary Pok\u00e9mon uses photosynthesis\\nto store up energy during the day, while\\nbecoming active at night. Silently it\\nglides, drawing near to its target.",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Rowlet",
+      "frontPicSize": {
+        "width": 31,
+        "height": 37
+      },
+      "frontPicYOffset": 12,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 30
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "circular-stretch-twice",
+      "backPic": "gMonBackPic_Rowlet",
+      "backPicSize": {
+        "width": 43,
+        "height": 36
+      },
+      "backPicYOffset": 15,
+      "backAnimId": "concave-arc-small",
+      "palette": "gMonPalette_Rowlet",
+      "shinyPalette": "gMonShinyPalette_Rowlet",
+      "iconSprite": "gMonIcon_Rowlet",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sRowletTeachableLearnset",
+      "eggMoveLearnset": "sRowletEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "17",
+          "species": "dartrix"
+        }
+      ]
+    },
+    "DARTRIX": {
+      "baseHP": 78,
+      "baseAttack": 75,
+      "baseDefense": 75,
+      "baseSpeed": 52,
+      "baseSpAttack": 70,
+      "baseSpDefense": 70,
+      "types": [
+        "grass",
+        "flying"
+      ],
+      "catchRate": 45,
+      "expYield": 147,
+      "evYield_HP": 2,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "flying"
+      ],
+      "abilities": [
+        "overgrow",
+        "none",
+        "long-reach"
+      ],
+      "bodyColor": "brown",
+      "noFlip": 1,
+      "speciesName": "Dartrix",
+      "cryId": "dartrix",
+      "natDexNum": "dartrix",
+      "categoryName": "Blade Quill",
+      "height": 7,
+      "weight": 160,
+      "description": "A bit of a dandy, it spends its free time\\npreening its wings. Its preoccupation\\nwith any dirt on its plumage can leave\\nit unable to battle.",
+      "pokemonScale": 365,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Dartrix",
+      "frontPicSize": {
+        "width": 34,
+        "height": 47
+      },
+      "frontPicYOffset": 8,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 30
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "v-stretch",
+      "backPic": "gMonBackPic_Dartrix",
+      "backPicSize": {
+        "width": 56,
+        "height": 54
+      },
+      "backPicYOffset": 4,
+      "backAnimId": "v-stretch",
+      "palette": "gMonPalette_Dartrix",
+      "shinyPalette": "gMonShinyPalette_Dartrix",
+      "iconSprite": "gMonIcon_Dartrix",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sDartrixTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "34",
+          "species": "decidueye",
+          "conditions": "CONDITIONS({IF_NOT_REGION, REGION_HISUI})"
+        },
+        {
+          "method": "level",
+          "param": "36",
+          "species": "decidueye-hisui",
+          "conditions": "CONDITIONS({IF_REGION, REGION_HISUI})"
+        }
+      ]
+    },
+    "DECIDUEYE": {
+      "baseHP": 78,
+      "baseAttack": 107,
+      "baseDefense": 75,
+      "baseSpeed": 70,
+      "baseSpAttack": 100,
+      "baseSpDefense": 100,
+      "types": [
+        "grass",
+        "ghost"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 265,
+        "gen7-": 239
+      },
+      "evYield_Attack": 3,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "flying"
+      ],
+      "abilities": [
+        "overgrow",
+        "none",
+        "long-reach"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Decidueye",
+      "cryId": "decidueye",
+      "natDexNum": "decidueye",
+      "categoryName": "Arrow Quill",
+      "height": 16,
+      "weight": 366,
+      "description": "Decidueye is cool and cautious.\\nIt fires arrow quills from its wings with\\nsuch precision, they can pierce a pebble\\nat distances of over a hundred yards.",
+      "pokemonScale": 259,
+      "pokemonOffset": 1,
+      "trainerScale": 296,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_Decidueye",
+      "frontPicSize": {
+        "width": 45,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 50
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "shrink-grow-vibrate-fast",
+      "backPic": "gMonBackPic_Decidueye",
+      "backPicSize": {
+        "width": 46,
+        "height": 62
+      },
+      "backPicYOffset": 0,
+      "backAnimId": "shrink-grow-vibrate",
+      "palette": "gMonPalette_Decidueye",
+      "shinyPalette": "gMonShinyPalette_Decidueye",
+      "iconSprite": "gMonIcon_Decidueye",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sDecidueyeTeachableLearnset",
+      "formSpeciesIdTable": "sDecidueyeFormSpeciesIdTable",
+      "forms": {
+        "HISUI": {
+          "baseHP": 88,
+          "baseAttack": 112,
+          "baseDefense": 80,
+          "baseSpeed": 60,
+          "baseSpAttack": 95,
+          "baseSpDefense": 95,
+          "types": [
+            "grass",
+            "fighting"
+          ],
+          "expYield": 265,
+          "abilities": [
+            "overgrow",
+            "none",
+            "scrappy"
+          ],
+          "weight": 370,
+          "description": "The air stored inside the rachises\\nof Decidueye's feathers insulates\\nthe Pok\u00e9mon against Hisui's extreme\\ncold.",
+          "frontPic": "gMonFrontPic_DecidueyeHisui",
+          "frontPicSize": {
+            "width": 64,
+            "height": 64
+          },
+          "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+          "backPic": "gMonBackPic_DecidueyeHisui",
+          "backPicSize": {
+            "width": 64,
+            "height": 64
+          },
+          "palette": "gMonPalette_DecidueyeHisui",
+          "shinyPalette": "gMonShinyPalette_DecidueyeHisui",
+          "iconSprite": "gMonIcon_DecidueyeHisui",
+          "iconPalIndex": 0,
+          "levelUpLearnset": "sDecidueyeHisuiLevelUpLearnset",
+          "teachableLearnset": "sDecidueyeHisuiTeachableLearnset"
+        }
+      }
+    },
+    "LITTEN": {
+      "baseHP": 45,
+      "baseAttack": 65,
+      "baseDefense": 40,
+      "baseSpeed": 70,
+      "baseSpAttack": 60,
+      "baseSpDefense": 40,
+      "types": [
+        "fire"
+      ],
+      "catchRate": 45,
+      "expYield": 64,
+      "evYield_Speed": 1,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "blaze",
+        "none",
+        "intimidate"
+      ],
+      "bodyColor": "red",
+      "speciesName": "Litten",
+      "cryId": "litten",
+      "natDexNum": "litten",
+      "categoryName": "Fire Cat",
+      "height": 4,
+      "weight": 43,
+      "description": "While grooming itself, it builds up fur\\ninside its stomach. It sets the fur alight\\nand spews fiery attacks, which change\\nbased on how it coughs.",
+      "pokemonScale": 491,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Litten",
+      "frontPicSize": {
+        "width": 48,
+        "height": 40
+      },
+      "frontPicYOffset": 12,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-stretch",
+      "backPic": "gMonBackPic_Litten",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 11,
+      "palette": "gMonPalette_Litten",
+      "shinyPalette": "gMonShinyPalette_Litten",
+      "iconSprite": "gMonIcon_Litten",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "fast",
+      "teachableLearnset": "sLittenTeachableLearnset",
+      "eggMoveLearnset": "sLittenEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "17",
+          "species": "torracat"
+        }
+      ]
+    },
+    "TORRACAT": {
+      "baseHP": 65,
+      "baseAttack": 85,
+      "baseDefense": 50,
+      "baseSpeed": 90,
+      "baseSpAttack": 80,
+      "baseSpDefense": 50,
+      "types": [
+        "fire"
+      ],
+      "catchRate": 45,
+      "expYield": 147,
+      "evYield_Speed": 2,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "blaze",
+        "none",
+        "intimidate"
+      ],
+      "bodyColor": "red",
+      "speciesName": "Torracat",
+      "cryId": "torracat",
+      "natDexNum": "torracat",
+      "categoryName": "Fire Cat",
+      "height": 7,
+      "weight": 250,
+      "description": "At its throat, it bears a bell of fire. The\\nbell rings brightly whenever this Pok\u00e9mon\\nspits fire. With a single punch, it can bend\\nan iron bar right over.",
+      "pokemonScale": 365,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Torracat",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-stretch",
+      "backPic": "gMonBackPic_Torracat",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 7,
+      "palette": "gMonPalette_Torracat",
+      "shinyPalette": "gMonShinyPalette_Torracat",
+      "iconSprite": "gMonIcon_Torracat",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "fast",
+      "teachableLearnset": "sTorracatTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "34",
+          "species": "incineroar"
+        }
+      ]
+    },
+    "INCINEROAR": {
+      "baseHP": 95,
+      "baseAttack": 115,
+      "baseDefense": 90,
+      "baseSpeed": 60,
+      "baseSpAttack": 80,
+      "baseSpDefense": 90,
+      "types": [
+        "fire",
+        "dark"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 265,
+        "gen7-": 239
+      },
+      "evYield_Attack": 3,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "blaze",
+        "none",
+        "intimidate"
+      ],
+      "bodyColor": "red",
+      "speciesName": "Incineroar",
+      "cryId": "incineroar",
+      "natDexNum": "incineroar",
+      "categoryName": "Heel",
+      "height": 18,
+      "weight": 830,
+      "description": "This Pok\u00e9mon has a violent, selfish\\ndisposition. If it's not in the mood to\\nlisten, it will ignore its Trainer's orders\\nwith complete nonchalance.",
+      "pokemonScale": 267,
+      "pokemonOffset": 2,
+      "trainerScale": 286,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_Incineroar",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-shake",
+      "backPic": "gMonBackPic_Incineroar",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 4,
+      "palette": "gMonPalette_Incineroar",
+      "shinyPalette": "gMonShinyPalette_Incineroar",
+      "iconSprite": "gMonIcon_Incineroar",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sIncineroarTeachableLearnset"
+    },
+    "POPPLIO": {
+      "baseHP": 50,
+      "baseAttack": 54,
+      "baseDefense": 54,
+      "baseSpeed": 40,
+      "baseSpAttack": 66,
+      "baseSpDefense": 56,
+      "types": [
+        "water"
+      ],
+      "catchRate": 45,
+      "expYield": 64,
+      "evYield_SpAttack": 1,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "water-1",
+        "field"
+      ],
+      "abilities": [
+        "torrent",
+        "none",
+        "liquid-voice"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Popplio",
+      "cryId": "popplio",
+      "natDexNum": "popplio",
+      "categoryName": "Sea Lion",
+      "height": 4,
+      "weight": 75,
+      "description": "This Pok\u00e9mon snorts body fluids from\\nits nose, blowing balloons to smash into\\nits foes. It practices diligently so it can\\nlearn to make big bubbles.",
+      "pokemonScale": 491,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Popplio",
+      "frontPicSize": {
+        "width": 40,
+        "height": 48
+      },
+      "frontPicYOffset": 11,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-squish-and-bounce-slow",
+      "backPic": "gMonBackPic_Popplio",
+      "backPicSize": {
+        "width": 48,
+        "height": 48
+      },
+      "backPicYOffset": 11,
+      "palette": "gMonPalette_Popplio",
+      "shinyPalette": "gMonShinyPalette_Popplio",
+      "iconSprite": "gMonIcon_Popplio",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sPopplioTeachableLearnset",
+      "eggMoveLearnset": "sPopplioEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "17",
+          "species": "brionne"
+        }
+      ]
+    },
+    "BRIONNE": {
+      "baseHP": 60,
+      "baseAttack": 69,
+      "baseDefense": 69,
+      "baseSpeed": 50,
+      "baseSpAttack": 91,
+      "baseSpDefense": 81,
+      "types": [
+        "water"
+      ],
+      "catchRate": 45,
+      "expYield": 147,
+      "evYield_SpAttack": 2,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "water-1",
+        "field"
+      ],
+      "abilities": [
+        "torrent",
+        "none",
+        "liquid-voice"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Brionne",
+      "cryId": "brionne",
+      "natDexNum": "brionne",
+      "categoryName": "Pop Star",
+      "height": 6,
+      "weight": 175,
+      "description": "It cares deeply for its companions.\\nWhen its Trainer is feeling down, it\\nperforms a cheery dance with a sequence\\nof water balloons  to try and help.",
+      "pokemonScale": 422,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Brionne",
+      "frontPicSize": {
+        "width": 48,
+        "height": 56
+      },
+      "frontPicYOffset": 6,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shrink-grow",
+      "backPic": "gMonBackPic_Brionne",
+      "backPicSize": {
+        "width": 48,
+        "height": 56
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Brionne",
+      "shinyPalette": "gMonShinyPalette_Brionne",
+      "iconSprite": "gMonIcon_Brionne",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sBrionneTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "34",
+          "species": "primarina"
+        }
+      ]
+    },
+    "PRIMARINA": {
+      "baseHP": 80,
+      "baseAttack": 74,
+      "baseDefense": 74,
+      "baseSpeed": 60,
+      "baseSpAttack": 126,
+      "baseSpDefense": 116,
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 265,
+        "gen7-": 239
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "water-1",
+        "field"
+      ],
+      "abilities": [
+        "torrent",
+        "none",
+        "liquid-voice"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Primarina",
+      "cryId": "primarina",
+      "natDexNum": "primarina",
+      "categoryName": "Soloist",
+      "height": 18,
+      "weight": 440,
+      "description": "It controls its water balloons with song.\\nThe melody is learned from others of\\nits kind and is passed down from one\\ngeneration to the next.",
+      "pokemonScale": 267,
+      "pokemonOffset": 2,
+      "trainerScale": 286,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_Primarina",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shake-glow-blue-slow",
+      "backPic": "gMonBackPic_Primarina",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 0,
+      "palette": "gMonPalette_Primarina",
+      "shinyPalette": "gMonShinyPalette_Primarina",
+      "iconSprite": "gMonIcon_Primarina",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sPrimarinaTeachableLearnset"
+    },
+    "PIKIPEK": {
+      "baseHP": 35,
+      "baseAttack": 75,
+      "baseDefense": 30,
+      "baseSpeed": 65,
+      "baseSpAttack": 30,
+      "baseSpDefense": 30,
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "catchRate": 255,
+      "expYield": 53,
+      "evYield_Attack": 1,
+      "itemCommon": "ITEM_ORAN_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "flying"
+      ],
+      "abilities": [
+        "keen-eye",
+        "skill-link",
+        "pickup"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Pikipek",
+      "cryId": "pikipek",
+      "natDexNum": "pikipek",
+      "categoryName": "Woodpecker",
+      "height": 3,
+      "weight": 12,
+      "description": "This Pok\u00e9mon feeds on berries, whose\\nleftover seeds become the ammunition for\\nthe attacks it fires off from its mouth.\\nIt uses holes in trees for nesting.",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Pikipek",
+      "frontPicSize": {
+        "width": 29,
+        "height": 40
+      },
+      "frontPicYOffset": 10,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 15
+        },
+        {
+          "frame": 1,
+          "duration": 20
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "v-squish-and-bounce",
+      "backPic": "gMonBackPic_Pikipek",
+      "backPicSize": {
+        "width": 48,
+        "height": 48
+      },
+      "backPicYOffset": 8,
+      "backAnimId": "shrink-grow",
+      "palette": "gMonPalette_Pikipek",
+      "shinyPalette": "gMonShinyPalette_Pikipek",
+      "iconSprite": "gMonIcon_Pikipek",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sPikipekTeachableLearnset",
+      "eggMoveLearnset": "sPikipekEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "14",
+          "species": "trumbeak"
+        }
+      ]
+    },
+    "TRUMBEAK": {
+      "baseHP": 55,
+      "baseAttack": 85,
+      "baseDefense": 50,
+      "baseSpeed": 75,
+      "baseSpAttack": 40,
+      "baseSpDefense": 50,
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "catchRate": 120,
+      "expYield": 124,
+      "evYield_Attack": 2,
+      "itemRare": "ITEM_SITRUS_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "flying"
+      ],
+      "abilities": [
+        "keen-eye",
+        "skill-link",
+        "pickup"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Trumbeak",
+      "cryId": "trumbeak",
+      "natDexNum": "trumbeak",
+      "categoryName": "Bugle Beak",
+      "height": 6,
+      "weight": 148,
+      "description": "By bending its beak, it can produce a\\nvariety of calls and brand itself a noisy\\nnuisance for its neighbors. It eats\\nberries and stores their seeds in its beak.",
+      "pokemonScale": 422,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Trumbeak",
+      "frontPicSize": {
+        "width": 44,
+        "height": 53
+      },
+      "frontPicYOffset": 4,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 15
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 30
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "h-stretch",
+      "backPic": "gMonBackPic_Trumbeak",
+      "backPicSize": {
+        "width": 56,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "backAnimId": "h-stretch",
+      "palette": "gMonPalette_Trumbeak",
+      "shinyPalette": "gMonShinyPalette_Trumbeak",
+      "iconSprite": "gMonIcon_Trumbeak",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sTrumbeakTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "28",
+          "species": "toucannon"
+        }
+      ]
+    },
+    "TOUCANNON": {
+      "baseHP": 80,
+      "baseAttack": 120,
+      "baseDefense": 75,
+      "baseSpeed": 60,
+      "baseSpAttack": 75,
+      "baseSpDefense": 75,
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 243,
+        "gen7-": 218
+      },
+      "evYield_Attack": 3,
+      "itemCommon": "ITEM_SITRUS_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "flying"
+      ],
+      "abilities": [
+        "keen-eye",
+        "skill-link",
+        "sheer-force"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Toucannon",
+      "cryId": "toucannon",
+      "natDexNum": "toucannon",
+      "categoryName": "Cannon",
+      "height": 11,
+      "weight": 260,
+      "description": "When it battles, within its beak, its\\ninternal gases ignite, explosively\\nlaunching seeds with enough power to\\npulverize boulders.",
+      "pokemonScale": 320,
+      "pokemonOffset": 7,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Toucannon",
+      "frontPicSize": {
+        "width": 59,
+        "height": 59
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 40
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "shake-glow-red-slow",
+      "backPic": "gMonBackPic_Toucannon",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "backAnimId": "shrink-grow-vibrate",
+      "palette": "gMonPalette_Toucannon",
+      "shinyPalette": "gMonShinyPalette_Toucannon",
+      "iconSprite": "gMonIcon_Toucannon",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sToucannonTeachableLearnset"
+    },
+    "YUNGOOS": {
+      "baseHP": 48,
+      "baseAttack": 70,
+      "baseDefense": 30,
+      "baseSpeed": 45,
+      "baseSpAttack": 30,
+      "baseSpDefense": 30,
+      "types": [
+        "normal"
+      ],
+      "catchRate": 255,
+      "expYield": 51,
+      "evYield_Attack": 1,
+      "itemRare": "ITEM_PECHA_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "stakeout",
+        "strong-jaw",
+        "adaptability"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Yungoos",
+      "cryId": "yungoos",
+      "natDexNum": "yungoos",
+      "categoryName": "Loitering",
+      "height": 4,
+      "weight": 60,
+      "description": "With its sharp fangs, it will bite anything.\\nIt wanders around in a never-ending\\nsearch for food. At dusk, it collapses\\nand falls asleep on the spot.",
+      "pokemonScale": 491,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Yungoos",
+      "frontPicSize": {
+        "width": 64,
+        "height": 40
+      },
+      "frontPicYOffset": 12,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-stretch",
+      "backPic": "gMonBackPic_Yungoos",
+      "backPicSize": {
+        "width": 48,
+        "height": 40
+      },
+      "backPicYOffset": 14,
+      "palette": "gMonPalette_Yungoos",
+      "shinyPalette": "gMonShinyPalette_Yungoos",
+      "iconSprite": "gMonIcon_Yungoos",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "fast",
+      "teachableLearnset": "sYungoosTeachableLearnset",
+      "eggMoveLearnset": "sYungoosEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "20",
+          "species": "gumshoos",
+          "conditions": "CONDITIONS({IF_NOT_TIME, TIME_NIGHT})"
+        }
+      ]
+    },
+    "GUMSHOOS": {
+      "baseHP": 88,
+      "baseAttack": 110,
+      "baseDefense": 60,
+      "baseSpeed": 45,
+      "baseSpAttack": 55,
+      "baseSpDefense": 60,
+      "types": [
+        "normal"
+      ],
+      "catchRate": 127,
+      "expYield": 146,
+      "evYield_Attack": 2,
+      "itemRare": "ITEM_PECHA_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "stakeout",
+        "strong-jaw",
+        "adaptability"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Gumshoos",
+      "cryId": "gumshoos",
+      "natDexNum": "gumshoos",
+      "categoryName": "Stakeout",
+      "height": 7,
+      "weight": 142,
+      "description": "gGumshoosPokedexText",
+      "pokemonScale": 365,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Gumshoos",
+      "frontPicSize": {
+        "width": 56,
+        "height": 56
+      },
+      "frontPicYOffset": 5,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-shake",
+      "backPic": "gMonBackPic_Gumshoos",
+      "backPicSize": {
+        "width": 48,
+        "height": 56
+      },
+      "backPicYOffset": 7,
+      "palette": "gMonPalette_Gumshoos",
+      "shinyPalette": "gMonShinyPalette_Gumshoos",
+      "iconSprite": "gMonIcon_Gumshoos",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sGumshoosTeachableLearnset",
+      "formSpeciesIdTable": "sGumshoosFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "abilities": [
+            "adaptability",
+            "none",
+            "none"
+          ],
+          "height": 14,
+          "weight": 600,
+          "pokemonJumpType": "none",
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sGumshoosLevelUpLearnset"
+        }
+      }
+    },
+    "GRUBBIN": {
+      "baseHP": 47,
+      "baseAttack": 62,
+      "baseDefense": 45,
+      "baseSpeed": 46,
+      "baseSpAttack": 55,
+      "baseSpDefense": 45,
+      "types": [
+        "bug"
+      ],
+      "catchRate": 255,
+      "expYield": 60,
+      "evYield_Attack": 1,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "bug"
+      ],
+      "abilities": [
+        "swarm",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Grubbin",
+      "cryId": "grubbin",
+      "natDexNum": "grubbin",
+      "categoryName": "Larva",
+      "height": 4,
+      "weight": 44,
+      "description": "They often gather near places frequented\\nby electric Pok\u00e9mon in order to avoid being\\nattacked by bird Pok\u00e9mon, though it\\nnormally lives underground.",
+      "pokemonScale": 491,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Grubbin",
+      "frontPicSize": {
+        "width": 48,
+        "height": 32
+      },
+      "frontPicYOffset": 17,
+      "frontAnimFrames": "sAnims_Vikavolt",
+      "frontAnimId": "h-slide",
+      "backPic": "gMonBackPic_Grubbin",
+      "backPicSize": {
+        "width": 64,
+        "height": 32
+      },
+      "backPicYOffset": 16,
+      "palette": "gMonPalette_Grubbin",
+      "shinyPalette": "gMonShinyPalette_Grubbin",
+      "iconSprite": "gMonIcon_Grubbin",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sGrubbinTeachableLearnset",
+      "eggMoveLearnset": "sGrubbinEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "20",
+          "species": "charjabug"
+        }
+      ]
+    },
+    "CHARJABUG": {
+      "baseHP": 57,
+      "baseAttack": 82,
+      "baseDefense": 95,
+      "baseSpeed": 36,
+      "baseSpAttack": 55,
+      "baseSpDefense": 75,
+      "types": [
+        "bug",
+        "electric"
+      ],
+      "catchRate": 120,
+      "expYield": 140,
+      "evYield_Defense": 2,
+      "itemRare": "ITEM_CELL_BATTERY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "bug"
+      ],
+      "abilities": [
+        "battery",
+        "none",
+        "none"
+      ],
+      "bodyColor": "green",
+      "speciesName": "Charjabug",
+      "cryId": "charjabug",
+      "natDexNum": "charjabug",
+      "categoryName": "Battery",
+      "height": 5,
+      "weight": 105,
+      "description": "From the food it digests, it generates\\nelectricity, and it stores this energy in\\nits electric sac. On camping trips, people\\nare grateful to have one around.",
+      "pokemonScale": 432,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Charjabug",
+      "frontPicSize": {
+        "width": 40,
+        "height": 40
+      },
+      "frontPicYOffset": 14,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 15
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "shake-flash-yellow-slow",
+      "backPic": "gMonBackPic_Charjabug",
+      "backPicSize": {
+        "width": 64,
+        "height": 40
+      },
+      "backPicYOffset": 15,
+      "palette": "gMonPalette_Charjabug",
+      "shinyPalette": "gMonShinyPalette_Charjabug",
+      "iconSprite": "gMonIcon_Charjabug",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sCharjabugTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "0",
+          "species": "vikavolt",
+          "conditions": "CONDITIONS({IF_IN_MAPSEC, MAPSEC_NEW_MAUVILLE})"
+        },
+        {
+          "method": "item",
+          "param": "ITEM_THUNDER_STONE",
+          "species": "vikavolt"
+        },
+        {
+          "method": "none",
+          "param": "0",
+          "species": "vikavolt-totem"
+        }
+      ]
+    },
+    "VIKAVOLT": {
+      "baseHP": 77,
+      "baseAttack": 70,
+      "baseDefense": 90,
+      "baseSpeed": 43,
+      "baseSpAttack": 145,
+      "baseSpDefense": 75,
+      "types": [
+        "bug",
+        "electric"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 250,
+        "gen7-": 225
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "bug"
+      ],
+      "abilities": [
+        "levitate",
+        "none",
+        "none"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Vikavolt",
+      "cryId": "vikavolt",
+      "natDexNum": "vikavolt",
+      "categoryName": "Stag Beetle",
+      "height": 15,
+      "weight": 450,
+      "description": "gVikavoltPokedexText",
+      "pokemonScale": 268,
+      "pokemonOffset": 2,
+      "trainerScale": 271,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Vikavolt",
+      "frontPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "frontPicYOffset": 3,
+      "frontAnimFrames": "sAnims_Vikavolt",
+      "frontAnimId": "bounce-rotate-to-sides",
+      "enemyMonElevation": 8,
+      "backPic": "gMonBackPic_Vikavolt",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 7,
+      "palette": "gMonPalette_Vikavolt",
+      "shinyPalette": "gMonShinyPalette_Vikavolt",
+      "iconSprite": "gMonIcon_Vikavolt",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sVikavoltTeachableLearnset",
+      "formSpeciesIdTable": "sVikavoltFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "expYield": 225,
+          "height": 26,
+          "weight": 1475,
+          "frontAnimFrames": [
+            {
+              "frame": 0,
+              "duration": 10
+            },
+            {
+              "frame": 1,
+              "duration": 10
+            },
+            {
+              "frame": 0,
+              "duration": 10
+            },
+            {
+              "frame": 1,
+              "duration": 10
+            },
+            {
+              "frame": 0,
+              "duration": 10
+            },
+            {
+              "frame": 1,
+              "duration": 10
+            },
+            {
+              "frame": 0,
+              "duration": 1
+            }
+          ],
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sVikavoltLevelUpLearnset"
+        }
+      }
+    },
+    "CRABRAWLER": {
+      "baseHP": 47,
+      "baseAttack": 82,
+      "baseDefense": 57,
+      "baseSpeed": 63,
+      "baseSpAttack": 42,
+      "baseSpDefense": 47,
+      "types": [
+        "fighting"
+      ],
+      "catchRate": 225,
+      "expYield": 68,
+      "evYield_Attack": 1,
+      "itemRare": "ITEM_ASPEAR_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "water-3"
+      ],
+      "abilities": [
+        "hyper-cutter",
+        "iron-fist",
+        "anger-point"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Crabrawler",
+      "cryId": "crabrawler",
+      "natDexNum": "crabrawler",
+      "categoryName": "Boxing",
+      "height": 6,
+      "weight": 70,
+      "description": "While guarding its weak points with its\\npincers, it looks for an opening and\\nunleashes punches. When it loses, it\\nfoams at the mouth and faints.",
+      "pokemonScale": 422,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Crabrawler",
+      "frontPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "frontPicYOffset": 7,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-shake",
+      "backPic": "gMonBackPic_Crabrawler",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Crabrawler",
+      "shinyPalette": "gMonShinyPalette_Crabrawler",
+      "iconSprite": "gMonIcon_Crabrawler",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sCrabrawlerTeachableLearnset",
+      "eggMoveLearnset": "sCrabrawlerEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "0",
+          "species": "crabominable",
+          "conditions": "CONDITIONS({IF_IN_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM})"
+        },
+        {
+          "method": "item",
+          "param": "ITEM_ICE_STONE",
+          "species": "crabominable"
+        }
+      ]
+    },
+    "CRABOMINABLE": {
+      "baseHP": 97,
+      "baseAttack": 132,
+      "baseDefense": 77,
+      "baseSpeed": 43,
+      "baseSpAttack": 62,
+      "baseSpDefense": 67,
+      "types": [
+        "fighting",
+        "ice"
+      ],
+      "catchRate": 60,
+      "expYield": 167,
+      "evYield_Attack": 2,
+      "itemRare": "ITEM_CHERI_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "water-3"
+      ],
+      "abilities": [
+        "hyper-cutter",
+        "iron-fist",
+        "anger-point"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Crabominable",
+      "cryId": "crabominable",
+      "natDexNum": "crabominable",
+      "categoryName": "Woolly Crab",
+      "height": 17,
+      "weight": 1800,
+      "description": "It aimed for the top but got lost and\\nended up on a snowy mountain. Being forced\\nto endure the cold, this Pok\u00e9mon evolved\\nand grew thick fur.",
+      "pokemonScale": 259,
+      "pokemonOffset": 0,
+      "trainerScale": 290,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_Crabominable",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shrink-grow-vibrate-fast",
+      "backPic": "gMonBackPic_Crabominable",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 3,
+      "palette": "gMonPalette_Crabominable",
+      "shinyPalette": "gMonShinyPalette_Crabominable",
+      "iconSprite": "gMonIcon_Crabominable",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sCrabominableTeachableLearnset"
+    },
+    "ORICORIO_PAU": {
+      "baseHP": 75,
+      "baseAttack": 70,
+      "baseDefense": 70,
+      "baseSpeed": 93,
+      "baseSpAttack": 98,
+      "baseSpDefense": 70,
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "catchRate": 45,
+      "expYield": 167,
+      "evYield_SpAttack": 2,
+      "itemRare": "ITEM_PINK_NECTAR",
+      "genderRatio": {
+        "female": 75.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "flying"
+      ],
+      "abilities": [
+        "dancer",
+        "none",
+        "none"
+      ],
+      "bodyColor": "pink",
+      "speciesName": "Oricorio",
+      "cryId": "oricorio-pau",
+      "natDexNum": "oricorio",
+      "categoryName": "Dancing",
+      "height": 6,
+      "weight": 34,
+      "description": "This form of Oricorio has sipped\\npink nectar. It elevates its mind with\\nthe gentle steps of its dance, then\\nunleashes its psychic energy.",
+      "pokemonScale": 422,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_OricorioPau",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 3,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "backPic": "gMonBackPic_OricorioPau",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 0,
+      "palette": "gMonPalette_OricorioPau",
+      "shinyPalette": "gMonShinyPalette_OricorioPau",
+      "iconSprite": "gMonIcon_OricorioPau",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sOricorioTeachableLearnset",
+      "eggMoveLearnset": "sOricorioEggMoveLearnset",
+      "formSpeciesIdTable": "sOricorioFormSpeciesIdTable",
+      "formChangeTable": "sOricorioFormChangeTable",
+      "forms": {
+        "ORICORIO_BAILE": {
+          "types": [
+            "fire",
+            "flying"
+          ],
+          "itemRare": "ITEM_RED_NECTAR",
+          "bodyColor": "red",
+          "cryId": "oricorio-baile",
+          "description": "It wins the hearts of its enemies\\nwith its passionate dancing and then\\nuses the opening it creates to\\nburn them up with blazing flames.",
+          "frontPic": "gMonFrontPic_OricorioBaile",
+          "frontPicYOffset": 2,
+          "frontAnimId": "concave-arc-small",
+          "backPic": "gMonBackPic_OricorioBaile",
+          "palette": "gMonPalette_OricorioBaile",
+          "shinyPalette": "gMonShinyPalette_OricorioBaile",
+          "iconSprite": "gMonIcon_OricorioBaile",
+          "iconPalIndex": 0
+        },
+        "ORICORIO_POM_POM": {
+          "types": [
+            "electric",
+            "flying"
+          ],
+          "itemRare": "ITEM_YELLOW_NECTAR",
+          "bodyColor": "yellow",
+          "cryId": "oricorio-pom-pom",
+          "description": "This form of Oricorio has sipped\\nyellow nectar. It uses nimble steps to\\napproach opponents, then knocks\\nthem out with electric punches.",
+          "frontPic": "gMonFrontPic_OricorioPomPom",
+          "frontPicSize": {
+            "width": 56,
+            "height": 56
+          },
+          "frontPicYOffset": 5,
+          "backPic": "gMonBackPic_OricorioPomPom",
+          "palette": "gMonPalette_OricorioPomPom",
+          "shinyPalette": "gMonShinyPalette_OricorioPomPom",
+          "iconSprite": "gMonIcon_OricorioPomPom"
+        },
+        "ORICORIO_SENSU": {
+          "types": [
+            "ghost",
+            "flying"
+          ],
+          "itemRare": "ITEM_PURPLE_NECTAR",
+          "bodyColor": "purple",
+          "cryId": "oricorio-sensu",
+          "description": "It charms its opponents with its\\nrefined dancing. When they let their\\nguard down, it places a curse on\\nthem that will bring on their demise.",
+          "frontPic": "gMonFrontPic_OricorioSensu",
+          "frontPicSize": {
+            "width": 64,
+            "height": 56
+          },
+          "frontPicYOffset": 4,
+          "backPic": "gMonBackPic_OricorioSensu",
+          "palette": "gMonPalette_OricorioSensu",
+          "shinyPalette": "gMonShinyPalette_OricorioSensu",
+          "iconSprite": "gMonIcon_OricorioSensu",
+          "iconPalIndex": 0
+        }
+      }
+    },
+    "CUTIEFLY": {
+      "baseHP": 40,
+      "baseAttack": 45,
+      "baseDefense": 40,
+      "baseSpeed": 84,
+      "baseSpAttack": 55,
+      "baseSpDefense": 40,
+      "types": [
+        "bug",
+        "fairy"
+      ],
+      "catchRate": 190,
+      "expYield": 61,
+      "evYield_Speed": 1,
+      "itemCommon": "ITEM_HONEY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "bug",
+        "fairy"
+      ],
+      "abilities": [
+        "honey-gather",
+        "shield-dust",
+        "sweet-veil"
+      ],
+      "bodyColor": "yellow",
+      "speciesName": "Cutiefly",
+      "cryId": "cutiefly",
+      "natDexNum": "cutiefly",
+      "categoryName": "Bee Fly",
+      "height": 1,
+      "weight": 2,
+      "description": "Myriads of Cutiefly flutter above the\\nheads of people who have auras resembling\\nthose of flowers. It can identify which\\nflowers are about to bloom.",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Cutiefly",
+      "frontPicSize": {
+        "width": 33,
+        "height": 35
+      },
+      "frontPicYOffset": 16,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 35
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 1
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "h-slide-wobble",
+      "enemyMonElevation": 10,
+      "backPic": "gMonBackPic_Cutiefly",
+      "backPicSize": {
+        "width": 56,
+        "height": 48
+      },
+      "backPicYOffset": 15,
+      "backAnimId": "concave-arc-large",
+      "palette": "gMonPalette_Cutiefly",
+      "shinyPalette": "gMonShinyPalette_Cutiefly",
+      "iconSprite": "gMonIcon_Cutiefly",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sCutieflyTeachableLearnset",
+      "eggMoveLearnset": "sCutieflyEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "25",
+          "species": "ribombee"
+        },
+        {
+          "method": "none",
+          "param": "0",
+          "species": "ribombee-totem"
+        }
+      ]
+    },
+    "RIBOMBEE": {
+      "baseHP": 60,
+      "baseAttack": 55,
+      "baseDefense": 60,
+      "baseSpeed": 124,
+      "baseSpAttack": 95,
+      "baseSpDefense": 70,
+      "types": [
+        "bug",
+        "fairy"
+      ],
+      "catchRate": 75,
+      "expYield": 162,
+      "evYield_Speed": 2,
+      "itemCommon": "ITEM_HONEY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "bug",
+        "fairy"
+      ],
+      "abilities": [
+        "honey-gather",
+        "shield-dust",
+        "sweet-veil"
+      ],
+      "bodyColor": "yellow",
+      "speciesName": "Ribombee",
+      "cryId": "ribombee",
+      "natDexNum": "ribombee",
+      "categoryName": "Bee Fly",
+      "height": 2,
+      "weight": 5,
+      "description": "gRibombeePokedexText",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Ribombee",
+      "frontPicSize": {
+        "width": 32,
+        "height": 47
+      },
+      "frontPicYOffset": 5,
+      "frontAnimFrames": "sAnims_Ribombee",
+      "frontAnimId": "convex-double-arc-twice",
+      "enemyMonElevation": 6,
+      "backPic": "gMonBackPic_Ribombee",
+      "backPicSize": {
+        "width": 56,
+        "height": 48
+      },
+      "backPicYOffset": 11,
+      "backAnimId": "convex-double-arc",
+      "palette": "gMonPalette_Ribombee",
+      "shinyPalette": "gMonShinyPalette_Ribombee",
+      "iconSprite": "gMonIcon_Ribombee",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sRibombeeTeachableLearnset",
+      "formSpeciesIdTable": "sRibombeeFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "itemRare": "ITEM_HONEY",
+          "abilities": [
+            "sweet-veil",
+            "none",
+            "none"
+          ],
+          "height": 4,
+          "weight": 20,
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sRibombeeLevelUpLearnset"
+        }
+      }
+    },
+    "ROCKRUFF": {
+      "baseHP": 45,
+      "baseAttack": 65,
+      "baseDefense": 40,
+      "baseSpeed": 60,
+      "baseSpAttack": 30,
+      "baseSpDefense": 40,
+      "types": [
+        "rock"
+      ],
+      "catchRate": 190,
+      "expYield": 56,
+      "evYield_Attack": 1,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "keen-eye",
+        "vital-spirit",
+        "steadfast"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Rockruff",
+      "cryId": "rockruff",
+      "natDexNum": "rockruff",
+      "categoryName": "Puppy",
+      "height": 5,
+      "weight": 92,
+      "description": "gRockruffPokedexText",
+      "pokemonScale": 432,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Rockruff",
+      "frontPicSize": {
+        "width": 37,
+        "height": 39
+      },
+      "frontPicYOffset": 11,
+      "frontAnimFrames": "sAnims_Rockruff",
+      "frontAnimId": "v-stretch",
+      "backPic": "gMonBackPic_Rockruff",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 7,
+      "backAnimId": "v-stretch",
+      "palette": "gMonPalette_Rockruff",
+      "shinyPalette": "gMonShinyPalette_Rockruff",
+      "iconSprite": "gMonIcon_Rockruff",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sRockruffTeachableLearnset",
+      "eggMoveLearnset": "sRockruffEggMoveLearnset",
+      "formSpeciesIdTable": "sRockruffFormSpeciesIdTable",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "25",
+          "species": "lycanroc-midday",
+          "conditions": "CONDITIONS({IF_NOT_TIME, TIME_NIGHT})"
+        },
+        {
+          "method": "level",
+          "param": "25",
+          "species": "lycanroc-midnight",
+          "conditions": "CONDITIONS({IF_TIME, TIME_NIGHT})"
+        }
+      ],
+      "forms": {
+        "OWN_TEMPO": {
+          "abilities": [
+            "own-tempo",
+            "none",
+            "none"
+          ],
+          "frontPicSize": {
+            "width": 40,
+            "height": 48
+          },
+          "evolutions": [
+            {
+              "method": "level",
+              "param": "25",
+              "species": "lycanroc-dusk",
+              "conditions": "CONDITIONS({IF_TIME, TIME_EVENING})"
+            }
+          ]
+        }
+      }
+    },
+    "LYCANROC_DUSK": {
+      "baseHP": 75,
+      "baseAttack": 117,
+      "baseDefense": 65,
+      "baseSpeed": 110,
+      "baseSpAttack": 55,
+      "baseSpDefense": 65,
+      "types": [
+        "rock"
+      ],
+      "catchRate": 90,
+      "expYield": 170,
+      "evYield_Attack": 2,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "tough-claws",
+        "none",
+        "none"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Lycanroc",
+      "cryId": "lycanroc-dusk",
+      "natDexNum": "lycanroc",
+      "categoryName": "Wolf",
+      "height": 8,
+      "weight": 250,
+      "description": "These Pok\u00e9mon have both calm and\\nferocious qualities. It's said that\\nthis form of Lycanroc is the most\\ntroublesome to raise.",
+      "pokemonScale": 366,
+      "pokemonOffset": 7,
+      "trainerScale": 257,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_LycanrocDusk",
+      "frontPicSize": {
+        "width": 57,
+        "height": 58
+      },
+      "frontPicYOffset": 6,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 40
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "v-shake",
+      "backPic": "gMonBackPic_LycanrocDusk",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "backAnimId": "v-shake",
+      "palette": "gMonPalette_LycanrocDusk",
+      "shinyPalette": "gMonShinyPalette_LycanrocDusk",
+      "iconSprite": "gMonIcon_LycanrocDusk",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sLycanrocDuskTeachableLearnset",
+      "formSpeciesIdTable": "sLycanrocFormSpeciesIdTable",
+      "forms": {
+        "LYCANROC_MIDDAY": {
+          "baseAttack": 115,
+          "baseSpeed": 112,
+          "abilities": [
+            "keen-eye",
+            "sand-rush",
+            "steadfast"
+          ],
+          "cryId": "lycanroc-midday",
+          "description": "It has a calm and collected\\ndemeanor. It swiftly closes in on its prey,\\nthen slices them with the rocks in\\nits mane.",
+          "frontPic": "gMonFrontPic_LycanrocMidday",
+          "frontPicSize": {
+            "width": 57,
+            "height": 53
+          },
+          "frontPicYOffset": 5,
+          "backPic": "gMonBackPic_LycanrocMidday",
+          "backPicYOffset": 7,
+          "palette": "gMonPalette_LycanrocMidday",
+          "shinyPalette": "gMonShinyPalette_LycanrocMidday",
+          "iconSprite": "gMonIcon_LycanrocMidday",
+          "iconPalIndex": 2,
+          "teachableLearnset": "sLycanrocMiddayTeachableLearnset"
+        },
+        "LYCANROC_MIDNIGHT": {
+          "baseHP": 85,
+          "baseAttack": 115,
+          "baseDefense": 75,
+          "baseSpeed": 82,
+          "baseSpDefense": 75,
+          "abilities": [
+            "keen-eye",
+            "vital-spirit",
+            "no-guard"
+          ],
+          "bodyColor": "red",
+          "cryId": "lycanroc-midnight",
+          "height": 11,
+          "description": "This Pok\u00e9mon uses its rocky mane\\nto slash any who approach. It will\\neven disobey its Trainer if it dislikes\\nthe orders it was given.",
+          "frontPic": "gMonFrontPic_LycanrocMidnight",
+          "frontPicSize": {
+            "width": 56,
+            "height": 61
+          },
+          "frontPicYOffset": 0,
+          "frontAnimFrames": [
+            {
+              "frame": 1,
+              "duration": 30
+            },
+            {
+              "frame": 0,
+              "duration": 5
+            }
+          ],
+          "frontAnimId": "shrink-grow-vibrate-slow",
+          "backPic": "gMonBackPic_LycanrocMidnight",
+          "backPicYOffset": 7,
+          "backAnimId": "shrink-grow-vibrate",
+          "palette": "gMonPalette_LycanrocMidnight",
+          "shinyPalette": "gMonShinyPalette_LycanrocMidnight",
+          "iconSprite": "gMonIcon_LycanrocMidnight",
+          "teachableLearnset": "sLycanrocMidnightTeachableLearnset"
+        }
+      }
+    },
+    "WISHIWASHI_SOLO": {
+      "baseHP": 45,
+      "baseAttack": 20,
+      "baseDefense": 20,
+      "baseSpeed": 40,
+      "baseSpAttack": 25,
+      "baseSpDefense": 25,
+      "types": [
+        "water"
+      ],
+      "catchRate": 60,
+      "expYield": 61,
+      "evYield_HP": 1,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "fast",
+      "eggGroups": [
+        "water-2"
+      ],
+      "abilities": [
+        "schooling",
+        "none",
+        "none"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Wishiwashi",
+      "cryId": "wishiwashi-solo",
+      "natDexNum": "wishiwashi",
+      "categoryName": "Small Fry",
+      "height": 2,
+      "weight": 3,
+      "description": "Individually, they're incredibly\\nweak. It's by gathering up into\\nschools that they're able to confront\\nopponents.",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_WishiwashiSolo",
+      "frontPicSize": {
+        "width": 40,
+        "height": 24
+      },
+      "frontPicYOffset": 20,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-slide-wobble-small",
+      "enemyMonElevation": 12,
+      "backPic": "gMonBackPic_WishiwashiSolo",
+      "backPicSize": {
+        "width": 56,
+        "height": 32
+      },
+      "backPicYOffset": 18,
+      "palette": "gMonPalette_WishiwashiSolo",
+      "shinyPalette": "gMonShinyPalette_WishiwashiSolo",
+      "iconSprite": "gMonIcon_WishiwashiSolo",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sWishiwashiTeachableLearnset",
+      "eggMoveLearnset": "sWishiwashiEggMoveLearnset",
+      "formSpeciesIdTable": "sWishiwashiFormSpeciesIdTable",
+      "formChangeTable": "sWishiwashiFormChangeTable",
+      "forms": {
+        "WISHIWASHI_SCHOOL": {
+          "baseAttack": 140,
+          "baseDefense": 130,
+          "baseSpeed": 30,
+          "baseSpAttack": 140,
+          "baseSpDefense": 135,
+          "expYield": 217,
+          "cryId": "wishiwashi-school",
+          "height": 82,
+          "weight": 786,
+          "description": "When facing tough opponents, they\\nget into formation. But if they get\\nwounded in battle, they'll scatter\\nand become solitary again.",
+          "frontPic": "gMonFrontPic_WishiwashiSchool",
+          "frontPicSize": {
+            "width": 64,
+            "height": 64
+          },
+          "frontPicYOffset": 4,
+          "backPic": "gMonBackPic_WishiwashiSchool",
+          "backPicSize": {
+            "width": 64,
+            "height": 56
+          },
+          "backPicYOffset": 5,
+          "palette": "gMonPalette_WishiwashiSchool",
+          "shinyPalette": "gMonShinyPalette_WishiwashiSchool",
+          "iconSprite": "gMonIcon_WishiwashiSchool",
+          "iconPalIndex": 0
+        }
+      }
+    },
+    "MAREANIE": {
+      "baseHP": 50,
+      "baseAttack": 53,
+      "baseDefense": 62,
+      "baseSpeed": 45,
+      "baseSpAttack": 43,
+      "baseSpDefense": 52,
+      "types": [
+        "poison",
+        "water"
+      ],
+      "catchRate": 190,
+      "expYield": 61,
+      "evYield_Defense": 1,
+      "itemRare": "ITEM_POISON_BARB",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "water-1"
+      ],
+      "abilities": [
+        "merciless",
+        "limber",
+        "regenerator"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Mareanie",
+      "cryId": "mareanie",
+      "natDexNum": "mareanie",
+      "categoryName": "Brutal Star",
+      "height": 4,
+      "weight": 80,
+      "description": "It's found crawling on beaches and\\nseafloors. The coral that grows on\\nCorsola's head is as good as a five-star\\nbanquet to this Pok\u00e9mon.",
+      "pokemonScale": 491,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Mareanie",
+      "frontPicSize": {
+        "width": 48,
+        "height": 40
+      },
+      "frontPicYOffset": 14,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "glow-purple",
+      "backPic": "gMonBackPic_Mareanie",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 15,
+      "palette": "gMonPalette_Mareanie",
+      "shinyPalette": "gMonShinyPalette_Mareanie",
+      "iconSprite": "gMonIcon_Mareanie",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sMareanieTeachableLearnset",
+      "eggMoveLearnset": "sMareanieEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "38",
+          "species": "toxapex"
+        }
+      ]
+    },
+    "TOXAPEX": {
+      "baseHP": 50,
+      "baseAttack": 63,
+      "baseDefense": 152,
+      "baseSpeed": 35,
+      "baseSpAttack": 53,
+      "baseSpDefense": 142,
+      "types": [
+        "poison",
+        "water"
+      ],
+      "catchRate": 75,
+      "expYield": 173,
+      "evYield_Defense": 2,
+      "itemRare": "ITEM_POISON_BARB",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "water-1"
+      ],
+      "abilities": [
+        "merciless",
+        "limber",
+        "regenerator"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Toxapex",
+      "cryId": "toxapex",
+      "natDexNum": "toxapex",
+      "categoryName": "Brutal Star",
+      "height": 7,
+      "weight": 145,
+      "description": "Those attacked by Toxapex's poison will\\nsuffer intense pain for three days and\\nthree nights. Post-recovery, there will be\\nsome aftereffects.",
+      "pokemonScale": 365,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Toxapex",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shake-glow-purple-slow",
+      "backPic": "gMonBackPic_Toxapex",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 8,
+      "palette": "gMonPalette_Toxapex",
+      "shinyPalette": "gMonShinyPalette_Toxapex",
+      "iconSprite": "gMonIcon_Toxapex",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sToxapexTeachableLearnset"
+    },
+    "MUDBRAY": {
+      "baseHP": 70,
+      "baseAttack": 100,
+      "baseDefense": 70,
+      "baseSpeed": 45,
+      "baseSpAttack": 45,
+      "baseSpDefense": 55,
+      "types": [
+        "ground"
+      ],
+      "catchRate": 190,
+      "expYield": 77,
+      "evYield_Attack": 1,
+      "itemRare": "ITEM_LIGHT_CLAY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "own-tempo",
+        "stamina",
+        "inner-focus"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Mudbray",
+      "cryId": "mudbray",
+      "natDexNum": "mudbray",
+      "categoryName": "Donkey",
+      "height": 10,
+      "weight": 1100,
+      "description": "The mud stuck to Mudbray's hooves\\nenhances its grip and its powerful running\\ngait. Eating dirt, making mud, and playing\\nin the mire form its daily routine.",
+      "pokemonScale": 305,
+      "pokemonOffset": 7,
+      "trainerScale": 257,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Mudbray",
+      "frontPicSize": {
+        "width": 48,
+        "height": 56
+      },
+      "frontPicYOffset": 7,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-shake",
+      "backPic": "gMonBackPic_Mudbray",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 8,
+      "palette": "gMonPalette_Mudbray",
+      "shinyPalette": "gMonShinyPalette_Mudbray",
+      "iconSprite": "gMonIcon_Mudbray",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sMudbrayTeachableLearnset",
+      "eggMoveLearnset": "sMudbrayEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "30",
+          "species": "mudsdale"
+        }
+      ]
+    },
+    "MUDSDALE": {
+      "baseHP": 100,
+      "baseAttack": 125,
+      "baseDefense": 100,
+      "baseSpeed": 35,
+      "baseSpAttack": 55,
+      "baseSpDefense": 85,
+      "types": [
+        "ground"
+      ],
+      "catchRate": 60,
+      "expYield": 175,
+      "evYield_Attack": 2,
+      "itemRare": "ITEM_LIGHT_CLAY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "own-tempo",
+        "stamina",
+        "inner-focus"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Mudsdale",
+      "cryId": "mudsdale",
+      "natDexNum": "mudsdale",
+      "categoryName": "Draft Horse",
+      "height": 25,
+      "weight": 9200,
+      "description": "Its heavy, mud-covered kicks are its\\nbest means of attack, and it can reduce\\nlarge trucks to scrap without breaking\\na sweat.",
+      "pokemonScale": 257,
+      "pokemonOffset": 10,
+      "trainerScale": 423,
+      "trainerOffset": 8,
+      "frontPic": "gMonFrontPic_Mudsdale",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-shake-twice",
+      "backPic": "gMonBackPic_Mudsdale",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 5,
+      "palette": "gMonPalette_Mudsdale",
+      "shinyPalette": "gMonShinyPalette_Mudsdale",
+      "iconSprite": "gMonIcon_Mudsdale",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sMudsdaleTeachableLearnset"
+    },
+    "DEWPIDER": {
+      "baseHP": 38,
+      "baseAttack": 40,
+      "baseDefense": 52,
+      "baseSpeed": 27,
+      "baseSpAttack": 40,
+      "baseSpDefense": 72,
+      "types": [
+        "water",
+        "bug"
+      ],
+      "catchRate": 200,
+      "expYield": 54,
+      "evYield_SpDefense": 1,
+      "itemRare": "ITEM_MYSTIC_WATER",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "water-1",
+        "bug"
+      ],
+      "abilities": [
+        "water-bubble",
+        "none",
+        "water-absorb"
+      ],
+      "bodyColor": "green",
+      "speciesName": "Dewpider",
+      "cryId": "dewpider",
+      "natDexNum": "dewpider",
+      "categoryName": "Water Bubble",
+      "height": 3,
+      "weight": 40,
+      "description": "It crawls onto the land in search of food.\\nWhen it comes across enemies or potential\\nprey, this Pok\u00e9mon smashes its\\nwater-bubble-covered head into them.",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Dewpider",
+      "frontPicSize": {
+        "width": 32,
+        "height": 48
+      },
+      "frontPicYOffset": 13,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 9
+        },
+        {
+          "frame": 0,
+          "duration": 9
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 9
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "shrink-grow",
+      "backPic": "gMonBackPic_Dewpider",
+      "backPicSize": {
+        "width": 40,
+        "height": 48
+      },
+      "backPicYOffset": 8,
+      "palette": "gMonPalette_Dewpider",
+      "shinyPalette": "gMonShinyPalette_Dewpider",
+      "iconSprite": "gMonIcon_Dewpider",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sDewpiderTeachableLearnset",
+      "eggMoveLearnset": "sDewpiderEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "22",
+          "species": "araquanid"
+        },
+        {
+          "method": "none",
+          "param": "0",
+          "species": "araquanid-totem"
+        }
+      ]
+    },
+    "ARAQUANID": {
+      "baseHP": 68,
+      "baseAttack": 70,
+      "baseDefense": 92,
+      "baseSpeed": 42,
+      "baseSpAttack": 50,
+      "baseSpDefense": 132,
+      "types": [
+        "water",
+        "bug"
+      ],
+      "catchRate": 100,
+      "expYield": 159,
+      "evYield_SpDefense": 2,
+      "itemRare": "ITEM_MYSTIC_WATER",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "water-1",
+        "bug"
+      ],
+      "abilities": [
+        "water-bubble",
+        "none",
+        "water-absorb"
+      ],
+      "bodyColor": "green",
+      "speciesName": "Araquanid",
+      "cryId": "araquanid",
+      "natDexNum": "araquanid",
+      "categoryName": "Water Bubble",
+      "height": 18,
+      "weight": 820,
+      "description": "gAraquanidPokedexText",
+      "pokemonScale": 267,
+      "pokemonOffset": 2,
+      "trainerScale": 286,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_Araquanid",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": "sAnims_Araquanid",
+      "frontAnimId": "h-shake",
+      "backPic": "gMonBackPic_Araquanid",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 12,
+      "palette": "gMonPalette_Araquanid",
+      "shinyPalette": "gMonShinyPalette_Araquanid",
+      "iconSprite": "gMonIcon_Araquanid",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sAraquanidTeachableLearnset",
+      "formSpeciesIdTable": "sAraquanidFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "abilities": [
+            "water-bubble",
+            "none",
+            "none"
+          ],
+          "height": 31,
+          "weight": 2175,
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sAraquanidLevelUpLearnset"
+        }
+      }
+    },
+    "FOMANTIS": {
+      "baseHP": 40,
+      "baseAttack": 55,
+      "baseDefense": 35,
+      "baseSpeed": 35,
+      "baseSpAttack": 50,
+      "baseSpDefense": 35,
+      "types": [
+        "grass"
+      ],
+      "catchRate": 190,
+      "expYield": 50,
+      "evYield_Attack": 1,
+      "itemRare": "ITEM_MIRACLE_SEED",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "leaf-guard",
+        "none",
+        "contrary"
+      ],
+      "bodyColor": "pink",
+      "speciesName": "Fomantis",
+      "cryId": "fomantis",
+      "natDexNum": "fomantis",
+      "categoryName": "Sickle Grass",
+      "height": 3,
+      "weight": 15,
+      "description": "During the day, it sleeps and soaks up\\nlight. They give off a sweet and refreshing\\nscent. Cutiefly often gather near the tall\\ngrass where Fomantis are hiding.",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Fomantis",
+      "frontPicSize": {
+        "width": 40,
+        "height": 48
+      },
+      "frontPicYOffset": 11,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-squish-and-bounce-slow",
+      "backPic": "gMonBackPic_Fomantis",
+      "backPicSize": {
+        "width": 40,
+        "height": 56
+      },
+      "backPicYOffset": 5,
+      "palette": "gMonPalette_Fomantis",
+      "shinyPalette": "gMonShinyPalette_Fomantis",
+      "iconSprite": "gMonIcon_Fomantis",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sFomantisTeachableLearnset",
+      "eggMoveLearnset": "sFomantisEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "34",
+          "species": "lurantis",
+          "conditions": "CONDITIONS({IF_NOT_TIME, TIME_NIGHT})"
+        },
+        {
+          "method": "none",
+          "param": "0",
+          "species": "lurantis-totem"
+        }
+      ]
+    },
+    "LURANTIS": {
+      "baseHP": 70,
+      "baseAttack": 105,
+      "baseDefense": 90,
+      "baseSpeed": 45,
+      "baseSpAttack": 80,
+      "baseSpDefense": 90,
+      "types": [
+        "grass"
+      ],
+      "catchRate": 75,
+      "expYield": 168,
+      "evYield_Attack": 2,
+      "itemRare": "ITEM_MIRACLE_SEED",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "leaf-guard",
+        "none",
+        "contrary"
+      ],
+      "bodyColor": "pink",
+      "speciesName": "Lurantis",
+      "cryId": "lurantis",
+      "natDexNum": "lurantis",
+      "categoryName": "Bloom Sickle",
+      "height": 9,
+      "weight": 185,
+      "description": "gLurantisPokedexText",
+      "pokemonScale": 338,
+      "pokemonOffset": 8,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Lurantis",
+      "frontPicSize": {
+        "width": 48,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 5
+        },
+        {
+          "frame": 1,
+          "duration": 35
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "grow-vibrate",
+      "backPic": "gMonBackPic_Lurantis",
+      "backPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "backPicYOffset": 1,
+      "palette": "gMonPalette_Lurantis",
+      "shinyPalette": "gMonShinyPalette_Lurantis",
+      "iconSprite": "gMonIcon_Lurantis",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sLurantisTeachableLearnset",
+      "formSpeciesIdTable": "sLurantisFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "abilities": [
+            "leaf-guard",
+            "none",
+            "none"
+          ],
+          "height": 15,
+          "weight": 580,
+          "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sLurantisLevelUpLearnset"
+        }
+      }
+    },
+    "MORELULL": {
+      "baseHP": 40,
+      "baseAttack": 35,
+      "baseDefense": 55,
+      "baseSpeed": 15,
+      "baseSpAttack": 65,
+      "baseSpDefense": 75,
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "catchRate": 190,
+      "expYield": 57,
+      "evYield_SpDefense": 1,
+      "itemCommon": "ITEM_TINY_MUSHROOM",
+      "itemRare": "ITEM_BIG_MUSHROOM",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "illuminate",
+        "effect-spore",
+        "rain-dish"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Morelull",
+      "cryId": "morelull",
+      "natDexNum": "morelull",
+      "categoryName": "Illuminate",
+      "height": 2,
+      "weight": 15,
+      "description": "As it drowses the day away, it nourishes\\nitself by sucking from tree roots.\\nIt wakens at the fall of night, wandering\\noff in search of a new tree.",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Morelull",
+      "frontPicSize": {
+        "width": 24,
+        "height": 48
+      },
+      "frontPicYOffset": 10,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shake-flash-yellow",
+      "backPic": "gMonBackPic_Morelull",
+      "backPicSize": {
+        "width": 40,
+        "height": 48
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Morelull",
+      "shinyPalette": "gMonShinyPalette_Morelull",
+      "iconSprite": "gMonIcon_Morelull",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sMorelullTeachableLearnset",
+      "eggMoveLearnset": "sMorelullEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "24",
+          "species": "shiinotic"
+        }
+      ]
+    },
+    "SHIINOTIC": {
+      "baseHP": 60,
+      "baseAttack": 45,
+      "baseDefense": 80,
+      "baseSpeed": 30,
+      "baseSpAttack": 90,
+      "baseSpDefense": 100,
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "catchRate": 75,
+      "expYield": 142,
+      "evYield_SpDefense": 2,
+      "itemCommon": "ITEM_TINY_MUSHROOM",
+      "itemRare": "ITEM_BIG_MUSHROOM",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "illuminate",
+        "effect-spore",
+        "rain-dish"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Shiinotic",
+      "cryId": "shiinotic",
+      "natDexNum": "shiinotic",
+      "categoryName": "Illuminate",
+      "height": 10,
+      "weight": 115,
+      "description": "Forests where Shiinotic live are\\ntreacherous to enter at night.\\nPeople confused by its strange lights\\ncan never find their way home again.",
+      "pokemonScale": 305,
+      "pokemonOffset": 7,
+      "trainerScale": 257,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Shiinotic",
+      "frontPicSize": {
+        "width": 56,
+        "height": 56
+      },
+      "frontPicYOffset": 4,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shake-glow-white-slow",
+      "backPic": "gMonBackPic_Shiinotic",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 8,
+      "palette": "gMonPalette_Shiinotic",
+      "shinyPalette": "gMonShinyPalette_Shiinotic",
+      "iconSprite": "gMonIcon_Shiinotic",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sShiinoticTeachableLearnset"
+    },
+    "SALANDIT": {
+      "baseHP": 48,
+      "baseAttack": 44,
+      "baseDefense": 40,
+      "baseSpeed": 77,
+      "baseSpAttack": 71,
+      "baseSpDefense": 40,
+      "types": [
+        "poison",
+        "fire"
+      ],
+      "catchRate": 120,
+      "expYield": 64,
+      "evYield_Speed": 1,
+      "itemRare": "ITEM_SMOKE_BALL",
+      "genderRatio": {
+        "female": 12.5
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "monster",
+        "dragon"
+      ],
+      "abilities": [
+        "corrosion",
+        "none",
+        "oblivious"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Salandit",
+      "cryId": "salandit",
+      "natDexNum": "salandit",
+      "categoryName": "Toxic Lizard",
+      "height": 6,
+      "weight": 48,
+      "description": "It burns its bodily fluids to create a\\nsweet-smelling poisonous gas. When its\\nenemies become disoriented from inhaling\\nthe gas, it attacks them.",
+      "pokemonScale": 422,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Salandit",
+      "frontPicSize": {
+        "width": 56,
+        "height": 40
+      },
+      "frontPicYOffset": 12,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 50
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        }
+      ],
+      "frontAnimId": "glow-red",
+      "backPic": "gMonBackPic_Salandit",
+      "backPicSize": {
+        "width": 56,
+        "height": 40
+      },
+      "backPicYOffset": 12,
+      "palette": "gMonPalette_Salandit",
+      "shinyPalette": "gMonShinyPalette_Salandit",
+      "iconSprite": "gMonIcon_Salandit",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "fast",
+      "teachableLearnset": "sSalanditTeachableLearnset",
+      "eggMoveLearnset": "sSalanditEggMoveLearnset",
+      "formSpeciesIdTable": "sSalanditFormSpeciesIdTable",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "33",
+          "species": "salazzle",
+          "conditions": "CONDITIONS({IF_GENDER, MON_FEMALE})"
+        },
+        {
+          "method": "none",
+          "param": "0",
+          "species": "salazzle-totem"
+        }
+      ]
+    },
+    "SALAZZLE": {
+      "baseHP": 68,
+      "baseAttack": 64,
+      "baseDefense": 60,
+      "baseSpeed": 117,
+      "baseSpAttack": 111,
+      "baseSpDefense": 60,
+      "types": [
+        "poison",
+        "fire"
+      ],
+      "catchRate": 45,
+      "expYield": 168,
+      "evYield_Speed": 2,
+      "itemRare": "ITEM_SMOKE_BALL",
+      "genderRatio": "female-only",
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "monster",
+        "dragon"
+      ],
+      "abilities": [
+        "corrosion",
+        "none",
+        "oblivious"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Salazzle",
+      "cryId": "salazzle",
+      "natDexNum": "salazzle",
+      "categoryName": "Toxic Lizard",
+      "height": 12,
+      "weight": 222,
+      "description": "gSalazzlePokedexText",
+      "pokemonScale": 282,
+      "pokemonOffset": 4,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Salazzle",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": "sAnims_Salazzle",
+      "frontAnimId": "grow-vibrate",
+      "backPic": "gMonBackPic_Salazzle",
+      "backPicSize": {
+        "width": 48,
+        "height": 64
+      },
+      "backPicYOffset": 3,
+      "palette": "gMonPalette_Salazzle",
+      "shinyPalette": "gMonShinyPalette_Salazzle",
+      "iconSprite": "gMonIcon_Salazzle",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sSalazzleTeachableLearnset",
+      "formSpeciesIdTable": "sSalazzleFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "abilities": [
+            "corrosion",
+            "none",
+            "none"
+          ],
+          "height": 21,
+          "weight": 810,
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sSalazzleLevelUpLearnset"
+        }
+      }
+    },
+    "STUFFUL": {
+      "baseHP": 70,
+      "baseAttack": 75,
+      "baseDefense": 50,
+      "baseSpeed": 50,
+      "baseSpAttack": 45,
+      "baseSpDefense": 50,
+      "types": [
+        "normal",
+        "fighting"
+      ],
+      "catchRate": 140,
+      "expYield": 68,
+      "evYield_Attack": 1,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "fluffy",
+        "klutz",
+        "cute-charm"
+      ],
+      "bodyColor": "pink",
+      "speciesName": "Stufful",
+      "cryId": "stufful",
+      "natDexNum": "stufful",
+      "categoryName": "Flailing",
+      "height": 5,
+      "weight": 68,
+      "description": "Despite its adorable appearance, when it\\ngets angry and flails about, its arms and\\nlegs could knock a pro wrestler sprawling.\\nIt's an incredibly dangerous Pok\u00e9mon.",
+      "pokemonScale": 432,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Stufful",
+      "frontPicSize": {
+        "width": 48,
+        "height": 48
+      },
+      "frontPicYOffset": 10,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 44
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        }
+      ],
+      "frontAnimId": "v-shake",
+      "backPic": "gMonBackPic_Stufful",
+      "backPicSize": {
+        "width": 56,
+        "height": 40
+      },
+      "backPicYOffset": 12,
+      "palette": "gMonPalette_Stufful",
+      "shinyPalette": "gMonShinyPalette_Stufful",
+      "iconSprite": "gMonIcon_Stufful",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sStuffulTeachableLearnset",
+      "eggMoveLearnset": "sStuffulEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "27",
+          "species": "bewear"
+        }
+      ]
+    },
+    "BEWEAR": {
+      "baseHP": 120,
+      "baseAttack": 125,
+      "baseDefense": 80,
+      "baseSpeed": 60,
+      "baseSpAttack": 55,
+      "baseSpDefense": 60,
+      "types": [
+        "normal",
+        "fighting"
+      ],
+      "catchRate": 70,
+      "expYield": 175,
+      "evYield_Attack": 2,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "fluffy",
+        "klutz",
+        "unnerve"
+      ],
+      "bodyColor": "pink",
+      "speciesName": "Bewear",
+      "cryId": "bewear",
+      "natDexNum": "bewear",
+      "categoryName": "Strong Arm",
+      "height": 21,
+      "weight": 1350,
+      "description": "This Pok\u00e9mon has the habit of hugging its\\ncompanions. Many Trainers have left this\\nworld after their spines were squashed\\nby its hug.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 365,
+      "trainerOffset": 7,
+      "frontPic": "gMonFrontPic_Bewear",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 20
+        },
+        {
+          "frame": 1,
+          "duration": 60
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        }
+      ],
+      "frontAnimId": "h-stretch",
+      "backPic": "gMonBackPic_Bewear",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 2,
+      "palette": "gMonPalette_Bewear",
+      "shinyPalette": "gMonShinyPalette_Bewear",
+      "iconSprite": "gMonIcon_Bewear",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sBewearTeachableLearnset"
+    },
+    "BOUNSWEET": {
+      "baseHP": 42,
+      "baseAttack": 30,
+      "baseDefense": 38,
+      "baseSpeed": 32,
+      "baseSpAttack": 30,
+      "baseSpDefense": 38,
+      "types": [
+        "grass"
+      ],
+      "catchRate": 235,
+      "expYield": 42,
+      "evYield_HP": 1,
+      "itemRare": "ITEM_GRASSY_SEED",
+      "genderRatio": "female-only",
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "leaf-guard",
+        "oblivious",
+        "sweet-veil"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Bounsweet",
+      "cryId": "bounsweet",
+      "natDexNum": "bounsweet",
+      "categoryName": "Fruit",
+      "height": 3,
+      "weight": 32,
+      "description": "A delectable aroma pours from its body. \\nBounsweet's sweat can be watered down\\ninto a juice with just the right amount\\nof sweetness.",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Bounsweet",
+      "frontPicSize": {
+        "width": 32,
+        "height": 40
+      },
+      "frontPicYOffset": 16,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-squish-and-bounce",
+      "backPic": "gMonBackPic_Bounsweet",
+      "backPicSize": {
+        "width": 48,
+        "height": 40
+      },
+      "backPicYOffset": 14,
+      "palette": "gMonPalette_Bounsweet",
+      "shinyPalette": "gMonShinyPalette_Bounsweet",
+      "iconSprite": "gMonIcon_Bounsweet",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sBounsweetTeachableLearnset",
+      "eggMoveLearnset": "sBounsweetEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "18",
+          "species": "steenee"
+        }
+      ]
+    },
+    "STEENEE": {
+      "baseHP": 52,
+      "baseAttack": 40,
+      "baseDefense": 48,
+      "baseSpeed": 62,
+      "baseSpAttack": 40,
+      "baseSpDefense": 48,
+      "types": [
+        "grass"
+      ],
+      "catchRate": 120,
+      "expYield": 102,
+      "evYield_Speed": 2,
+      "itemRare": "ITEM_GRASSY_SEED",
+      "genderRatio": "female-only",
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "leaf-guard",
+        "oblivious",
+        "sweet-veil"
+      ],
+      "bodyColor": "purple",
+      "noFlip": 1,
+      "speciesName": "Steenee",
+      "cryId": "steenee",
+      "natDexNum": "steenee",
+      "categoryName": "Fruit",
+      "height": 7,
+      "weight": 82,
+      "description": "The sepals on its head developed to\\nprotect its body. These are quite hard, so\\neven if pecked by bird Pok\u00e9mon, this\\nPok\u00e9mon is totally fine.",
+      "pokemonScale": 365,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Steenee",
+      "frontPicSize": {
+        "width": 48,
+        "height": 56
+      },
+      "frontPicYOffset": 7,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-squish-and-bounce",
+      "backPic": "gMonBackPic_Steenee",
+      "backPicSize": {
+        "width": 56,
+        "height": 56
+      },
+      "backPicYOffset": 8,
+      "palette": "gMonPalette_Steenee",
+      "shinyPalette": "gMonShinyPalette_Steenee",
+      "iconSprite": "gMonIcon_Steenee",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sSteeneeTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "0",
+          "species": "tsareena",
+          "conditions": "CONDITIONS({IF_KNOWS_MOVE, MOVE_STOMP})"
+        }
+      ]
+    },
+    "TSAREENA": {
+      "baseHP": 72,
+      "baseAttack": 120,
+      "baseDefense": 98,
+      "baseSpeed": 72,
+      "baseSpAttack": 50,
+      "baseSpDefense": 98,
+      "types": [
+        "grass"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 255,
+        "gen7-": 230
+      },
+      "evYield_Attack": 3,
+      "itemCommon": "ITEM_GRASSY_SEED",
+      "genderRatio": "female-only",
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-slow",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "leaf-guard",
+        "queenly-majesty",
+        "sweet-veil"
+      ],
+      "bodyColor": "purple",
+      "noFlip": 1,
+      "speciesName": "Tsareena",
+      "cryId": "tsareena",
+      "natDexNum": "tsareena",
+      "categoryName": "Fruit",
+      "height": 12,
+      "weight": 214,
+      "description": "Its long, striking legs aren't just for\\nshow but to be used to kick with skill.\\nIn victory, it shows off by kicking the\\ndefeated, laughing boisterously.",
+      "pokemonScale": 282,
+      "pokemonOffset": 4,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Tsareena",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shrink-grow",
+      "backPic": "gMonBackPic_Tsareena",
+      "backPicSize": {
+        "width": 56,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "palette": "gMonPalette_Tsareena",
+      "shinyPalette": "gMonShinyPalette_Tsareena",
+      "iconSprite": "gMonIcon_Tsareena",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sTsareenaTeachableLearnset"
+    },
+    "COMFEY": {
+      "baseHP": 51,
+      "baseAttack": 52,
+      "baseDefense": 90,
+      "baseSpeed": 100,
+      "baseSpAttack": 82,
+      "baseSpDefense": 110,
+      "types": [
+        "fairy"
+      ],
+      "catchRate": 60,
+      "expYield": 170,
+      "evYield_SpDefense": 2,
+      "itemRare": "ITEM_MISTY_SEED",
+      "genderRatio": {
+        "female": 75.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "fast",
+      "eggGroups": [
+        "grass"
+      ],
+      "abilities": [
+        "flower-veil",
+        "triage",
+        "natural-cure"
+      ],
+      "bodyColor": "green",
+      "noFlip": 1,
+      "speciesName": "Comfey",
+      "cryId": "comfey",
+      "natDexNum": "comfey",
+      "categoryName": "Posy Picker",
+      "height": 1,
+      "weight": 3,
+      "description": "It attaches flowers to its nutritious\\nvine. Baths prepared with the flowers\\nfrom its vine have a relaxing effect, so\\nthis Pok\u00e9mon is a hit with many people.",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Comfey",
+      "frontPicSize": {
+        "width": 48,
+        "height": 48
+      },
+      "frontPicYOffset": 9,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-slide-wobble",
+      "enemyMonElevation": 8,
+      "backPic": "gMonBackPic_Comfey",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 11,
+      "palette": "gMonPalette_Comfey",
+      "shinyPalette": "gMonShinyPalette_Comfey",
+      "iconSprite": "gMonIcon_Comfey",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sComfeyTeachableLearnset",
+      "eggMoveLearnset": "sComfeyEggMoveLearnset"
+    },
+    "ORANGURU": {
+      "baseHP": 90,
+      "baseAttack": 60,
+      "baseDefense": 80,
+      "baseSpeed": 60,
+      "baseSpAttack": 90,
+      "baseSpDefense": 110,
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "catchRate": 45,
+      "expYield": 172,
+      "evYield_SpDefense": 2,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "inner-focus",
+        "telepathy",
+        "symbiosis"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Oranguru",
+      "cryId": "oranguru",
+      "natDexNum": "oranguru",
+      "categoryName": "Sage",
+      "height": 15,
+      "weight": 760,
+      "description": "Deep in the jungle, high in the lofty\\ncanopy, this Pok\u00e9mon abides. On rare\\noccasions, it shows up at the beach to\\nmatch wits with Slowking.",
+      "pokemonScale": 268,
+      "pokemonOffset": 2,
+      "trainerScale": 271,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Oranguru",
+      "frontPicSize": {
+        "width": 56,
+        "height": 56
+      },
+      "frontPicYOffset": 5,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 20
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "shrink-grow-slow",
+      "backPic": "gMonBackPic_Oranguru",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 12,
+      "backAnimId": "h-slide",
+      "palette": "gMonPalette_Oranguru",
+      "shinyPalette": "gMonShinyPalette_Oranguru",
+      "iconSprite": "gMonIcon_Oranguru",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sOranguruTeachableLearnset",
+      "eggMoveLearnset": "sOranguruEggMoveLearnset"
+    },
+    "PASSIMIAN": {
+      "baseHP": 100,
+      "baseAttack": 120,
+      "baseDefense": 90,
+      "baseSpeed": 80,
+      "baseSpAttack": 40,
+      "baseSpDefense": 60,
+      "types": [
+        "fighting"
+      ],
+      "catchRate": 45,
+      "expYield": 172,
+      "evYield_Attack": 2,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "receiver",
+        "none",
+        "defiant"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Passimian",
+      "cryId": "passimian",
+      "natDexNum": "passimian",
+      "categoryName": "Teamwork",
+      "height": 20,
+      "weight": 828,
+      "description": "They battle with hard berries for weapons.\\nThey form groups of about 20 individuals.\\nTheir techniques are passed from the boss\\nto the group, generation upon generation.",
+      "pokemonScale": 261,
+      "pokemonOffset": 1,
+      "trainerScale": 334,
+      "trainerOffset": 4,
+      "frontPic": "gMonFrontPic_Passimian",
+      "frontPicSize": {
+        "width": 57,
+        "height": 60
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 30
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "h-shake",
+      "backPic": "gMonBackPic_Passimian",
+      "backPicSize": {
+        "width": 51,
+        "height": 52
+      },
+      "backPicYOffset": 7,
+      "backAnimId": "h-shake",
+      "palette": "gMonPalette_Passimian",
+      "shinyPalette": "gMonShinyPalette_Passimian",
+      "iconSprite": "gMonIcon_Passimian",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sPassimianTeachableLearnset",
+      "eggMoveLearnset": "sPassimianEggMoveLearnset"
+    },
+    "WIMPOD": {
+      "baseHP": 25,
+      "baseAttack": 35,
+      "baseDefense": 40,
+      "baseSpeed": 80,
+      "baseSpAttack": 20,
+      "baseSpDefense": 30,
+      "types": [
+        "bug",
+        "water"
+      ],
+      "catchRate": 90,
+      "expYield": 46,
+      "evYield_Speed": 1,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "bug",
+        "water-3"
+      ],
+      "abilities": [
+        "wimp-out",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Wimpod",
+      "cryId": "wimpod",
+      "natDexNum": "wimpod",
+      "categoryName": "Turn Tail",
+      "height": 5,
+      "weight": 120,
+      "description": "This Pok\u00e9mon is a coward. As it desperately\\ndashes off, the flailing of its many legs\\nleaves a sparkling clean path in its wake.\\nIt lives on beaches and seabeds.",
+      "pokemonScale": 432,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Wimpod",
+      "frontPicSize": {
+        "width": 40,
+        "height": 40
+      },
+      "frontPicYOffset": 14,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 25
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "v-shake-h-slide-fast",
+      "backPic": "gMonBackPic_Wimpod",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 10,
+      "palette": "gMonPalette_Wimpod",
+      "shinyPalette": "gMonShinyPalette_Wimpod",
+      "iconSprite": "gMonIcon_Wimpod",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "fast",
+      "teachableLearnset": "sWimpodTeachableLearnset",
+      "eggMoveLearnset": "sWimpodEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "30",
+          "species": "golisopod"
+        }
+      ]
+    },
+    "GOLISOPOD": {
+      "baseHP": 75,
+      "baseAttack": 125,
+      "baseDefense": 140,
+      "baseSpeed": 40,
+      "baseSpAttack": 60,
+      "baseSpDefense": 90,
+      "types": [
+        "bug",
+        "water"
+      ],
+      "catchRate": 45,
+      "expYield": 186,
+      "evYield_Defense": 2,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "bug",
+        "water-3"
+      ],
+      "abilities": [
+        "emergency-exit",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Golisopod",
+      "cryId": "golisopod",
+      "natDexNum": "golisopod",
+      "categoryName": "Hard Scale",
+      "height": 20,
+      "weight": 1080,
+      "description": "It battles skillfully with its six arms,\\nwith a flashing slash of its giant sharp\\nclaws, it cleaves seawater--or even\\nair--right in two.",
+      "pokemonScale": 261,
+      "pokemonOffset": 1,
+      "trainerScale": 334,
+      "trainerOffset": 4,
+      "frontPic": "gMonFrontPic_Golisopod",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 25
+        },
+        {
+          "frame": 1,
+          "duration": 15
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "shrink-grow-vibrate-fast",
+      "backPic": "gMonBackPic_Golisopod",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Golisopod",
+      "shinyPalette": "gMonShinyPalette_Golisopod",
+      "iconSprite": "gMonIcon_Golisopod",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sGolisopodTeachableLearnset"
+    },
+    "SANDYGAST": {
+      "baseHP": 55,
+      "baseAttack": 55,
+      "baseDefense": 80,
+      "baseSpeed": 15,
+      "baseSpAttack": 70,
+      "baseSpDefense": 45,
+      "types": [
+        "ghost",
+        "ground"
+      ],
+      "catchRate": 140,
+      "expYield": 64,
+      "evYield_Defense": 1,
+      "itemRare": "ITEM_SPELL_TAG",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "amorphous"
+      ],
+      "abilities": [
+        "water-compaction",
+        "none",
+        "sand-veil"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Sandygast",
+      "cryId": "sandygast",
+      "natDexNum": "sandygast",
+      "categoryName": "Sand Heap",
+      "height": 5,
+      "weight": 700,
+      "description": "It takes control of anyone who puts a\\nhand in its mouth, to add to the pile\\nof its sand-mound body. This Pok\u00e9mon\\nembodies the grudges of the departed.",
+      "pokemonScale": 432,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Sandygast",
+      "frontPicSize": {
+        "width": 48,
+        "height": 48
+      },
+      "frontPicYOffset": 11,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "circular-stretch-twice",
+      "backPic": "gMonBackPic_Sandygast",
+      "backPicSize": {
+        "width": 40,
+        "height": 48
+      },
+      "backPicYOffset": 11,
+      "palette": "gMonPalette_Sandygast",
+      "shinyPalette": "gMonShinyPalette_Sandygast",
+      "iconSprite": "gMonIcon_Sandygast",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sSandygastTeachableLearnset",
+      "eggMoveLearnset": "sSandygastEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "42",
+          "species": "palossand"
+        }
+      ]
+    },
+    "PALOSSAND": {
+      "baseHP": 85,
+      "baseAttack": 75,
+      "baseDefense": 110,
+      "baseSpeed": 35,
+      "baseSpAttack": 100,
+      "baseSpDefense": 75,
+      "types": [
+        "ghost",
+        "ground"
+      ],
+      "catchRate": 60,
+      "expYield": 168,
+      "evYield_Defense": 2,
+      "itemRare": "ITEM_SPELL_TAG",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "amorphous"
+      ],
+      "abilities": [
+        "water-compaction",
+        "none",
+        "sand-veil"
+      ],
+      "bodyColor": "brown",
+      "speciesName": "Palossand",
+      "cryId": "palossand",
+      "natDexNum": "palossand",
+      "categoryName": "Sand Castle",
+      "height": 13,
+      "weight": 2500,
+      "description": "Possessed people controlled by this\\nPok\u00e9mon transformed its sand mound into\\na castle. As it evolved, its power to curse\\ngrew ever stronger.",
+      "pokemonScale": 272,
+      "pokemonOffset": 3,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Palossand",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-vibrate",
+      "backPic": "gMonBackPic_Palossand",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 2,
+      "palette": "gMonPalette_Palossand",
+      "shinyPalette": "gMonShinyPalette_Palossand",
+      "iconSprite": "gMonIcon_Palossand",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sPalossandTeachableLearnset"
+    },
+    "PYUKUMUKU": {
+      "baseHP": 55,
+      "baseAttack": 60,
+      "baseDefense": 130,
+      "baseSpeed": 5,
+      "baseSpAttack": 30,
+      "baseSpDefense": 130,
+      "types": [
+        "water"
+      ],
+      "catchRate": 60,
+      "expYield": 144,
+      "evYield_SpDefense": 2,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "fast",
+      "eggGroups": [
+        "water-1"
+      ],
+      "abilities": [
+        "innards-out",
+        "none",
+        "unaware"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Pyukumuku",
+      "cryId": "pyukumuku",
+      "natDexNum": "pyukumuku",
+      "categoryName": "Sea Cucumber",
+      "height": 3,
+      "weight": 12,
+      "description": "It lives in shallow seas, such as areas\\nnear a beach. The sticky mucous that\\ncovers their bodies can be used to soothe\\nsunburned skin. How convenient!",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Pyukumuku",
+      "frontPicSize": {
+        "width": 40,
+        "height": 40
+      },
+      "frontPicYOffset": 15,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 25
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "v-squish-and-bounce",
+      "backPic": "gMonBackPic_Pyukumuku",
+      "backPicSize": {
+        "width": 48,
+        "height": 32
+      },
+      "backPicYOffset": 16,
+      "palette": "gMonPalette_Pyukumuku",
+      "shinyPalette": "gMonShinyPalette_Pyukumuku",
+      "iconSprite": "gMonIcon_Pyukumuku",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sPyukumukuTeachableLearnset",
+      "eggMoveLearnset": "sPyukumukuEggMoveLearnset",
+      "formSpeciesIdTable": "sPyukumukuFormSpeciesIdTable"
+    },
+    "TYPE_NULL": {
+      "baseHP": 95,
+      "baseAttack": 95,
+      "baseDefense": 95,
+      "baseSpeed": 59,
+      "baseSpAttack": 95,
+      "baseSpDefense": 95,
+      "types": [
+        "normal"
+      ],
+      "catchRate": 3,
+      "expYield": 107,
+      "evYield_HP": 2,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "battle-armor",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Type: Null",
+      "cryId": "type-null",
+      "natDexNum": "type-null",
+      "categoryName": "Synthetic",
+      "height": 19,
+      "weight": 1205,
+      "description": "Due to the danger that this synthetic\\nPok\u00e9mon may go on a rampage, it wears a\\ncontrol mask to restrain its capabilities.\\nIt has some hidden special power.",
+      "pokemonScale": 256,
+      "pokemonOffset": 1,
+      "trainerScale": 326,
+      "trainerOffset": 4,
+      "frontPic": "gMonFrontPic_TypeNull",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-shake",
+      "backPic": "gMonBackPic_TypeNull",
+      "backPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "backPicYOffset": 1,
+      "palette": "gMonPalette_TypeNull",
+      "shinyPalette": "gMonShinyPalette_TypeNull",
+      "iconSprite": "gMonIcon_TypeNull",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sTypeNullLevelUpLearnset",
+      "teachableLearnset": "sTypeNullTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "0",
+          "species": "silvally-normal",
+          "conditions": "CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})"
+        }
+      ]
+    },
+    "KOMALA": {
+      "baseHP": 65,
+      "baseAttack": 115,
+      "baseDefense": 65,
+      "baseSpeed": 65,
+      "baseSpAttack": 75,
+      "baseSpDefense": 95,
+      "types": [
+        "normal"
+      ],
+      "catchRate": 45,
+      "expYield": 168,
+      "evYield_Attack": 2,
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "field"
+      ],
+      "abilities": [
+        "comatose",
+        "none",
+        "none"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Komala",
+      "cryId": "komala",
+      "natDexNum": "komala",
+      "categoryName": "Drowsing",
+      "height": 4,
+      "weight": 199,
+      "description": "It is born asleep, and it dies asleep.\\nAll its movements are apparently no more\\nthan the results of it tossing and turning\\nin its dreams.",
+      "pokemonScale": 491,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Komala",
+      "frontPicSize": {
+        "width": 48,
+        "height": 40
+      },
+      "frontPicYOffset": 12,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-dip",
+      "backPic": "gMonBackPic_Komala",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Komala",
+      "shinyPalette": "gMonShinyPalette_Komala",
+      "iconSprite": "gMonIcon_Komala",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "slow",
+      "teachableLearnset": "sKomalaTeachableLearnset",
+      "eggMoveLearnset": "sKomalaEggMoveLearnset"
+    },
+    "TURTONATOR": {
+      "baseHP": 60,
+      "baseAttack": 78,
+      "baseDefense": 135,
+      "baseSpeed": 36,
+      "baseSpAttack": 91,
+      "baseSpDefense": 85,
+      "types": [
+        "fire",
+        "dragon"
+      ],
+      "catchRate": 70,
+      "expYield": 170,
+      "evYield_Defense": 2,
+      "itemRare": "ITEM_CHARCOAL",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "monster",
+        "dragon"
+      ],
+      "abilities": [
+        "shell-armor",
+        "none",
+        "none"
+      ],
+      "bodyColor": "red",
+      "speciesName": "Turtonator",
+      "cryId": "turtonator",
+      "natDexNum": "turtonator",
+      "categoryName": "Blast Turtle",
+      "height": 20,
+      "weight": 2120,
+      "description": "The shell on its back is chemically\\nunstable and explodes violently if struck.\\nThe hole in its stomach is its weak point.\\nIt gushes fire from its nostrils.",
+      "pokemonScale": 261,
+      "pokemonOffset": 1,
+      "trainerScale": 334,
+      "trainerOffset": 4,
+      "frontPic": "gMonFrontPic_Turtonator",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 44
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        }
+      ],
+      "frontAnimId": "shake-glow-red",
+      "backPic": "gMonBackPic_Turtonator",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Turtonator",
+      "shinyPalette": "gMonShinyPalette_Turtonator",
+      "iconSprite": "gMonIcon_Turtonator",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sTurtonatorTeachableLearnset",
+      "eggMoveLearnset": "sTurtonatorEggMoveLearnset"
+    },
+    "TOGEDEMARU": {
+      "baseHP": 65,
+      "baseAttack": 98,
+      "baseDefense": 63,
+      "baseSpeed": 96,
+      "baseSpAttack": 40,
+      "baseSpDefense": 73,
+      "types": [
+        "electric",
+        "steel"
+      ],
+      "catchRate": 180,
+      "expYield": 152,
+      "evYield_Attack": 2,
+      "itemRare": "ITEM_ELECTRIC_SEED",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 10,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "field",
+        "fairy"
+      ],
+      "abilities": [
+        "iron-barbs",
+        "lightning-rod",
+        "sturdy"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Togedemaru",
+      "cryId": "togedemaru",
+      "natDexNum": "togedemaru",
+      "categoryName": "Roly-Poly",
+      "height": 3,
+      "weight": 33,
+      "description": "gTogedemaruPokedexText",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Togedemaru",
+      "frontPicSize": {
+        "width": 40,
+        "height": 40
+      },
+      "frontPicYOffset": 9,
+      "frontAnimFrames": "sAnims_Togedemaru",
+      "frontAnimId": "flash-yellow",
+      "backPic": "gMonBackPic_Togedemaru",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 13,
+      "backAnimId": "grow-stutter",
+      "palette": "gMonPalette_Togedemaru",
+      "shinyPalette": "gMonShinyPalette_Togedemaru",
+      "iconSprite": "gMonIcon_Togedemaru",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sTogedemaruTeachableLearnset",
+      "eggMoveLearnset": "sTogedemaruEggMoveLearnset",
+      "formSpeciesIdTable": "sTogedemaruFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "abilities": [
+            "sturdy",
+            "none",
+            "none"
+          ],
+          "height": 6,
+          "weight": 130,
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sTogedemaruLevelUpLearnset"
+        }
+      }
+    },
+    "MIMIKYU_BUSTED": {
+      "baseHP": 55,
+      "baseAttack": 90,
+      "baseDefense": 80,
+      "baseSpeed": 96,
+      "baseSpAttack": 50,
+      "baseSpDefense": 105,
+      "types": [
+        "ghost",
+        "fairy"
+      ],
+      "catchRate": 45,
+      "expYield": 167,
+      "evYield_SpDefense": 2,
+      "itemRare": "ITEM_CHESTO_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "amorphous"
+      ],
+      "abilities": [
+        "disguise",
+        "none",
+        "none"
+      ],
+      "bodyColor": "yellow",
+      "speciesName": "Mimikyu",
+      "cryId": "mimikyu",
+      "natDexNum": "mimikyu",
+      "categoryName": "Disguise",
+      "height": 2,
+      "weight": 7,
+      "description": "gMimikyuBustedPokedexText",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_MimikyuBusted",
+      "frontPicSize": {
+        "width": 48,
+        "height": 40
+      },
+      "frontPicYOffset": 12,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "deep-v-squish-and-bounce",
+      "backPic": "gMonBackPic_MimikyuBusted",
+      "backPicSize": {
+        "width": 64,
+        "height": 40
+      },
+      "backPicYOffset": 15,
+      "palette": "gMonPalette_MimikyuBusted",
+      "shinyPalette": "gMonShinyPalette_MimikyuBusted",
+      "iconSprite": "gMonIcon_MimikyuBusted",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "normal",
+      "teachableLearnset": "sMimikyuTeachableLearnset",
+      "eggMoveLearnset": "sMimikyuEggMoveLearnset",
+      "formSpeciesIdTable": "sMimikyuFormSpeciesIdTable",
+      "formChangeTable": "sMimikyuFormChangeTable",
+      "forms": {
+        "MIMIKYU_DISGUISED": {
+          "description": "gMimikyuDisguisedPokedexText",
+          "frontPic": "gMonFrontPic_MimikyuDisguised",
+          "backPic": "gMonBackPic_MimikyuDisguised",
+          "backPicSize": {
+            "width": 56,
+            "height": 56
+          },
+          "backPicYOffset": 7,
+          "palette": "gMonPalette_MimikyuDisguised",
+          "shinyPalette": "gMonShinyPalette_MimikyuDisguised",
+          "iconSprite": "gMonIcon_MimikyuDisguised"
+        },
+        "MIMIKYU_TOTEM_DISGUISED": {
+          "height": 24,
+          "weight": 28,
+          "description": "gMimikyuDisguisedPokedexText",
+          "frontPic": "gMonFrontPic_MimikyuDisguised",
+          "backPic": "gMonBackPic_MimikyuDisguised",
+          "backPicSize": {
+            "width": 56,
+            "height": 56
+          },
+          "backPicYOffset": 7,
+          "palette": "gMonPalette_MimikyuDisguised",
+          "shinyPalette": "gMonShinyPalette_MimikyuDisguised",
+          "iconSprite": "gMonIcon_MimikyuDisguised",
+          "pokemonJumpType": "none",
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sMimikyuLevelUpLearnset",
+          "formChangeTable": "sMimikyuTotemFormChangeTable"
+        },
+        "TOTEM": {
+          "height": 24,
+          "weight": 28,
+          "pokemonJumpType": "none",
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sMimikyuLevelUpLearnset",
+          "formChangeTable": "sMimikyuTotemFormChangeTable"
+        }
+      }
+    },
+    "BRUXISH": {
+      "baseHP": 68,
+      "baseAttack": 105,
+      "baseDefense": 70,
+      "baseSpeed": 92,
+      "baseSpAttack": 70,
+      "baseSpDefense": 70,
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "catchRate": 80,
+      "expYield": 166,
+      "evYield_Attack": 2,
+      "itemRare": "ITEM_RAZOR_FANG",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "water-2"
+      ],
+      "abilities": [
+        "dazzling",
+        "strong-jaw",
+        "wonder-skin"
+      ],
+      "bodyColor": "pink",
+      "speciesName": "Bruxish",
+      "cryId": "bruxish",
+      "natDexNum": "bruxish",
+      "categoryName": "Gnash Teeth",
+      "height": 9,
+      "weight": 190,
+      "description": "It stuns its prey with its psychic powers\\nand then grinds them to mush with its\\nstrong teeth. Even Shellder's shell is no\\nmatch for it.",
+      "pokemonScale": 338,
+      "pokemonOffset": 8,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Bruxish",
+      "frontPicSize": {
+        "width": 56,
+        "height": 40
+      },
+      "frontPicYOffset": 15,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "rising-wobble",
+      "backPic": "gMonBackPic_Bruxish",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 14,
+      "palette": "gMonPalette_Bruxish",
+      "shinyPalette": "gMonShinyPalette_Bruxish",
+      "iconSprite": "gMonIcon_Bruxish",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sBruxishTeachableLearnset",
+      "eggMoveLearnset": "sBruxishEggMoveLearnset",
+      "formSpeciesIdTable": "sBruxishFormSpeciesIdTable"
+    },
+    "DRAMPA": {
+      "baseHP": 78,
+      "baseAttack": 60,
+      "baseDefense": 85,
+      "baseSpeed": 36,
+      "baseSpAttack": 135,
+      "baseSpDefense": 91,
+      "types": [
+        "normal",
+        "dragon"
+      ],
+      "catchRate": 70,
+      "expYield": 170,
+      "evYield_SpAttack": 2,
+      "itemRare": "ITEM_PERSIM_BERRY",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 20,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "monster",
+        "dragon"
+      ],
+      "abilities": [
+        "berserk",
+        "sap-sipper",
+        "cloud-nine"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Drampa",
+      "cryId": "drampa",
+      "natDexNum": "drampa",
+      "categoryName": "Placid",
+      "height": 30,
+      "weight": 1850,
+      "description": "This Pok\u00e9mon is friendly to people and\\nloves children most of all. It comes from\\ndeep in the mountains to play with\\nchildren it likes in town.",
+      "pokemonScale": 275,
+      "pokemonOffset": 7,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Drampa",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 50
+        },
+        {
+          "frame": 0,
+          "duration": 50
+        }
+      ],
+      "frontAnimId": "v-shake-twice",
+      "backPic": "gMonBackPic_Drampa",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 5,
+      "backAnimId": "h-slide",
+      "palette": "gMonPalette_Drampa",
+      "shinyPalette": "gMonShinyPalette_Drampa",
+      "iconSprite": "gMonIcon_Drampa",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sDrampaTeachableLearnset",
+      "eggMoveLearnset": "sDrampaEggMoveLearnset",
+      "formSpeciesIdTable": "sDrampaFormSpeciesIdTable",
+      "formChangeTable": "sDrampaFormChangeTable",
+      "forms": {
+        "MEGA": {
+          "baseAttack": 85,
+          "baseDefense": 110,
+          "baseSpAttack": 160,
+          "baseSpDefense": 116,
+          "categoryName": "Imposing",
+          "height": 3,
+          "weight": 2405,
+          "description": "Drampa's cells have been\\ninvigorated, allowing it to regain\\nits youth. It manipulates the\\natmosphere to summon storms.",
+          "levelUpLearnset": "sDrampaLevelUpLearnset"
+        }
+      }
+    },
+    "DHELMISE": {
+      "baseHP": 70,
+      "baseAttack": 131,
+      "baseDefense": 100,
+      "baseSpeed": 40,
+      "baseSpAttack": 86,
+      "baseSpDefense": 90,
+      "types": [
+        "ghost",
+        "grass"
+      ],
+      "catchRate": 25,
+      "expYield": 181,
+      "evYield_Attack": 2,
+      "genderRatio": "genderless",
+      "eggCycles": 25,
+      "friendship": "standard",
+      "growthRate": "medium-fast",
+      "eggGroups": [
+        "mineral"
+      ],
+      "abilities": [
+        "steelworker",
+        "none",
+        "none"
+      ],
+      "bodyColor": "green",
+      "noFlip": 1,
+      "speciesName": "Dhelmise",
+      "cryId": "dhelmise",
+      "natDexNum": "dhelmise",
+      "categoryName": "Sea Creeper",
+      "height": 39,
+      "weight": 2100,
+      "description": "The soul of seaweed adrift in the waves\\nbecame reborn as this Pok\u00e9mon.\\nIt maintains itself with new infusions of\\nseabed detritus and seaweed.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 510,
+      "trainerOffset": 11,
+      "frontPic": "gMonFrontPic_Dhelmise",
+      "frontPicSize": {
+        "width": 48,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "swing-convex",
+      "enemyMonElevation": 2,
+      "backPic": "gMonBackPic_Dhelmise",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 3,
+      "palette": "gMonPalette_Dhelmise",
+      "shinyPalette": "gMonShinyPalette_Dhelmise",
+      "iconSprite": "gMonIcon_Dhelmise",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sDhelmiseTeachableLearnset"
+    },
+    "JANGMO_O": {
+      "baseHP": 45,
+      "baseAttack": 55,
+      "baseDefense": 65,
+      "baseSpeed": 45,
+      "baseSpAttack": 45,
+      "baseSpDefense": 45,
+      "types": [
+        "dragon"
+      ],
+      "catchRate": 45,
+      "expYield": 60,
+      "evYield_Defense": 1,
+      "itemRare": "ITEM_RAZOR_CLAW",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 40,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "dragon"
+      ],
+      "abilities": [
+        "bulletproof",
+        "soundproof",
+        "overcoat"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Jangmo-o",
+      "cryId": "jangmo-o",
+      "natDexNum": "jangmo-o",
+      "categoryName": "Scaly",
+      "height": 6,
+      "weight": 297,
+      "description": "It expresses its feelings by smacking its\\nscales. Metallic sounds echo through the\\ntall mountains where Jangmo-o live. They\\ngrow little by little battling one another.",
+      "pokemonScale": 422,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_JangmoO",
+      "frontPicSize": {
+        "width": 36,
+        "height": 43
+      },
+      "frontPicYOffset": 9,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 15
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "h-stretch",
+      "backPic": "gMonBackPic_JangmoO",
+      "backPicSize": {
+        "width": 42,
+        "height": 56
+      },
+      "backPicYOffset": 5,
+      "backAnimId": "grow-stutter",
+      "palette": "gMonPalette_JangmoO",
+      "shinyPalette": "gMonShinyPalette_JangmoO",
+      "iconSprite": "gMonIcon_JangmoO",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "fast",
+      "teachableLearnset": "sJangmoOTeachableLearnset",
+      "eggMoveLearnset": "sJangmoOEggMoveLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "35",
+          "species": "hakamo-o"
+        }
+      ]
+    },
+    "HAKAMO_O": {
+      "baseHP": 55,
+      "baseAttack": 75,
+      "baseDefense": 90,
+      "baseSpeed": 65,
+      "baseSpAttack": 65,
+      "baseSpDefense": 70,
+      "types": [
+        "dragon",
+        "fighting"
+      ],
+      "catchRate": 45,
+      "expYield": 147,
+      "evYield_Defense": 2,
+      "itemRare": "ITEM_RAZOR_CLAW",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 40,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "dragon"
+      ],
+      "abilities": [
+        "bulletproof",
+        "soundproof",
+        "overcoat"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Hakamo-o",
+      "cryId": "hakamo-o",
+      "natDexNum": "hakamo-o",
+      "categoryName": "Scaly",
+      "height": 12,
+      "weight": 470,
+      "description": "It sheds and regrows its scales on a\\ncontinuous basis. The scales become\\nharder each time they're regrown. Its\\nscaly punches tear its foes to shreds.",
+      "pokemonScale": 282,
+      "pokemonOffset": 4,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_HakamoO",
+      "frontPicSize": {
+        "width": 53,
+        "height": 61
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 30
+        },
+        {
+          "frame": 0,
+          "duration": 5
+        }
+      ],
+      "frontAnimId": "h-stretch",
+      "backPic": "gMonBackPic_HakamoO",
+      "backPicSize": {
+        "width": 49,
+        "height": 56
+      },
+      "backPicYOffset": 5,
+      "backAnimId": "h-stretch",
+      "palette": "gMonPalette_HakamoO",
+      "shinyPalette": "gMonShinyPalette_HakamoO",
+      "iconSprite": "gMonIcon_HakamoO",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sHakamoOTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "45",
+          "species": "kommo-o"
+        },
+        {
+          "method": "none",
+          "param": "0",
+          "species": "kommo-o-totem"
+        }
+      ]
+    },
+    "KOMMO_O": {
+      "baseHP": 75,
+      "baseAttack": 110,
+      "baseDefense": 125,
+      "baseSpeed": 85,
+      "baseSpAttack": 100,
+      "baseSpDefense": 105,
+      "types": [
+        "dragon",
+        "fighting"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 300,
+        "gen7-": 270
+      },
+      "evYield_Defense": 3,
+      "itemCommon": "ITEM_RAZOR_CLAW",
+      "genderRatio": {
+        "female": 50.0
+      },
+      "eggCycles": 40,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "dragon"
+      ],
+      "abilities": [
+        "bulletproof",
+        "soundproof",
+        "overcoat"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Kommo-o",
+      "cryId": "kommo-o",
+      "natDexNum": "kommo-o",
+      "categoryName": "Scaly",
+      "height": 16,
+      "weight": 782,
+      "description": "gKommoOPokedexText",
+      "pokemonScale": 259,
+      "pokemonOffset": 1,
+      "trainerScale": 296,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_KommoO",
+      "frontPicSize": {
+        "width": 63,
+        "height": 63
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_Kommo_O",
+      "frontAnimId": "shrink-grow-vibrate-fast",
+      "backPic": "gMonBackPic_KommoO",
+      "backPicSize": {
+        "width": 60,
+        "height": 60
+      },
+      "backPicYOffset": 2,
+      "backAnimId": "shrink-grow-vibrate",
+      "palette": "gMonPalette_KommoO",
+      "shinyPalette": "gMonShinyPalette_KommoO",
+      "iconSprite": "gMonIcon_KommoO",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "teachableLearnset": "sKommoOTeachableLearnset",
+      "formSpeciesIdTable": "sKommoOFormSpeciesIdTable",
+      "forms": {
+        "TOTEM": {
+          "expYield": 270,
+          "abilities": [
+            "overcoat",
+            "none",
+            "none"
+          ],
+          "height": 24,
+          "weight": 2075,
+          "frontAnimFrames": [
+            {
+              "frame": 0,
+              "duration": 10
+            },
+            {
+              "frame": 1,
+              "duration": 20
+            },
+            {
+              "frame": 0,
+              "duration": 20
+            },
+            {
+              "frame": 1,
+              "duration": 20
+            },
+            {
+              "frame": 0,
+              "duration": 1
+            }
+          ],
+          "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+          "levelUpLearnset": "sKommoOLevelUpLearnset"
+        }
+      }
+    },
+    "TAPU_KOKO": {
+      "baseHP": 70,
+      "baseAttack": 115,
+      "baseDefense": 85,
+      "baseSpeed": 130,
+      "baseSpAttack": 95,
+      "baseSpDefense": 75,
+      "types": [
+        "electric",
+        "fairy"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_Speed": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "electric-surge",
+        "none",
+        "telepathy"
+      ],
+      "bodyColor": "yellow",
+      "speciesName": "Tapu Koko",
+      "cryId": "tapu-koko",
+      "natDexNum": "tapu-koko",
+      "categoryName": "Land Spirit",
+      "height": 18,
+      "weight": 205,
+      "description": "It confuses its enemies by flying too\\nquickly for the eye to follow. It has a\\nhair-trigger temper but forgets what\\nmade it angry an instant later.",
+      "pokemonScale": 267,
+      "pokemonOffset": 2,
+      "trainerScale": 286,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_TapuKoko",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 40
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 10
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 10
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "triangle-down-twice",
+      "enemyMonElevation": 9,
+      "backPic": "gMonBackPic_TapuKoko",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 2,
+      "palette": "gMonPalette_TapuKoko",
+      "shinyPalette": "gMonShinyPalette_TapuKoko",
+      "iconSprite": "gMonIcon_TapuKoko",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sTapuKokoLevelUpLearnset",
+      "teachableLearnset": "sTapuKokoTeachableLearnset"
+    },
+    "TAPU_LELE": {
+      "baseHP": 70,
+      "baseAttack": 85,
+      "baseDefense": 75,
+      "baseSpeed": 95,
+      "baseSpAttack": 130,
+      "baseSpDefense": 115,
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "psychic-surge",
+        "none",
+        "telepathy"
+      ],
+      "bodyColor": "pink",
+      "speciesName": "Tapu Lele",
+      "cryId": "tapu-lele",
+      "natDexNum": "tapu-lele",
+      "categoryName": "Land Spirit",
+      "height": 12,
+      "weight": 186,
+      "description": "A fragrant aroma of flowers follows it.\\nAs it flutters about, it scatters its\\nstrangely glowing scales. Touching them\\nis said to restore good health.",
+      "pokemonScale": 282,
+      "pokemonOffset": 4,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_TapuLele",
+      "frontPicSize": {
+        "width": 48,
+        "height": 56
+      },
+      "frontPicYOffset": 6,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 50
+        },
+        {
+          "frame": 1,
+          "duration": 50
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "v-slide-wobble-small",
+      "enemyMonElevation": 8,
+      "backPic": "gMonBackPic_TapuLele",
+      "backPicSize": {
+        "width": 56,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "palette": "gMonPalette_TapuLele",
+      "shinyPalette": "gMonShinyPalette_TapuLele",
+      "iconSprite": "gMonIcon_TapuLele",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sTapuLeleLevelUpLearnset",
+      "teachableLearnset": "sTapuLeleTeachableLearnset"
+    },
+    "TAPU_BULU": {
+      "baseHP": 70,
+      "baseAttack": 130,
+      "baseDefense": 115,
+      "baseSpeed": 75,
+      "baseSpAttack": 85,
+      "baseSpDefense": 95,
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_Attack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "grassy-surge",
+        "none",
+        "telepathy"
+      ],
+      "bodyColor": "red",
+      "speciesName": "Tapu Bulu",
+      "cryId": "tapu-bulu",
+      "natDexNum": "tapu-bulu",
+      "categoryName": "Land Spirit",
+      "height": 19,
+      "weight": 455,
+      "description": "It causes vegetation to grow, and then\\nit absorbs energy from the growth.\\nIt pulls large trees up by the roots and\\nswings them around at its enemies.",
+      "pokemonScale": 256,
+      "pokemonOffset": 1,
+      "trainerScale": 326,
+      "trainerOffset": 4,
+      "frontPic": "gMonFrontPic_TapuBulu",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 40
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        },
+        {
+          "frame": 1,
+          "duration": 40
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "v-shake-twice",
+      "enemyMonElevation": 5,
+      "backPic": "gMonBackPic_TapuBulu",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 1,
+      "palette": "gMonPalette_TapuBulu",
+      "shinyPalette": "gMonShinyPalette_TapuBulu",
+      "iconSprite": "gMonIcon_TapuBulu",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sTapuBuluLevelUpLearnset",
+      "teachableLearnset": "sTapuBuluTeachableLearnset"
+    },
+    "TAPU_FINI": {
+      "baseHP": 70,
+      "baseAttack": 75,
+      "baseDefense": 115,
+      "baseSpeed": 85,
+      "baseSpAttack": 95,
+      "baseSpDefense": 130,
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_SpDefense": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 15,
+      "friendship": "standard",
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "misty-surge",
+        "none",
+        "telepathy"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Tapu Fini",
+      "cryId": "tapu-fini",
+      "natDexNum": "tapu-fini",
+      "categoryName": "Land Spirit",
+      "height": 13,
+      "weight": 212,
+      "description": "People say it can create pure water that\\nwill wash away any corruption. The dense\\nfog it creates brings the downfall and\\ndestruction of its confused enemies.",
+      "pokemonScale": 272,
+      "pokemonOffset": 3,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_TapuFini",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": [
+        {
+          "frame": 1,
+          "duration": 60
+        },
+        {
+          "frame": 1,
+          "duration": 60
+        },
+        {
+          "frame": 0,
+          "duration": 1
+        }
+      ],
+      "frontAnimId": "shake-glow-blue-slow",
+      "frontAnimDelay": 5,
+      "enemyMonElevation": 6,
+      "backPic": "gMonBackPic_TapuFini",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 4,
+      "palette": "gMonPalette_TapuFini",
+      "shinyPalette": "gMonShinyPalette_TapuFini",
+      "iconSprite": "gMonIcon_TapuFini",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sTapuFiniLevelUpLearnset",
+      "teachableLearnset": "sTapuFiniTeachableLearnset"
+    },
+    "COSMOG": {
+      "baseHP": 43,
+      "baseAttack": 29,
+      "baseDefense": 31,
+      "baseSpeed": 37,
+      "baseSpAttack": 29,
+      "baseSpDefense": 31,
+      "types": [
+        "psychic"
+      ],
+      "catchRate": 3,
+      "expYield": 40,
+      "evYield_HP": 1,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "unaware",
+        "none",
+        "none"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Cosmog",
+      "cryId": "cosmog",
+      "natDexNum": "cosmog",
+      "categoryName": "Nebula",
+      "height": 2,
+      "weight": 1,
+      "description": "In ages past, it was called the child of\\nthe stars. It's said to be a Pok\u00e9mon from\\nanother world, but no specific details\\nare known.",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Cosmog",
+      "frontPicSize": {
+        "width": 56,
+        "height": 48
+      },
+      "frontPicYOffset": 10,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-jumps-v-stretch",
+      "enemyMonElevation": 7,
+      "backPic": "gMonBackPic_Cosmog",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 10,
+      "palette": "gMonPalette_Cosmog",
+      "shinyPalette": "gMonShinyPalette_Cosmog",
+      "iconSprite": "gMonIcon_Cosmog",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "tmIlliterate": 1,
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sCosmogLevelUpLearnset",
+      "teachableLearnset": "sCosmogTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "43",
+          "species": "cosmoem"
+        }
+      ]
+    },
+    "COSMOEM": {
+      "baseHP": 43,
+      "baseAttack": 29,
+      "baseDefense": 131,
+      "baseSpeed": 37,
+      "baseSpAttack": 29,
+      "baseSpDefense": 131,
+      "types": [
+        "psychic"
+      ],
+      "catchRate": 3,
+      "expYield": 140,
+      "evYield_Defense": 1,
+      "evYield_SpDefense": 1,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "sturdy",
+        "none",
+        "none"
+      ],
+      "bodyColor": "blue",
+      "speciesName": "Cosmoem",
+      "cryId": "cosmoem",
+      "natDexNum": "cosmoem",
+      "categoryName": "Protostar",
+      "height": 1,
+      "weight": 9999,
+      "description": "Motionless as if dead, its body is faintly\\nwarm to the touch. There's something\\naccumulating around the black core\\nwithin its hard shell.",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Cosmoem",
+      "frontPicSize": {
+        "width": 48,
+        "height": 48
+      },
+      "frontPicYOffset": 9,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "rising-wobble",
+      "enemyMonElevation": 3,
+      "backPic": "gMonBackPic_Cosmoem",
+      "backPicSize": {
+        "width": 64,
+        "height": 40
+      },
+      "backPicYOffset": 17,
+      "palette": "gMonPalette_Cosmoem",
+      "shinyPalette": "gMonShinyPalette_Cosmoem",
+      "iconSprite": "gMonIcon_Cosmoem",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "tmIlliterate": 1,
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sCosmoemLevelUpLearnset",
+      "teachableLearnset": "sCosmoemTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "53",
+          "species": "solgaleo",
+          "conditions": "CONDITIONS({IF_NOT_TIME, TIME_NIGHT})"
+        },
+        {
+          "method": "level",
+          "param": "53",
+          "species": "lunala",
+          "conditions": "CONDITIONS({IF_TIME, TIME_NIGHT})"
+        }
+      ]
+    },
+    "SOLGALEO": {
+      "baseHP": 137,
+      "baseAttack": 137,
+      "baseDefense": 107,
+      "baseSpeed": 97,
+      "baseSpAttack": 113,
+      "baseSpDefense": 89,
+      "types": [
+        "psychic",
+        "steel"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 340,
+        "gen7-": 306
+      },
+      "evYield_Attack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "full-metal-body",
+        "none",
+        "none"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Solgaleo",
+      "cryId": "solgaleo",
+      "natDexNum": "solgaleo",
+      "categoryName": "Sunne",
+      "height": 34,
+      "weight": 2300,
+      "description": "It is said to live in another world.\\nThe intense light it radiates from the\\nsurface of its body can make the darkest\\nof nights light up like midday.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 405,
+      "trainerOffset": 8,
+      "frontPic": "gMonFrontPic_Solgaleo",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "grow-vibrate",
+      "backPic": "gMonBackPic_Solgaleo",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 3,
+      "palette": "gMonPalette_Solgaleo",
+      "shinyPalette": "gMonShinyPalette_Solgaleo",
+      "iconSprite": "gMonIcon_Solgaleo",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sSolgaleoLevelUpLearnset",
+      "teachableLearnset": "sSolgaleoTeachableLearnset"
+    },
+    "LUNALA": {
+      "baseHP": 137,
+      "baseAttack": 113,
+      "baseDefense": 89,
+      "baseSpeed": 97,
+      "baseSpAttack": 137,
+      "baseSpDefense": 107,
+      "types": [
+        "psychic",
+        "ghost"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 340,
+        "gen7-": 306
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "shadow-shield",
+        "none",
+        "none"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Lunala",
+      "cryId": "lunala",
+      "natDexNum": "lunala",
+      "categoryName": "Moone",
+      "height": 40,
+      "weight": 1200,
+      "description": "When its third eye activates, away it flies\\nto another world. This Pok\u00e9mon devours\\nlight, drawing the moonless dark veil of\\nnight over the brightness of day.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 411,
+      "trainerOffset": 5,
+      "frontPic": "gMonFrontPic_Lunala",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "circular-vibrate",
+      "enemyMonElevation": 6,
+      "backPic": "gMonBackPic_Lunala",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 2,
+      "palette": "gMonPalette_Lunala",
+      "shinyPalette": "gMonShinyPalette_Lunala",
+      "iconSprite": "gMonIcon_Lunala",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sLunalaLevelUpLearnset",
+      "teachableLearnset": "sLunalaTeachableLearnset"
+    },
+    "NIHILEGO": {
+      "baseHP": 109,
+      "baseAttack": 53,
+      "baseDefense": 47,
+      "baseSpeed": 103,
+      "baseSpAttack": 127,
+      "baseSpDefense": 131,
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_SpDefense": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Nihilego",
+      "cryId": "nihilego",
+      "natDexNum": "nihilego",
+      "categoryName": "Parasite",
+      "height": 12,
+      "weight": 555,
+      "description": "One of several mysterious Ultra Beasts.\\nIt's unclear whether or not this Pok\u00e9mon\\nis sentient, but sometimes it can be\\nobserved behaving like a young girl.",
+      "pokemonScale": 282,
+      "pokemonOffset": 4,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Nihilego",
+      "frontPicSize": {
+        "width": 48,
+        "height": 64
+      },
+      "frontPicYOffset": 3,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "circular-stretch-twice",
+      "enemyMonElevation": 6,
+      "backPic": "gMonBackPic_Nihilego",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Nihilego",
+      "shinyPalette": "gMonShinyPalette_Nihilego",
+      "iconSprite": "gMonIcon_Nihilego",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sNihilegoLevelUpLearnset",
+      "teachableLearnset": "sNihilegoTeachableLearnset"
+    },
+    "BUZZWOLE": {
+      "baseHP": 107,
+      "baseAttack": 139,
+      "baseDefense": 139,
+      "baseSpeed": 79,
+      "baseSpAttack": 53,
+      "baseSpDefense": 53,
+      "types": [
+        "bug",
+        "fighting"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_Attack": 1,
+      "evYield_Defense": 2,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "red",
+      "speciesName": "Buzzwole",
+      "cryId": "buzzwole",
+      "natDexNum": "buzzwole",
+      "categoryName": "Swollen",
+      "height": 24,
+      "weight": 3336,
+      "description": "This life-form called an Ultra Beast\\nappeared from another world. It shows\\noff its body, but whether that display\\nis a boast or a threat remains unclear.",
+      "pokemonScale": 256,
+      "pokemonOffset": 3,
+      "trainerScale": 369,
+      "trainerOffset": 7,
+      "frontPic": "gMonFrontPic_Buzzwole",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shrink-grow-vibrate-fast",
+      "backPic": "gMonBackPic_Buzzwole",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 14,
+      "palette": "gMonPalette_Buzzwole",
+      "shinyPalette": "gMonShinyPalette_Buzzwole",
+      "iconSprite": "gMonIcon_Buzzwole",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sBuzzwoleLevelUpLearnset",
+      "teachableLearnset": "sBuzzwoleTeachableLearnset"
+    },
+    "PHEROMOSA": {
+      "baseHP": 71,
+      "baseAttack": 137,
+      "baseDefense": 37,
+      "baseSpeed": 151,
+      "baseSpAttack": 137,
+      "baseSpDefense": 37,
+      "types": [
+        "bug",
+        "fighting"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_Speed": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Pheromosa",
+      "cryId": "pheromosa",
+      "natDexNum": "pheromosa",
+      "categoryName": "Lissome",
+      "height": 18,
+      "weight": 250,
+      "description": "One of the dangerous Ultra Beasts,\\nit refuses to touch anything, perhaps\\nbecause it senses some uncleanness\\nin this world.",
+      "pokemonScale": 267,
+      "pokemonOffset": 2,
+      "trainerScale": 286,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_Pheromosa",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shrink-grow",
+      "backPic": "gMonBackPic_Pheromosa",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 2,
+      "palette": "gMonPalette_Pheromosa",
+      "shinyPalette": "gMonShinyPalette_Pheromosa",
+      "iconSprite": "gMonIcon_Pheromosa",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sPheromosaLevelUpLearnset",
+      "teachableLearnset": "sPheromosaTeachableLearnset"
+    },
+    "XURKITREE": {
+      "baseHP": 83,
+      "baseAttack": 89,
+      "baseDefense": 71,
+      "baseSpeed": 83,
+      "baseSpAttack": 173,
+      "baseSpDefense": 71,
+      "types": [
+        "electric"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Xurkitree",
+      "cryId": "xurkitree",
+      "natDexNum": "xurkitree",
+      "categoryName": "Glowing",
+      "height": 38,
+      "weight": 1000,
+      "description": "One of the mysterious life-forms known\\nas Ultra Beasts. Astonishing electric\\nshocks emanate from its entire body,\\naccording to witnesses.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 610,
+      "trainerOffset": 17,
+      "frontPic": "gMonFrontPic_Xurkitree",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shake-flash-yellow-fast",
+      "backPic": "gMonBackPic_Xurkitree",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 2,
+      "palette": "gMonPalette_Xurkitree",
+      "shinyPalette": "gMonShinyPalette_Xurkitree",
+      "iconSprite": "gMonIcon_Xurkitree",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sXurkitreeLevelUpLearnset",
+      "teachableLearnset": "sXurkitreeTeachableLearnset"
+    },
+    "CELESTEELA": {
+      "baseHP": 97,
+      "baseAttack": 101,
+      "baseDefense": 103,
+      "baseSpeed": 61,
+      "baseSpAttack": 107,
+      "baseSpDefense": 101,
+      "types": [
+        "steel",
+        "flying"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_Attack": 1,
+      "evYield_Defense": 1,
+      "evYield_SpAttack": 1,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "green",
+      "speciesName": "Celesteela",
+      "cryId": "celesteela",
+      "natDexNum": "celesteela",
+      "categoryName": "Launch",
+      "height": 92,
+      "weight": 9999,
+      "description": "It appeared from the Ultra Wormhole.\\nOne kind of Ultra Beast, witnesses saw\\nit flying across the sky by expelling gas\\nfrom its two arms.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 516,
+      "trainerOffset": 13,
+      "frontPic": "gMonFrontPic_Celesteela",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "grow-stutter-slow",
+      "backPic": "gMonBackPic_Celesteela",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 0,
+      "palette": "gMonPalette_Celesteela",
+      "shinyPalette": "gMonShinyPalette_Celesteela",
+      "iconSprite": "gMonIcon_Celesteela",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sCelesteelaLevelUpLearnset",
+      "teachableLearnset": "sCelesteelaTeachableLearnset"
+    },
+    "KARTANA": {
+      "baseHP": 59,
+      "baseAttack": 181,
+      "baseDefense": 131,
+      "baseSpeed": 109,
+      "baseSpAttack": 59,
+      "baseSpDefense": 31,
+      "types": [
+        "grass",
+        "steel"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_Attack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "white",
+      "speciesName": "Kartana",
+      "cryId": "kartana",
+      "natDexNum": "kartana",
+      "categoryName": "Drawn Sword",
+      "height": 3,
+      "weight": 1,
+      "description": "This Ultra Beast came from the\\nUltra Wormhole. It seems not to attack\\nenemies on its own, but its sharp body is\\na dangerous weapon in itself.",
+      "pokemonScale": 530,
+      "pokemonOffset": 13,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Kartana",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-vibrate",
+      "enemyMonElevation": 3,
+      "backPic": "gMonBackPic_Kartana",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 11,
+      "palette": "gMonPalette_Kartana",
+      "shinyPalette": "gMonShinyPalette_Kartana",
+      "iconSprite": "gMonIcon_Kartana",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sKartanaLevelUpLearnset",
+      "teachableLearnset": "sKartanaTeachableLearnset"
+    },
+    "GUZZLORD": {
+      "baseHP": 223,
+      "baseAttack": 101,
+      "baseDefense": 53,
+      "baseSpeed": 43,
+      "baseSpAttack": 97,
+      "baseSpDefense": 53,
+      "types": [
+        "dark",
+        "dragon"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_HP": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "black",
+      "speciesName": "Guzzlord",
+      "cryId": "guzzlord",
+      "natDexNum": "guzzlord",
+      "categoryName": "Junkivore",
+      "height": 55,
+      "weight": 8880,
+      "description": "A dangerous Ultra Beast, it has gobbled\\nmountains and swallowed whole buildings,\\naccording to reports. But for some reason\\nits droppings have never been found.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 721,
+      "trainerOffset": 19,
+      "frontPic": "gMonFrontPic_Guzzlord",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 3,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shrink-grow-vibrate-fast",
+      "backPic": "gMonBackPic_Guzzlord",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 10,
+      "palette": "gMonPalette_Guzzlord",
+      "shinyPalette": "gMonShinyPalette_Guzzlord",
+      "iconSprite": "gMonIcon_Guzzlord",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sGuzzlordLevelUpLearnset",
+      "teachableLearnset": "sGuzzlordTeachableLearnset"
+    },
+    "NECROZMA": {
+      "baseHP": 97,
+      "baseAttack": 107,
+      "baseDefense": 101,
+      "baseSpeed": 79,
+      "baseSpAttack": 127,
+      "baseSpDefense": 89,
+      "types": [
+        "psychic"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 300,
+        "gen7-": 270
+      },
+      "evYield_Attack": 1,
+      "evYield_SpAttack": 2,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "prism-armor",
+        "none",
+        "none"
+      ],
+      "bodyColor": "black",
+      "noFlip": 1,
+      "speciesName": "Necrozma",
+      "cryId": "necrozma",
+      "natDexNum": "necrozma",
+      "categoryName": "Prism",
+      "height": 24,
+      "weight": 2300,
+      "description": "Reminiscent of the Ultra Beasts, this\\nlife-form, apparently asleep underground,\\nis thought to have come from another\\nworld in ancient times.",
+      "pokemonScale": 256,
+      "pokemonOffset": 3,
+      "trainerScale": 369,
+      "trainerOffset": 7,
+      "frontPic": "gMonFrontPic_Necrozma",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 2,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "grow-vibrate",
+      "enemyMonElevation": 6,
+      "backPic": "gMonBackPic_Necrozma",
+      "backPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "backPicYOffset": 4,
+      "palette": "gMonPalette_Necrozma",
+      "shinyPalette": "gMonShinyPalette_Necrozma",
+      "iconSprite": "gMonIcon_Necrozma",
+      "iconPalIndex": 1,
+      "pokemonJumpType": "none",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sNecrozmaLevelUpLearnset",
+      "teachableLearnset": "sNecrozmaTeachableLearnset",
+      "formSpeciesIdTable": "sNecrozmaFormSpeciesIdTable",
+      "forms": {
+        "DUSK_MANE": {
+          "baseAttack": 157,
+          "baseDefense": 127,
+          "baseSpeed": 77,
+          "baseSpAttack": 113,
+          "baseSpDefense": 109,
+          "types": [
+            "psychic",
+            "steel"
+          ],
+          "expYield": {
+            "gen8+": 340,
+            "gen7-": 306
+          },
+          "evYield_Attack": 3,
+          "bodyColor": "yellow",
+          "cryId": "necrozma-dusk-mane",
+          "height": 38,
+          "weight": 4600,
+          "description": "This is its form while it is devouring\\nthe light of Solgaleo. It pounces on\\nfoes and then slashes them with the\\nclaws on its four limbs and back.",
+          "frontPic": "gMonFrontPic_NecrozmaDuskMane",
+          "frontPicYOffset": 0,
+          "backPic": "gMonBackPic_NecrozmaDuskMane",
+          "backPicYOffset": 1,
+          "palette": "gMonPalette_NecrozmaDuskMane",
+          "shinyPalette": "gMonShinyPalette_NecrozmaDuskMane",
+          "iconSprite": "gMonIcon_NecrozmaDuskMane",
+          "iconPalIndex": 0,
+          "cannotBeTraded": 1,
+          "formChangeTable": "sNecrozmaDuskManeFormChangeTable"
+        },
+        "DAWN_WINGS": {
+          "baseAttack": 113,
+          "baseDefense": 109,
+          "baseSpeed": 77,
+          "baseSpAttack": 157,
+          "baseSpDefense": 127,
+          "types": [
+            "psychic",
+            "ghost"
+          ],
+          "expYield": {
+            "gen8+": 340,
+            "gen7-": 306
+          },
+          "evYield_SpAttack": 3,
+          "bodyColor": "blue",
+          "cryId": "necrozma-dawn-wings",
+          "height": 42,
+          "weight": 3500,
+          "description": "This is its form while it's\\ndevouring the light of Lunala. It grasps\\nfoes in its giant claws and rips them\\napart with brute force.",
+          "frontPic": "gMonFrontPic_NecrozmaDawnWings",
+          "frontPicYOffset": 0,
+          "backPic": "gMonBackPic_NecrozmaDawnWings",
+          "backPicYOffset": 2,
+          "palette": "gMonPalette_NecrozmaDawnWings",
+          "shinyPalette": "gMonShinyPalette_NecrozmaDawnWings",
+          "iconSprite": "gMonIcon_NecrozmaDawnWings",
+          "iconPalIndex": 0,
+          "cannotBeTraded": 1,
+          "formChangeTable": "sNecrozmaDawnWingsFormChangeTable"
+        },
+        "ULTRA": {
+          "baseAttack": 167,
+          "baseDefense": 97,
+          "baseSpeed": 129,
+          "baseSpAttack": 167,
+          "baseSpDefense": 97,
+          "types": [
+            "psychic",
+            "dragon"
+          ],
+          "expYield": {
+            "gen8+": 377,
+            "gen7-": 339
+          },
+          "evYield_Speed": 1,
+          "evYield_SpAttack": 1,
+          "abilities": [
+            "neuroforce",
+            "none",
+            "none"
+          ],
+          "bodyColor": "yellow",
+          "cryId": "necrozma-ultra",
+          "height": 75,
+          "description": "The light pouring out from all over\\nits body affects living things and\\nnature, impacting them in various\\nways.",
+          "frontPic": "gMonFrontPic_NecrozmaUltra",
+          "frontPicYOffset": 0,
+          "enemyMonElevation": 5,
+          "backPic": "gMonBackPic_NecrozmaUltra",
+          "backPicYOffset": 3,
+          "palette": "gMonPalette_NecrozmaUltra",
+          "shinyPalette": "gMonShinyPalette_NecrozmaUltra",
+          "iconSprite": "gMonIcon_NecrozmaUltra",
+          "iconPalIndex": 2,
+          "isUltraBurst": 1,
+          "cannotBeTraded": 1,
+          "formChangeTable": "sNecrozmaUltraFormChangeTable"
+        }
+      }
+    },
+    "MAGEARNA": {
+      "baseHP": 80,
+      "baseAttack": 95,
+      "baseDefense": 115,
+      "baseSpeed": 65,
+      "baseSpAttack": 130,
+      "baseSpDefense": 115,
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 300,
+        "gen7-": 270
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "soul-heart",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Magearna",
+      "cryId": "magearna",
+      "natDexNum": "magearna",
+      "categoryName": "Artificial",
+      "height": 10,
+      "weight": 805,
+      "description": "This artificial Pok\u00e9mon, constructed more\\nthan 500 years ago, can understand human\\nspeech but cannot itself speak. Its true\\nself is its Soul-Heart, an artificial soul.",
+      "pokemonScale": 305,
+      "pokemonOffset": 7,
+      "trainerScale": 257,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Magearna",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "h-slide-slow",
+      "backPic": "gMonBackPic_Magearna",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 4,
+      "shinyPalette": "gMonShinyPalette_Magearna",
+      "iconSprite": "gMonIcon_Magearna",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sMagearnaLevelUpLearnset",
+      "teachableLearnset": "sMagearnaTeachableLearnset",
+      "formSpeciesIdTable": "sMagearnaFormSpeciesIdTable",
+      "forms": {
+        "ORIGINAL": {
+          "bodyColor": "red",
+          "description": "This is its form from almost 500\\nyears ago. Its body is nothing more\\nthan a container-its artificial heart\\nis the actual life-form.",
+          "frontPic": "gMonFrontPic_MagearnaOriginal",
+          "backPic": "gMonBackPic_MagearnaOriginal",
+          "shinyPalette": "gMonShinyPalette_MagearnaOriginal",
+          "iconSprite": "gMonIcon_MagearnaOriginal"
+        }
+      }
+    },
+    "MARSHADOW": {
+      "baseHP": 90,
+      "baseAttack": 125,
+      "baseDefense": 80,
+      "baseSpeed": 125,
+      "baseSpAttack": 90,
+      "baseSpDefense": 90,
+      "types": [
+        "fighting",
+        "ghost"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 300,
+        "gen7-": 270
+      },
+      "evYield_Attack": 2,
+      "evYield_Speed": 1,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "technician",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "noFlip": 1,
+      "speciesName": "Marshadow",
+      "cryId": "marshadow",
+      "natDexNum": "marshadow",
+      "categoryName": "Gloomdwellr",
+      "height": 7,
+      "weight": 222,
+      "description": "Able to conceal itself in the shadows of\\nothers, it never appears before humans,\\nso its very existence is the stuff of myth.\\nThis Pok\u00e9mon is craven and cowering.",
+      "pokemonScale": 365,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Marshadow",
+      "frontPicSize": {
+        "width": 32,
+        "height": 56
+      },
+      "frontPicYOffset": 9,
+      "frontAnimFrames": [
+        {
+          "frame": 0,
+          "duration": 1
+        },
+        {
+          "frame": 1,
+          "duration": 54
+        },
+        {
+          "frame": 0,
+          "duration": 10
+        }
+      ],
+      "frontAnimId": "v-shake",
+      "backPic": "gMonBackPic_Marshadow",
+      "backPicSize": {
+        "width": 40,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "palette": "gMonPalette_Marshadow",
+      "shinyPalette": "gMonShinyPalette_Marshadow",
+      "iconSprite": "gMonIcon_Marshadow",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "slow",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sMarshadowLevelUpLearnset",
+      "teachableLearnset": "sMarshadowTeachableLearnset"
+    },
+    "POIPOLE": {
+      "baseHP": 67,
+      "baseAttack": 73,
+      "baseDefense": 67,
+      "baseSpeed": 73,
+      "baseSpAttack": 73,
+      "baseSpDefense": 67,
+      "types": [
+        "poison"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 210,
+        "gen7-": 189
+      },
+      "evYield_Speed": 1,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Poipole",
+      "cryId": "poipole",
+      "natDexNum": "poipole",
+      "categoryName": "Poison Pin",
+      "height": 6,
+      "weight": 18,
+      "description": "This Ultra Beast is well enough\\nliked to be chosen as a\\nfirst partner in its own world.",
+      "pokemonScale": 422,
+      "pokemonOffset": 12,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Poipole",
+      "frontPicSize": {
+        "width": 40,
+        "height": 56
+      },
+      "frontPicYOffset": 8,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shake-glow-purple-slow",
+      "enemyMonElevation": 9,
+      "backPic": "gMonBackPic_Poipole",
+      "backPicSize": {
+        "width": 48,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "palette": "gMonPalette_Poipole",
+      "shinyPalette": "gMonShinyPalette_Poipole",
+      "iconSprite": "gMonIcon_Poipole",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sPoipoleLevelUpLearnset",
+      "teachableLearnset": "sPoipoleTeachableLearnset",
+      "evolutions": [
+        {
+          "method": "level",
+          "param": "0",
+          "species": "naganadel",
+          "conditions": "CONDITIONS({IF_KNOWS_MOVE, MOVE_DRAGON_PULSE})"
+        }
+      ]
+    },
+    "NAGANADEL": {
+      "baseHP": 73,
+      "baseAttack": 73,
+      "baseDefense": 73,
+      "baseSpeed": 121,
+      "baseSpAttack": 127,
+      "baseSpDefense": 73,
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "catchRate": 45,
+      "expYield": {
+        "gen8+": 270,
+        "gen7-": 243
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "purple",
+      "speciesName": "Naganadel",
+      "cryId": "naganadel",
+      "natDexNum": "naganadel",
+      "categoryName": "Poison Pin",
+      "height": 36,
+      "weight": 1500,
+      "description": "It stores hundreds of liters of poisonous\\nliquid inside its body. It is one of the\\norganisms known as UBs.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 405,
+      "trainerOffset": 8,
+      "frontPic": "gMonFrontPic_Naganadel",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "triangle-down-twice",
+      "enemyMonElevation": 7,
+      "backPic": "gMonBackPic_Naganadel",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 6,
+      "palette": "gMonPalette_Naganadel",
+      "shinyPalette": "gMonShinyPalette_Naganadel",
+      "iconSprite": "gMonIcon_Naganadel",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sNaganadelLevelUpLearnset",
+      "teachableLearnset": "sNaganadelTeachableLearnset"
+    },
+    "STAKATAKA": {
+      "baseHP": 61,
+      "baseAttack": 131,
+      "baseDefense": 211,
+      "baseSpeed": 13,
+      "baseSpAttack": 53,
+      "baseSpDefense": 101,
+      "types": [
+        "rock",
+        "steel"
+      ],
+      "catchRate": 30,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_Defense": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "noFlip": 1,
+      "speciesName": "Stakataka",
+      "cryId": "stakataka",
+      "natDexNum": "stakataka",
+      "categoryName": "Rampart",
+      "height": 55,
+      "weight": 8200,
+      "description": "It appeared from an Ultra Wormhole. Each\\none appears to be made up of many life-\\nforms stacked one on top of each other.",
+      "pokemonScale": 256,
+      "pokemonOffset": 0,
+      "trainerScale": 721,
+      "trainerOffset": 19,
+      "frontPic": "gMonFrontPic_Stakataka",
+      "frontPicSize": {
+        "width": 64,
+        "height": 64
+      },
+      "frontPicYOffset": 0,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "grow-vibrate",
+      "backPic": "gMonBackPic_Stakataka",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 12,
+      "palette": "gMonPalette_Stakataka",
+      "shinyPalette": "gMonShinyPalette_Stakataka",
+      "iconSprite": "gMonIcon_Stakataka",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sStakatakaLevelUpLearnset",
+      "teachableLearnset": "sStakatakaTeachableLearnset"
+    },
+    "BLACEPHALON": {
+      "baseHP": 53,
+      "baseAttack": 127,
+      "baseDefense": 53,
+      "baseSpeed": 107,
+      "baseSpAttack": 151,
+      "baseSpDefense": 79,
+      "types": [
+        "fire",
+        "ghost"
+      ],
+      "catchRate": 30,
+      "expYield": {
+        "gen8+": 285,
+        "gen7-": 257
+      },
+      "evYield_SpAttack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "beast-boost",
+        "none",
+        "none"
+      ],
+      "bodyColor": "white",
+      "noFlip": 1,
+      "speciesName": "Blacephalon",
+      "cryId": "blacephalon",
+      "natDexNum": "blacephalon",
+      "categoryName": "Fireworks",
+      "height": 18,
+      "weight": 130,
+      "description": "It slithers toward people and explode\\nits head without warning. It is\\none kind of Ultra Beast.",
+      "pokemonScale": 267,
+      "pokemonOffset": 2,
+      "trainerScale": 286,
+      "trainerOffset": 1,
+      "frontPic": "gMonFrontPic_Blacephalon",
+      "frontPicSize": {
+        "width": 56,
+        "height": 64
+      },
+      "frontPicYOffset": 1,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "shake-glow-red",
+      "backPic": "gMonBackPic_Blacephalon",
+      "backPicSize": {
+        "width": 64,
+        "height": 48
+      },
+      "backPicYOffset": 9,
+      "palette": "gMonPalette_Blacephalon",
+      "shinyPalette": "gMonShinyPalette_Blacephalon",
+      "iconSprite": "gMonIcon_Blacephalon",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sBlacephalonLevelUpLearnset",
+      "teachableLearnset": "sBlacephalonTeachableLearnset"
+    },
+    "ZERAORA": {
+      "baseHP": 88,
+      "baseAttack": 112,
+      "baseDefense": 75,
+      "baseSpeed": 143,
+      "baseSpAttack": 102,
+      "baseSpDefense": 80,
+      "types": [
+        "electric"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 300,
+        "gen7-": 270
+      },
+      "evYield_Speed": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "volt-absorb",
+        "none",
+        "none"
+      ],
+      "bodyColor": "yellow",
+      "speciesName": "Zeraora",
+      "cryId": "zeraora",
+      "natDexNum": "zeraora",
+      "categoryName": "Thunderclap",
+      "height": 15,
+      "weight": 445,
+      "description": "It approaches its enemies at the speed\\nof lightning, then tears them limb from\\nlimb with its sharp claws.",
+      "pokemonScale": 268,
+      "pokemonOffset": 2,
+      "trainerScale": 271,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Zeraora",
+      "frontPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "frontPicYOffset": 4,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "v-stretch",
+      "backPic": "gMonBackPic_Zeraora",
+      "backPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "backPicYOffset": 11,
+      "palette": "gMonPalette_Zeraora",
+      "shinyPalette": "gMonShinyPalette_Zeraora",
+      "iconSprite": "gMonIcon_Zeraora",
+      "iconPalIndex": 0,
+      "pokemonJumpType": "none",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sZeraoraLevelUpLearnset",
+      "teachableLearnset": "sZeraoraTeachableLearnset"
+    },
+    "MELTAN": {
+      "baseHP": 46,
+      "baseAttack": 65,
+      "baseDefense": 65,
+      "baseSpeed": 34,
+      "baseSpAttack": 55,
+      "baseSpDefense": 35,
+      "types": [
+        "steel"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 150,
+        "gen7-": 135
+      },
+      "evYield_Attack": 1,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "magnet-pull",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Meltan",
+      "cryId": "meltan",
+      "natDexNum": "meltan",
+      "categoryName": "Hex Nut",
+      "height": 2,
+      "weight": 80,
+      "description": "It melts particles of iron and other metals\\nfound in the subsoil, so it can absorb them\\ninto its body of molten steel.",
+      "pokemonScale": 682,
+      "pokemonOffset": 24,
+      "trainerScale": 256,
+      "trainerOffset": 0,
+      "frontPic": "gMonFrontPic_Meltan",
+      "frontPicSize": {
+        "width": 32,
+        "height": 48
+      },
+      "frontPicYOffset": 11,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "grow-stutter-slow",
+      "backPic": "gMonBackPic_Meltan",
+      "backPicSize": {
+        "width": 40,
+        "height": 40
+      },
+      "backPicYOffset": 12,
+      "palette": "gMonPalette_Meltan",
+      "shinyPalette": "gMonShinyPalette_Meltan",
+      "iconSprite": "gMonIcon_Meltan",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "slow",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sMeltanLevelUpLearnset",
+      "teachableLearnset": "sMeltanTeachableLearnset",
+      "formSpeciesIdTable": "sMeltanFormSpeciesIdTable"
+    },
+    "MELMETAL": {
+      "baseHP": 135,
+      "baseAttack": 143,
+      "baseDefense": 143,
+      "baseSpeed": 34,
+      "baseSpAttack": 80,
+      "baseSpDefense": 65,
+      "types": [
+        "steel"
+      ],
+      "catchRate": 3,
+      "expYield": {
+        "gen8+": 300,
+        "gen7-": 270
+      },
+      "evYield_Attack": 3,
+      "genderRatio": "genderless",
+      "eggCycles": 120,
+      "friendship": 0,
+      "growthRate": "slow",
+      "eggGroups": [
+        "no-eggs-discovered"
+      ],
+      "abilities": [
+        "iron-fist",
+        "none",
+        "none"
+      ],
+      "bodyColor": "gray",
+      "speciesName": "Melmetal",
+      "cryId": "melmetal",
+      "natDexNum": "melmetal",
+      "categoryName": "Hex Nut",
+      "height": 25,
+      "weight": 8000,
+      "description": "Revered long ago for its capacity to\\ncreate iron from nothing, for some reason\\nit has come back to life after 3,000 years.",
+      "pokemonScale": 257,
+      "pokemonOffset": 10,
+      "trainerScale": 423,
+      "trainerOffset": 8,
+      "frontPic": "gMonFrontPic_Melmetal",
+      "frontPicSize": {
+        "width": 64,
+        "height": 56
+      },
+      "frontPicYOffset": 4,
+      "frontAnimFrames": "sAnims_SingleFramePlaceHolder",
+      "frontAnimId": "grow-vibrate",
+      "backPic": "gMonBackPic_Melmetal",
+      "backPicSize": {
+        "width": 64,
+        "height": 40
+      },
+      "backPicYOffset": 13,
+      "palette": "gMonPalette_Melmetal",
+      "shinyPalette": "gMonShinyPalette_Melmetal",
+      "iconSprite": "gMonIcon_Melmetal",
+      "iconPalIndex": 2,
+      "pokemonJumpType": "none",
+      "isFrontierBanned": 1,
+      "perfectIVCount": "LEGENDARY_PERFECT_IV_COUNT",
+      "levelUpLearnset": "sMelmetalLevelUpLearnset",
+      "teachableLearnset": "sMelmetalTeachableLearnset",
+      "formSpeciesIdTable": "sMelmetalFormSpeciesIdTable",
+      "formChangeTable": "sMelmetalFormChangeTable",
+      "forms": {
+        "GMAX": {
+          "height": 250,
+          "weight": 0,
+          "description": "In a distant land, there are\\nlegends about a cyclopean giant. In fact,\\nthe giant was a Melmetal that was\\nflooded with Gigantamax energy.",
+          "frontPic": "gMonFrontPic_MelmetalGmax",
+          "frontPicSize": {
+            "width": 64,
+            "height": 64
+          },
+          "frontPicYOffset": 1,
+          "backPic": "gMonBackPic_MelmetalGmax",
+          "backPicSize": {
+            "width": 64,
+            "height": 64
+          },
+          "backPicYOffset": 14,
+          "palette": "gMonPalette_MelmetalGmax",
+          "shinyPalette": "gMonShinyPalette_MelmetalGmax",
+          "iconSprite": "gMonIcon_MelmetalGmax",
+          "iconPalIndex": 0,
+          "isGigantamax": 1
+        }
+      }
+    }
+  }
+}
